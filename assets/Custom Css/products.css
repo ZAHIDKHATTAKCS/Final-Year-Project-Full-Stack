@@ -1,0 +1,28 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+  
+  .body {
+    background-color:#cdf5ec;
+    color: white;
+    font-family: "poppins", "sans-serif";
+    width: 100%;
+    margin: 0px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card{
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 3px 3px 10px gray;
+  }
+  
+  .card:hover{
+    box-shadow: 3px 3px 10px green;
+    transform: scale(1.03);
+    cursor: pointer;
+  }

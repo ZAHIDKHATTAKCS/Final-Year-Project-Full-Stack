@@ -3,7 +3,7 @@
 
 <img src="https://cdn.icon-icons.com/icons2/3053/PNG/512/figma_macos_bigsur_icon_190183.png" width="100" align="right">
 
-<img src="Team Members Images/Muhammad Shahzad Designer.jpg" width="200px">
+<img src="assets/Team Members Images/Muhammad Shahzad Designer.jpg" width="200px">
  
  
  
@@ -26,7 +26,7 @@
 
 
 
-<img src="Team Members Images/Bilal Ahmad Frontend Developer.jpg" width="200px">
+<img src="assets/Team Members Images/Bilal Ahmad Frontend Developer.jpg" width="200px">
 
 #### A Passionate Frontend Developer from Mohmand Agancy, as a Frontend Developer for the Project
 ---
@@ -34,6 +34,6 @@
 
 <img src="assets/Icons/php icon.png" width="100" align="right">
 
-<img src="Team Members Images/Muhammad Zahid Backend Developer.JPG" width="200px">
+<img src="assets/Team Members Images/Muhammad Zahid Backend Developer.JPG" width="200px">
  
 #### Hi, this is me Muhammad Zahid from Hangu, working as Backend Developer ( Core PHP ) for the Project

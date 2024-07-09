@@ -1,0 +1,40 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.body {
+  background-color: #cdf5ec;
+  color: black;
+  font-family: "poppins", "sans-serif";
+  width: 100%;
+  margin: 0px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-fluid {
+  overflow: hidden;
+  font-weight: bold;
+}
+
+.row {
+  /* background-color: rgb(127, 221, 189); */
+  background-color: lightskyblue;
+}
+.small-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+}
+
+.small-img:hover{
+  cursor: pointer;
+}
+
+.explore-card{
+  background-color: aquamarine;
+}

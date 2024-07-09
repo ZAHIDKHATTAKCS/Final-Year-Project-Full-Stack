@@ -1,0 +1,33 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.body {
+  background-color: #cdf5ec;
+  color: black;
+  font-family: "poppins", "sans-serif";
+  width: 100%;
+  margin: 0px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar_container {
+  background-color: #36cad1;
+  color: white;
+  font-family: "poppins", sans-serif;
+  font-weight: bolder;
+}
+
+.navbar_container .nav-link {
+  color: white;
+}
+
+.navbar_container .nav-link:hover {
+  color: blue;
+}

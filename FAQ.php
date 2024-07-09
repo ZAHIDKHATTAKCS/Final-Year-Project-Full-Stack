@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,74 +33,77 @@
 
     <link rel="stylesheet" href="assets/Custom Css/Faq.css" />
 
-      <!-- Favicon -->
-  <link rel="shortcut icon" href="assets/Team Members Images/Muhammad Zahid Backend Developer.JPG" type="image/x-icon">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/Team Members Images/Muhammad Zahid Backend Developer.JPG"
+        type="image/x-icon">
 </head>
 
 <body class="body">
 
-     <!-- navigation bar -->
-     <div class="container-fluid navbar_container">
+    <!-- navigation bar -->
+    <div class="container-fluid navbar_container">
 
         <nav class="navbar navbar-expand-lg d-sm-flex d-md-flex">
-          <div class="container d-flex justify-content-between">
-            <!-- Logo -->
-            <img src="../assets/Icons/main_logo.jpeg" style="width: 80px; height: 70px" alt="logo" class="rounded me-5" />
-            <!-- User Icon -->
-    
-            <!-- Toggler button for mobile view -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon ">
-                <div class="bg-dark" style="width: 20px; height:2px;">
+            <div class="container d-flex justify-content-between">
+                <!-- Logo -->
+                <img src="/assets/Icons/main_logo.jpeg" style="width: 80px; height: 70px" alt="logo"
+                    class="rounded me-5" />
+                <!-- User Icon -->
+
+                <!-- Toggler button for mobile view -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon ">
+                        <div class="bg-dark" style="width: 20px; height:2px;">
+                        </div>
+                        <div class="bg-dark mt-2" style="width: 20px; height:2px;">
+                        </div>
+                        <div class="bg-dark mt-2" style="width: 20px; height:2px;">
+                        </div>
+                    </span>
+                </button>
+
+                <!-- Navbar items for mobile views-->
+                <div class="collapse navbar-collapse navbar" id="navbarNav">
+                    <div class="w-100">
+                        <ul
+                            class="navbar-nav d-md-flex justify-content-md-between align-items-center align-items-md-center">
+                            <li class="nav-item">
+                                <a class="nav-link text-center" href="home.php">Home</a>
+                            </li>
+
+
+
+                            <li class="nav-item">
+                                <a class="nav-link text-center" href="About.php">About Us</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link text-center" href="./Contact page/contact.php">Contact Us</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link text-center" href="FAQ.php">FAQ</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link text-center" href="Add to cart.php">Add To Cart</a>
+                            </li>
+
+
+                            <li class="nav-item">
+                                <img src="assets/Team Members Images/Bilal.png"
+                                    class="nav-link img-fluid rounded-circle" alt="login user" width="100px">
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="bg-dark mt-2" style="width: 20px; height:2px;">
-                </div>
-                <div class="bg-dark mt-2" style="width: 20px; height:2px;">
-                </div>
-              </span>
-            </button>
-    
-            <!-- Navbar items for mobile views-->
-            <div class="collapse navbar-collapse navbar" id="navbarNav">
-              <div class="w-100">
-                <ul class="navbar-nav d-md-flex justify-content-md-between align-items-center align-items-md-center">
-                  <li class="nav-item">
-                    <a class="nav-link text-center" href="home.php">Home</a>
-                  </li>
-    
-                  
-    
-                  <li class="nav-item">
-                    <a class="nav-link text-center" href="About.php">About Us</a>
-                  </li>
-    
-                  <li class="nav-item">
-                    <a class="nav-link text-center" href="./Contact page/contact.php">Contact Us</a>
-                  </li>
-    
-                  <li class="nav-item">
-                    <a class="nav-link text-center" href="FAQ.php">FAQ</a>
-                  </li>
-    
-                  <li class="nav-item">
-                    <a class="nav-link text-center" href="Add to cart.php">Add To Cart</a>
-                  </li>
-    
-                  
-                  <li class="nav-item">
-                    <img src="../assets/Team Members Images/Bilal.png"
-                      class="nav-link img-fluid rounded-circle" alt="login user" width="100px">
-                  </li>
-                </ul>
-              </div>
+
             </div>
 
-          </div>
-    
         </nav>
-      </div> <br>
-      <!-- the end of navbar container -->
+    </div> <br>
+    <!-- the end of navbar container -->
 
     <div class="container-fluid d-flex flex-column justify-content-center align-items-center">
 
@@ -177,10 +181,12 @@
         </div>
 
         <!-- Contact form -->
-        <div class="row col-12 gap-2 col-md-8 d-flex flex-column justify-content-center align-items-center mt-4 text-center">
+        <div
+            class="row col-12 gap-2 col-md-8 d-flex flex-column justify-content-center align-items-center mt-4 text-center">
             <h2>Contact Form</h2>
             <div class="d-flex flex-column d-md-flex flex-md-row">
-                <form action="" class="w-100 col-12 col-md-6 d-flex flex-column justify-content-center align-items-center">
+                <form action=""
+                    class="w-100 col-12 col-md-6 d-flex flex-column justify-content-center align-items-center">
                     <input type="text" name="" class="form-control" placeholder="Enter your Full Name" required>
                     <input type="email" name="" class="form-control mt-2 " placeholder="Enter your Email" required>
                     <input type="text" name="" class="form-control mt-2 " placeholder="Enter your Address" required>
@@ -188,7 +194,7 @@
                     <textarea name="" class="form-control mt-2 " placeholder="Enter Message" required></textarea>
                     <button type="submit" name="submit" class="btn btn-success w-100 mt-3">Send Form</button>
                 </form>
-    
+
                 <img src="assets/Icons/FAQ/laptop.jpeg" class="img-fluid col-md-6" alt="laptop img">
             </div>
 
@@ -197,7 +203,7 @@
         <!-- Footer -->
 
         <div class="container-fluid footer p-4 mt-4 text-center">
-                <h2>Online Shop Tracking System</h2>
+            <h2>Online Shop Tracking System</h2>
 
             <!-- social media icons -->
 

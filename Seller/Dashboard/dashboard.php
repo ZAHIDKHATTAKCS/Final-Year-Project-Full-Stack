@@ -1,3 +1,7 @@
+<?php
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,7 +41,7 @@
     .main{
       height: 100vh;
     }
-  
+
     ul {
       height: 100%;
       display: flex;
@@ -47,27 +51,27 @@
       padding: 0;
       margin: 0;
     }
-  
+
     ul li {
       list-style-type: none;
     }
-  
+
     ul li a {
       text-decoration: none;
     }
-  
+
     @media screen and (min-width: 320px) and (max-width: 768px) {
       h4 {
         font-size: medium;
       }
     }
-  
+
     @media screen and (min-width: 1024px) and (max-width: 1440px) {
       h4 {
         font-size: 30px;
       }
     }
-  
+
     @media screen and (min-width: 768px) and (max-width: 1024px) {
       .link {
         font-size: 27px;
@@ -75,8 +79,6 @@
     }
   </style>
 </head>
-
-
 
 <body class="body">
 
@@ -94,11 +96,11 @@
         <button class="btn btn-outline-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
           Menu
         </button>
-    
+
         <!-- Offcanvas component -->
         <div class="offcanvas offcanvas-start"  id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
           <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Admin! Welcome to Menu</h5>
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel"> Hi ! <?php echo $_SESSION['Seller_Name']; ?> Welcome to the Menu</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body">
@@ -150,12 +152,23 @@
   </div>
 
 
+  <!-- php code -->
+  <?php
+  include ('../../DBconnection.php');
+  $Fetch = "SELECT * FROM `buyers table`";
+  
+  $result = mysqli_query($conn,$Fetch);
+
+  $Total_Users = mysqli_num_rows($result);
+    
+  ?>
+
   <!-- for Laptop and big screens -->
   <div class="row d-md-flex align-items-md-center d-none w-100 main">
     <!-- admin div -->
     <div class="col-md-3 bg-dark d-md-flex flex-md-column justify-content-md-center align-items-md-center h-100">
       <img src="../../assets/Team Members Images/Muhammad Zahid Backend Developer.JPG" alt="" class="w-50 rounded-circle img-fluid border border-3 border-white mt-1">
-      <h3>Welcome Admin</h3>
+      <h3>Welcome <?php echo $_SESSION['Seller_Name']; ?></h3>
       <ul class="text-decoration-none w-100 h-100 fs-4">
         <li><a href="./dashboard.php" class="btn btn-outline-info mt-4">Home</a></li>
         <li><a href="./buyers.php" class="btn btn-outline-info mt-4">Buyers</a></li>
@@ -172,10 +185,10 @@
         <img class="card-img-top w-25 mt-3" src="Icons/buyers.jpeg" alt="">
         <div class="card-body">
           <h5 class="card-title">Total Users</h5>
-          <p class="card-text text-center">23</p>
+          <p class="card-text text-center"><?php echo $Total_Users ?></p>
         </div>
       </div>
-  
+
       <!-- card 2 -->
       <div class="card col-md-3 d-flex flex-column justify-content-center align-items-center bg-light">
         <img class="card-img-top w-25 mt-2" src="Icons/categories icon.svg" alt="">
@@ -184,17 +197,19 @@
           <p class="card-text text-center">6</p>
         </div>
       </div>
-  
+
       <!-- card 3 -->
       <div class="card col-md-3 d-flex flex-column justify-content-center align-items-center bg-light mb-3">
         <img class="card-img-top w-25 mt-2" src="Icons/shopify.svg" alt="">
         <div class="card-body">
-          <h5 class="card-title">Total Total Orders</h5>
+          <h5 class="card-title">Total Orders</h5>
           <p class="card-text text-center">50</p>
         </div>
       </div>
     </div>
   </div>
+
+
 
 </body>
 

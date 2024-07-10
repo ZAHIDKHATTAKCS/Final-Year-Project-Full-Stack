@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <title>Buyer Sign up</title>
   <!-- Required meta tags -->
@@ -58,12 +57,12 @@
 
   <!-- Sign up Form -->
   <div class="row d-flex justify-content-center w-100">
-    <form class="col-11 col-sm-8 col-md-4 form border border-danger mb-3 text-dark rounded-2 ">
+    <form class="col-11 col-sm-8 col-md-4 form border border-danger mb-3 text-dark rounded-2 " method="POST" enctype="multipart/form-data">
       <h3 class="mb-5 text-dark">Create account as a Buyer</h3>
       <!-- Name -->
       <div class="input-group mb-3 ">
         <i class="fa-regular fa-user input-group-text"></i>
-        <input type="text" name="username" class="form-control" placeholder="Enter your Full Name" required />
+        <input type="text" name="name" class="form-control" placeholder="Enter your Full Name" required />
       </div>
 
 
@@ -83,7 +82,7 @@
       <!-- Password -->
       <div class="mt-3 input-group">
         <i class="fa-solid fa-lock input-group-text"></i>
-        <input type="password" name="" class="form-control" placeholder="Create Password" required />
+        <input type="password" name="password" class="form-control" placeholder="Create Password" required />
       </div>
 
 
@@ -95,13 +94,13 @@
 
       <!-- Image -->
       <div class="input-group mt-3">
-        <input type="file" name="profile" class="form-control" required />
+        <input type="file" name="buyerimg" class="form-control" required />
       </div>
 
 
-      <!-- Sign in Button -->
+      <!-- create account Button -->
       <div class="d-flex justify-content-center">
-        <button type="submit" class="mt-3 btn btn-primary w-100">
+        <button type="submit" name="submit" class="mt-3 btn btn-primary w-100">
           Create Account
         </button>
       </div>
@@ -115,6 +114,80 @@
       </p>
     </form>
   </div>
+
+  <!-- PHP code goes here -->
+  <?php
+  include ('../DBconnection.php');
+  if(isset($_POST['submit'])){
+    $Buyer_Name = $_POST['name'];
+    $Buyer_Email = $_POST['email'];
+    $Buyer_Phone = $_POST['phone'];
+    $Password = $_POST['password'];
+    $Confirm_Password = $_POST['cpassword'];
+    $Buyer_Img = $_FILES['buyerimg'];
+
+    $File_Name = $Buyer_Img['name'];
+    $File_Path = $Buyer_Img['tmp_name'];
+    $File_Error = $Buyer_Img['error'];
+
+    // password encryption
+    $Hash_Password = password_hash($Password,PASSWORD_BCRYPT);
+
+    $Hash_Confirm_Password = password_hash($Confirm_Password,PASSWORD_BCRYPT);
+
+    // Check if email already exist
+
+    $Fetch_Email = "select * from `buyers table` where Buyer_Email = '$Buyer_Email'";
+
+    $qry = mysqli_query($conn,$Fetch_Email);
+
+    $Email_Counts = mysqli_num_rows($qry);
+
+    if($Email_Counts){
+      ?>
+      <script>
+      alert('Email already exists login please'); 
+      location.replace('buyer signin.php');
+      </script>
+      <?php
+    }else{
+      if($Password === $Confirm_Password){
+        $Final_Folder = 'Buyer Images/'.$File_Name;
+
+        move_uploaded_file($File_Path,$Final_Folder);
+
+        $Insert_Query = "INSERT INTO `buyers table`(`Buyer_Name`, `Buyer_Email`, `Buyer_Phone`, `Password`, `Confirm_Password`, `Buyer_Image`) VALUES ('$Buyer_Name','$Buyer_Email','$Buyer_Phone','$Hash_Password','$Hash_Confirm_Password','$Final_Folder')";
+
+        $queryrn = mysqli_query($conn,$Insert_Query);
+        if($queryrn){
+          ?>
+          <script>
+          alert('Data inserted you are now a buyer! login please');
+          location.replace('buyer signin.php');
+          </script>
+          <?php
+        }else{
+          ?>
+          <script>alert('error in insertion query');</script>
+          <?php
+        }
+      }else{
+        ?>
+        <script>alert('Double Check, Your Passwords are not matching');</script>
+        <?php
+      }
+    }
+
+  }else{
+    ?>
+    <script>alert('Create account button not clicked yet');</script>
+    <?php
+  }
+  ?>
+
+
+
 </body>
 
 </html>
+

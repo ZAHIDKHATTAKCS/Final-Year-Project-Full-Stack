@@ -54,11 +54,13 @@
   </nav>
 
 
+  
+
 
   <!-- Sign in Form -->
   <div class="row d-flex justify-content-center w-100">
     <marquee behavior="" direction="" class="text-dark fs-5 mt-3">Enter your Details to Login as a Buyer</marquee>
-    <form class="col-11 col-sm-8 col-md-4 form border border-danger mb-3 text-dark rounded-2 ">
+    <form class="col-11 col-sm-8 col-md-4 form border border-danger mb-3 text-dark rounded-2 " method="post">
       <h3 class="mb-5 text-dark">Login as a Buyer</h3>
 
       <!-- Email -->
@@ -70,14 +72,14 @@
       <!-- Password -->
       <div class="mt-3 input-group">
         <i class="fa-solid fa-lock input-group-text"></i>
-        <input type="password" name="" class="form-control" placeholder="Create Password" required />
+        <input type="password" name="password" class="form-control" placeholder="Create Password" required />
       </div>
 
 
 
       <!-- Sign in Button -->
       <div class="d-flex justify-content-center">
-        <button type="submit" class="mt-3 btn btn-primary w-100">
+        <button type="submit" name="submit" class="mt-3 btn btn-primary w-100">
           Sign in
         </button>
       </div>
@@ -91,6 +93,63 @@
       </p>
     </form>
   </div>
+
+
+  <!-- php code -->
+  <?php
+  
+  include('../DBconnection.php');
+
+  if(isset($_POST['submit'])){
+    $Buyer_Email = $_POST['email'];
+    $Buyer_Password = $_POST['password'];
+
+    $Retreive_Query = "SELECT * FROM `buyers table` WHERE Buyer_Email = '$Buyer_Email'";
+
+    $Fire_Query=mysqli_query($conn,$Retreive_Query);
+
+    $Email_Counts = mysqli_num_rows($Fire_Query);
+
+    if($Email_Counts){
+      // if email founds that user enter than fetch all his Correspondence data
+      $Fetch_Data = mysqli_fetch_array($Fire_Query);
+
+      $DB_Password = $Fetch_Data['Password'];
+
+      // fetch buyer name also for using it in other pages
+      $_SESSION['Buyer_Name'] = $Fetch_Data['Buyer_Name'];
+      $_SESSION['Buyer_Pic'] = $Fetch_Data['Buyer_Image'];
+      
+      // now verifying both password check if the user password and db passwords are matching
+
+      $Verifying_Passwords = password_verify($Buyer_Password,$DB_Password);
+
+      if($Verifying_Passwords){
+        ?>
+        <script>
+        alert('you are logged in as a buyer! Explore our E Commerce shop now');
+        location.replace('../home.php');
+        </script>
+        <?php
+      }else{
+        ?>
+        <script>alert('You enter the wrong Password! try again');</script>
+        <?php
+      }
+    }else{
+      ?>
+      <script>
+        alert('Your Email is not exists in buyer list! please Register yourself first');
+        location.replace('buyer.php');
+      </script>
+      <?php
+    }
+  }else{
+    ?>
+    <script>alert('Please Click on sign in button clearly');</script>
+    <?php
+  }
+  ?>
 </body>
 
 </html>

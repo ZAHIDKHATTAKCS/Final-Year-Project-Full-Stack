@@ -149,6 +149,12 @@
                         <input type="number" name="" class="form-control" placeholder="Enetr quantity" required />
                        </div>
 
+                       <!-- Laptop Stand price -->
+                    <div class="input-group mb-3">
+                        <i class="fa-solid fa-dollar-sign input-group-text"></i>
+                        <input type="number" name="Laptop_Stand_Price" class="form-control" placeholder="Enter Price" required />
+                    </div>
+
                     <!-- Laptop Stand pic 1 -->
                     <div class="input-group mb-3">
                         <input type="file" name="" class="form-control" required />
@@ -222,6 +228,12 @@
                         <i class="fa-solid fa-plus-minus input-group-text"></i>
                         <input type="number" name="" class="form-control" placeholder="Enetr quantity" required />
                        </div>
+
+                       <!-- Laptop Stand price -->
+                    <div class="input-group mb-3">
+                        <i class="fa-solid fa-dollar-sign input-group-text"></i>
+                        <input type="number" name="Laptop_Stand_Price" class="form-control" placeholder="Enter Price" required />
+                    </div>
 
                     <!-- Laptop Stand pic 1 -->
                     <div class="input-group mb-3">

@@ -143,11 +143,17 @@
                         <input type="text" name="" class="form-control" placeholder="Monitor Description" required />
                     </div>
 
-                     <!-- Monitor quantity -->
-                     <div class="input-group mb-3">
+                    <!-- Monitor quantity -->
+                    <div class="input-group mb-3">
                         <i class="fa-solid fa-plus-minus input-group-text"></i>
                         <input type="number" name="" class="form-control" placeholder="Enetr quantity" required />
-                       </div>
+                    </div>
+
+                    <!-- Monitor price -->
+                    <div class="input-group mb-3">
+                        <i class="fa-solid fa-dollar-sign input-group-text"></i>
+                        <input type="number" name="Monitor_Price" class="form-control" placeholder="Enter Price" required />
+                    </div>
 
 
                     <!-- Monitor pic 1 -->
@@ -223,6 +229,12 @@
                         <i class="fa-solid fa-plus-minus input-group-text"></i>
                         <input type="number" name="" class="form-control" placeholder="Enetr quantity" required />
                        </div>
+
+                       <!-- Monitor price -->
+                    <div class="input-group mb-3">
+                        <i class="fa-solid fa-dollar-sign input-group-text"></i>
+                        <input type="number" name="Monitor_Price" class="form-control" placeholder="Enter Price" required />
+                    </div>
 
                     <!-- Monitor pic 1 -->
                     <div class="input-group mb-3">

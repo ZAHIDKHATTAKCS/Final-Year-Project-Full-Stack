@@ -149,6 +149,12 @@
                         <input type="number" name="" class="form-control" placeholder="Enetr quantity" required />
                        </div>
 
+                       <!-- Computer price -->
+                    <div class="input-group mb-3">
+                        <i class="fa-solid fa-dollar-sign input-group-text"></i>
+                        <input type="number" name="Computer_Price" class="form-control" placeholder="Enter Price" required />
+                    </div>
+
                     <!-- Computer pic 1 -->
                     <div class="input-group mb-3">
                         <input type="file" name="" class="form-control" required />
@@ -221,7 +227,13 @@
                     <div class="input-group mb-3">
                         <i class="fa-solid fa-plus-minus input-group-text"></i>
                         <input type="number" name="" class="form-control" placeholder="Enetr quantity" required />
-                       </div>
+                    </div>
+
+                    <!-- Computer price -->
+                    <div class="input-group mb-3">
+                        <i class="fa-solid fa-dollar-sign input-group-text"></i>
+                        <input type="number" name="Computer_Price" class="form-control" placeholder="Enter Price" required />
+                    </div>
 
                     <!-- Computer pic 1 -->
                     <div class="input-group mb-3">
@@ -240,7 +252,7 @@
 
                     <!-- Add product Button -->
                     <div class="d-flex justify-content-center">
-                        <button type="submit" class="mt-3 btn btn-success w-100">
+                        <button type="submit" name="submit" class="mt-3 btn btn-success w-100">
                             Add Product
                         </button>
                     </div>

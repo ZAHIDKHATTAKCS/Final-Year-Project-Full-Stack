@@ -1,6 +1,8 @@
+<?php 
+    include ('../../../DBconnection.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <title>Add Laptop</title>
     <!-- Required meta tags -->
@@ -148,6 +150,12 @@
                         <input type="number" name="" class="form-control" placeholder="Enetr quantity" required />
                        </div>
 
+                       <!-- Laptop price -->
+                      <div class="input-group mb-3">
+                        <i class="fa-solid fa-dollar-sign input-group-text"></i>
+                        <input type="number" name="Laptop_Price" class="form-control" placeholder="Enter Price" required />
+                       </div>
+
                     <!-- Laptop pic 1 -->
                     <div class="input-group mb-3">
                         <input type="file" name="" class="form-control" required />
@@ -173,6 +181,7 @@
             </div>
         </div>
     </div>
+
 
     <!-- for Laptop and big screens -->
     <div class="row d-md-flex align-items-md-center d-none w-100 main">
@@ -203,43 +212,49 @@
             <div class="border border border-dark w-50  rounded-3 shadow-lg mb-3">
                 <img src="../../../assets/Icons/Laptops/Apple Laptops/1.jpg" alt="" class="w-100" />
                 <!-- Add product Form -->
-                <form class="mb-3 text-dark rounded-2 mt-3 p-2">
+                <form class="mb-3 text-dark rounded-2 mt-3 p-2" method="POST" enctype="multipart/form-data">
                     <!-- Laptop title -->
                     <div class="input-group mb-3">
                         <i class="fas fa-laptop input-group-text"></i>
-                        <input type="text" name="" class="form-control" placeholder="Laptop Title" required />
+                        <input type="text" name="laptop_title" class="form-control" placeholder="Laptop Title" required />
                     </div>
 
                     <!-- Laptop Description -->
                     <div class="input-group mb-3">
                         <i class="fas fa-laptop input-group-text"></i>
-                        <input type="text" name="" class="form-control" placeholder="Laptop Description" required />
+                        <input type="text" name="laptop_description" class="form-control" placeholder="Laptop Description" required />
                     </div>
 
                       <!-- Laptop quantity -->
                       <div class="input-group mb-3">
                         <i class="fa-solid fa-plus-minus input-group-text"></i>
-                        <input type="number" name="" class="form-control" placeholder="Enetr quantity" required />
+                        <input type="number" name="Laptop_Quantity" class="form-control" placeholder="Enter quantity" required />
+                       </div>
+
+                       <!-- Laptop price -->
+                      <div class="input-group mb-3">
+                        <i class="fa-solid fa-dollar-sign input-group-text"></i>
+                        <input type="number" name="Laptop_Price" class="form-control" placeholder="Enter Price" required />
                        </div>
 
                     <!-- Laptop pic 1 -->
                     <div class="input-group mb-3">
-                        <input type="file" name="" class="form-control" required />
+                        <input type="file" name="laptop_pic_1" class="form-control" required />
                     </div>
 
                     <!-- Laptop pic 2 -->
                     <div class="input-group mb-3">
-                        <input type="file" name="" class="form-control" required />
+                        <input type="file" name="laptop_pic_1" class="form-control" required />
                     </div>
 
                     <!-- Laptop pic 3 -->
                     <div class="input-group mb-3">
-                        <input type="file" name="" class="form-control" required />
+                        <input type="file" name="laptop_pic_1" class="form-control" required />
                     </div>
 
                     <!-- Add product Button -->
                     <div class="d-flex justify-content-center">
-                        <button type="submit" class="mt-3 btn btn-success w-100">
+                        <button type="submit" name="submit"  class="mt-3 btn btn-success w-100">
                             Add Product
                         </button>
                     </div>

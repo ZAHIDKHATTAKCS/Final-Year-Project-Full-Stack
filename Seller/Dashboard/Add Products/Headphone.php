@@ -149,6 +149,13 @@
                         <input type="number" name="" class="form-control" placeholder="Enetr quantity" required />
                     </div>
 
+
+                    <!-- headphone price -->
+                    <div class="input-group mb-3">
+                        <i class="fa-solid fa-dollar-sign input-group-text"></i>
+                        <input type="number" name="headphone_Price" class="form-control" placeholder="Enter Price" required />
+                    </div>
+
                     <!-- headphone pic 1 -->
                     <div class="input-group mb-3">
                         <input type="file" name="" class="form-control" required />
@@ -221,6 +228,12 @@
                     <div class="input-group mb-3">
                         <i class="fa-solid fa-plus-minus input-group-text"></i>
                         <input type="number" name="" class="form-control" placeholder="Enetr quantity" required />
+                    </div>
+
+                    <!-- headphone price -->
+                    <div class="input-group mb-3">
+                        <i class="fa-solid fa-dollar-sign input-group-text"></i>
+                        <input type="number" name="Headphone_Price" class="form-control" placeholder="Enter Price" required />
                     </div>
 
                     <!-- headphone pic 1 -->

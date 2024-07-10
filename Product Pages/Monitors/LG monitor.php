@@ -70,6 +70,12 @@
             <button class="p-2 btn btn-success rounded-2">Order</button>
           </div>
         </div>
+        
+                <!-- Product Quantity -->
+                <div class="d-flex justify-content-between p-3">
+                    <h5 class="text-center text-success bg-light rounded-2 p-1 p-md-2">Quantity Available: 23</h5>
+                    <h5 class="text-center text-success bg-light rounded-2 p-1 p-md-2"><span class="">Price : 50000</span></h5>
+                </div>
       </div>
     </div>
 

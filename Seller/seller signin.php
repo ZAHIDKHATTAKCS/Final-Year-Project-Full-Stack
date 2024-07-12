@@ -112,7 +112,7 @@
 
 
                 // now fetch his picture
-                $_SESSION['Seller_Pic']=$Fetch_Record['Seller_Picture'];
+                $_SESSION['Seller_Pic'] = $Fetch_Record['Seller_Picture'];
 
                 // now verifying db and user enter password
                 $Password_verify = password_verify($Password,$DB_Password);

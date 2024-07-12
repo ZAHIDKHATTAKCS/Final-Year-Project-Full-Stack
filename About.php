@@ -1,3 +1,7 @@
+<?php
+  session_start();
+  include ('DBconnection.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -89,7 +93,7 @@
     
                   
                   <li class="nav-item">
-                    <img src="assets/Team Members Images/Muhammad Zahid Backend Developer.JPG"
+                    <img src="Buyer/<?php echo $_SESSION['Buyer_Pic']; ?>"
                       class="nav-link img-fluid rounded-circle" alt="login user" width="100px">
                   </li>
                 </ul>

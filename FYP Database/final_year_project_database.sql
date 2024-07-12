@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 10, 2024 at 06:51 PM
+-- Generation Time: Jul 12, 2024 at 07:17 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -44,8 +44,7 @@ CREATE TABLE `buyers table` (
 --
 
 INSERT INTO `buyers table` (`Id`, `Buyer_Name`, `Buyer_Email`, `Buyer_Phone`, `Password`, `Confirm_Password`, `Buyer_Image`) VALUES
-(1, 'Muhammad Zahid', 'zahidkhattakcs@gmail.com', '03348854074', '$2y$10$lEMNwZevvYwdL8mSObjg2eumlwC/55/wOlTKTAKt1PSlKbIubrOe2', '$2y$10$r69.V//iW32tMgpRagI/oeqmtqzbJgmH6T0m/kFPfYe43g19J13Le', 'Buyer Images/zahid pic.JPG'),
-(2, 'Muhammad Huzaifa', 'huzaifa@gmail.com', 'asdf', '$2y$10$E4CsF.n.xepsRy7KaMgsNOkZH43paANhyGE5i0NNYXXe0siu4tFKe', '$2y$10$QvIu9wNUlNkx11bKXz1Cie604PlAbNvDG2SqYhgO8RKvEp60rqn.a', 'Buyer Images/_DSC1063.JPG');
+(1, 'Muhammad Zahid', 'zahidkhattakcs@gmail.com', '03348854074', '$2y$10$mOOi.ua665L8qJqg5nwJ/Op58/RvonjHiMOvcT0B44aFEP6XqVnnS', '$2y$10$LfQhrvZ/A2SBTc/o1kUTWOuDCWhZSZfUEHaUAliaDKedjIXwcuTPy', 'Buyer Images/_DSC0045.JPG');
 
 -- --------------------------------------------------------
 
@@ -140,6 +139,13 @@ CREATE TABLE `orders` (
   `Product Pic 3` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`Id`, `Product Name`, `Product Description`, `Product Quantity`, `Product Price`, `Product Pic 1`, `Product Pic 2`, `Product Pic 3`) VALUES
+(1, 'adf', 'asdf', '45', '4500', 'asdf', 'asdf', 'asdf');
+
 -- --------------------------------------------------------
 
 --
@@ -176,7 +182,8 @@ CREATE TABLE `seller_table` (
 --
 
 INSERT INTO `seller_table` (`Id`, `Seller_Name`, `Seller_Email`, `Seller_Phone`, `Seller_Picture`, `Password`, `Confirm_Password`) VALUES
-(1, 'Muhammad Zahid', 'zahidkhattakcs@gmail.com', '03348854074', 'zahid.jpg', '$2a$12$JflDR8fkF0/5Ufm/I2/rpup.kvjlWow7akvPlXI0llMvVT1rLjx8W', '$2a$12$JflDR8fkF0/5Ufm/I2/rpup.kvjlWow7akvPlXI0llMvVT1rLjx8W');
+(1, 'Muhammad Zahid', 'zahidkhattakcs@gmail.com', '03348854074', 'Seller Images/zahid pic.JPG', '$2a$12$JflDR8fkF0/5Ufm/I2/rpup.kvjlWow7akvPlXI0llMvVT1rLjx8W', '$2a$12$JflDR8fkF0/5Ufm/I2/rpup.kvjlWow7akvPlXI0llMvVT1rLjx8W'),
+(2, 'Bilal Ahmad', 'bilal@gmail.com', '99887', 'Buyer/bilal.jpg', '$2a$12$D.MZ0gW1Ws5Dd9NCmy8PReGKN2M0lq3fJvuEiz9mDzJrEXwrzlHo2', '$2a$12$D.MZ0gW1Ws5Dd9NCmy8PReGKN2M0lq3fJvuEiz9mDzJrEXwrzlHo2');
 
 --
 -- Indexes for dumped tables
@@ -244,7 +251,7 @@ ALTER TABLE `seller_table`
 -- AUTO_INCREMENT for table `buyers table`
 --
 ALTER TABLE `buyers table`
-  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `cameras table`
@@ -280,7 +287,7 @@ ALTER TABLE `monitors table`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `personal computers table`
@@ -292,7 +299,7 @@ ALTER TABLE `personal computers table`
 -- AUTO_INCREMENT for table `seller_table`
 --
 ALTER TABLE `seller_table`
-  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- Database: `php`
 --

@@ -1,3 +1,8 @@
+<?php
+    session_start();
+
+    include('DBconnection.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,7 +51,7 @@
         <nav class="navbar navbar-expand-lg d-sm-flex d-md-flex">
             <div class="container d-flex justify-content-between">
                 <!-- Logo -->
-                <img src="/assets/Icons/main_logo.jpeg" style="width: 80px; height: 70px" alt="logo"
+                <img src="assets/Icons/main_logo.jpeg" style="width: 80px; height: 70px" alt="logo"
                     class="rounded me-5" />
                 <!-- User Icon -->
 
@@ -92,7 +97,7 @@
 
 
                             <li class="nav-item">
-                                <img src="assets/Team Members Images/Bilal.png"
+                                <img src="Buyer/<?php echo $_SESSION['Buyer_Pic']; ?>"
                                     class="nav-link img-fluid rounded-circle" alt="login user" width="100px">
                             </li>
                         </ul>

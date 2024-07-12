@@ -1,5 +1,19 @@
+<?php
+session_start();
+include('../../DBconnection.php');
+
+if(!isset($_SESSION['Seller_Pic'])){
+  ?>
+  <script>
+    alert('First Login Please!');
+    location.replace('../seller signin.php');
+  </script>
+  <?php
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
+<!-- TODO only fetching Orders table data and logout page are remains -->
 
 <head>
   <title>Dashboard</title>
@@ -87,8 +101,6 @@
 </head>
 
 <body class="body">
-
-
   <!-- for Mobile View -->
   <div class="maindiv d-md-none">
     <header class="border border-dark d-flex justify-content-between bg-dark align-items-center">
@@ -107,7 +119,7 @@
         <!-- Offcanvas component -->
         <div class="offcanvas offcanvas-start" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
           <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Admin! Welcome to Menu</h5>
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel"><?php echo $_SESSION['Seller_Name']; ?>! Welcome to Menu</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body">
@@ -117,48 +129,44 @@
                 <li><a href="buyers.php">Buyers</a></li>
                 <li><a href="order.php">Orders</a></li>
                 <li><a href="Add product.php">Add Product</a></li>
-                <li><a href="">Log out</a></li>
+                <li><a href="Logout.php">Log out</a></li>
               </ul>
             </div>
           </div>
         </div>
       </div>
-      <img src="../../assets/Team Members Images/Muhammad Zahid Backend Developer.JPG" alt="" class="w-25 img-fluid">
+      <img src="../<?php echo $_SESSION['Seller_Pic']; ?>" alt="" class="w-25 img-fluid">
     </header>
 
     <!-- table section for Mobile-->
       <div class="mt-3 table-responsive w-100 bg-light text-dark">
-        <h4 class="text-center p-3">Hi Admin these are the all Buyers</h4>
+        <h4 class="text-center p-3">Hi <?php echo $_SESSION['Seller_Name']; ?> these are the all Buyers</h4>
         <table class="table table-bordered table-hover border border-dark ">
             <thead class="table-dark">
                 <tr>
-                    <th scope="col">Username</th>
-                    <th scope="col">Order Number</th>
                     <th scope="col">Product Name</th>
+                    <th scope="col">Product Quantity</th>
+                    <th scope="col">Product Price</th>
                     <th scope="col">Product Picture</th>
-                    <th scope="col">Quantity</th>
-                    <th scope="col">Price</th>
                 </tr>
             </thead>
             <tbody>
-                <!-- Assuming data is fetched and inserted here -->
-                <tr >
-                    <td>shehzad123</td>
-                    <td>12345</td>
-                    <td>hp laptop</td>
-                    <td><img src="../../assets/Icons/Laptops/hp laptop 2.png" alt="Product Image" class="img-thumbnail" style="width: 100px;"></td>
-                    <td>1</td>
-                    <td>$25.99</td>
+              <!-- PHP code for fetching Orders from DB for mobile views -->
+                <?php 
+                  $selectqry = "select * from `Orders`";
+                  $firequery = mysqli_query($conn,$selectqry);
+
+                  while($Result = mysqli_fetch_array($firequery)){
+                    ?>
+                    <tr class="text-center">
+                    <td><?php echo $Result['Product Name']; ?></td>
+                    <td><?php echo $Result['Product Quantity']; ?></td>
+                    <td><?php echo $Result['Product Price']; ?></td>
+                    <td><img src="<?php // Here fetch the orders pics ?>" alt="Product Image" class="img-thumbnail" style="width: 100px;"></td>
                 </tr>
-                <tr>
-                    <td>zahidcs55</td>
-                    <td>67890</td>
-                    <td>Canon Camera</td>
-                    <td><img src="../../assets/Icons/Cameras/camera1.png" alt="Product Image" class="img-thumbnail" style="width: 100px;"></td>
-                    <td>1</td>
-                    <td>$49.99</td>
-                </tr>
-              
+                <?php
+                  }
+                ?>
             </tbody>
         </table>
     </div>
@@ -168,54 +176,51 @@
   <div class="d-none row d-md-flex align-items-md-center d-md-block w-100 main">
     <!-- admin div -->
     <div class="col-md-3 bg-dark d-md-flex flex-md-column justify-content-md-center align-items-md-center h-100">
-      <img src="../../assets/Team Members Images/Muhammad Zahid Backend Developer.JPG" alt=""
+      <img src="../<?php echo $_SESSION['Seller_Pic']; ?>" alt=""
         class="w-50 rounded-circle img-fluid mt-1 border border-3 border-white">
-      <h3>Welcome Admin</h3>
+      <h3>Welcome <?Php echo $_SESSION['Seller_Name']; ?></h3>
       <ul class="text-decoration-none w-100 h-100 fs-4">
         <li><a href="./dashboard.php" class="btn btn-outline-info mt-4">Home</a></li>
         <li><a href="./buyers.php" class="btn btn-outline-info mt-4">Buyers</a></li>
         <li><a href="./order.php" class="btn btn-outline-info mt-4">Orders</a></li>
         <li><a href="./Add product.php" class="btn btn-outline-info mt-4">Add Product</a></li>
-        <li><a href="" class="btn btn-outline-info mt-4">Logout</a></li>
+        <li><a href="Logout.php" class="btn btn-outline-info mt-4">Logout</a></li>
       </ul>
     </div>
 
     <!-- Content div -->
     <div class="d-none col-md-9 d-md-flex flex-md-column justify-content-md-between align-items-md-center text-dark text-center h-100 bg-white p-4">
-      <h3>Hi Admin here is the Orders details</h3>
+      <h3>Hi <?Php echo $_SESSION['Seller_Name']; ?> here is the Orders details</h3>
       <!-- table section -->
       <div class="table-section w-100 h-100 overflow-scroll">
         <div class="table-responsive">
           <table class="table table-bordered table-hover border border-dark ">
             <thead class="table-dark">
                 <tr>
-                    <th scope="col">Username</th>
-                    <th scope="col">Order Number</th>
                     <th scope="col">Product Name</th>
+                    <th scope="col">Product Quantity</th>
+                    <th scope="col">Product Price</th>
                     <th scope="col">Product Picture</th>
-                    <th scope="col">Quantity</th>
-                    <th scope="col">Price</th>
                 </tr>
             </thead>
             <tbody>
-                <!-- Assuming data is fetched and inserted here -->
-                <tr >
-                    <td>shehzad123</td>
-                    <td>12345</td>
-                    <td>hp laptop</td>
-                    <td><img src="../../assets/Icons/Laptops/hp laptop 2.png" alt="Product Image" class="img-thumbnail" style="width: 100px;"></td>
-                    <td>1</td>
-                    <td>$25.99</td>
+            <!-- PHP code for fetching orders From DB -->
+            <?php 
+                  $selectqry = "select * from `Orders`";
+                  $firequery = mysqli_query($conn,$selectqry);
+
+                  while($Result = mysqli_fetch_array($firequery)){
+                    ?>
+                    <tr>
+                    <td><?php echo $Result['Product Name']; ?></td>
+                    <td><?php echo $Result['Product Quantity']; ?></td>
+                    <td><?php echo $Result['Product Price']; ?></td>
+                    <td><img src="<?php // Here fetch the orders pics ?>" alt="Product Image" class="img-thumbnail" style="width: 100px;"></td>
                 </tr>
-                <tr>
-                    <td>zahidcs55</td>
-                    <td>67890</td>
-                    <td>Canon Camera</td>
-                    <td><img src="../../assets/Icons/Cameras/camera1.png" alt="Product Image" class="img-thumbnail" style="width: 100px;"></td>
-                    <td>1</td>
-                    <td>$49.99</td>
-                </tr>
-              
+                <?php
+                  }
+                ?>
+
             </tbody>
           </table>
         </div>

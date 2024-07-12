@@ -1,7 +1,38 @@
 <?php
 session_start();
+if(!isset($_SESSION['Seller_Pic'])){
+  ?>
+  <script>
+    alert('First Login Please!');
+    location.replace('../seller signin.php');
+  </script>
+  <?php
+}
 
-?>
+include ('../../DBconnection.php');
+
+//  Fetch all orders data to show in order page and store in global variables
+
+          $selectqry = "SELECT * FROM `orders`";
+
+          $fireqry = mysqli_query($conn,$selectqry);
+
+          while($fetch = mysqli_fetch_array($fireqry)){
+
+            $_SESSION['Product_Name'] = $fetch['Product Name'];
+
+            $_SESSION['Product_Quantity'] = $fetch['Product Quantity'];
+
+            $_SESSION['Product_Price'] = $fetch['Product Price'];
+            
+            $_SESSION['Product_Pic'] = $fetch['Product Pic 1'];
+
+          }
+
+          $slctqry = "select Id from `orders`";
+          $firequry = mysqli_query($conn,$slctqry);
+          $orders_Numbers = mysqli_num_rows($firequry);
+          ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -83,6 +114,7 @@ session_start();
 <body class="body">
 
 
+
   <!-- for Mobile View -->
   <div class="maindiv d-md-none">
     <header class="border border-dark d-flex justify-content-between bg-dark align-items-center">
@@ -110,13 +142,15 @@ session_start();
                 <li><a href="buyers.php" >Buyers</a></li>
                 <li><a href="order.php">Orders</a></li>
                 <li><a href="Add product.php" >Add Product</a></li>
-                <li><a href="" >Log out</a></li>
+                <li><a href="Logout.php" >Log out</a></li>
               </ul>
             </div>
           </div>
         </div>
       </div>
-      <img src="../../assets/Team Members Images/Muhammad Zahid Backend Developer.JPG" alt="" class="w-25 img-fluid">
+
+      <!-- code for rendering seller pic -->
+      <img src="../<?php echo $_SESSION['Seller_Pic'];?>" alt="seller image" class="w-25 img-fluid"> 
     </header>
 
 
@@ -126,8 +160,18 @@ session_start();
       <div class="card col-10 d-flex flex-column justify-content-center align-items-center bg-light">
         <img class="card-img-top w-25 mt-3" src="Icons/buyers.jpeg" alt="">
         <div class="card-body">
+          <!-- php code for rendering total users -->
+          <?php
+          $Fetch = "SELECT * FROM `buyers table`";
+          
+          $result = mysqli_query($conn,$Fetch);
+
+          $Total_Users = mysqli_num_rows($result);
+
+            
+          ?>
           <h4 class="card-title">Total Users</h4>
-          <p class="card-text text-center">23</p>
+          <p class="card-text text-center"><?php echo $Total_Users ;?></p>
         </div>
       </div>
 
@@ -144,39 +188,27 @@ session_start();
       <div class="card col-10 d-flex flex-column justify-content-center align-items-center bg-light mb-3">
         <img class="card-img-top w-25 mt-3" src="Icons/shopify.svg" alt="">
         <div class="card-body">
-          <h4 class="card-title">Total Total Orders</h4>
-          <p class="card-text text-center">50</p>
+          <h4 class="card-title">Total Orders</h4>
+          <p class="card-text text-center"><?php echo $orders_Numbers; ?></p>
         </div>
       </div>
     </div>
   </div>
 
 
-  <!-- php code -->
-  <?php
-  include ('../../DBconnection.php');
-  $Fetch = "SELECT * FROM `buyers table`";
-  
-  $result = mysqli_query($conn,$Fetch);
-
-  $Total_Users = mysqli_num_rows($result);
-
-  // TODO
-    
-  ?>
 
   <!-- for Laptop and big screens -->
   <div class="row d-md-flex align-items-md-center d-none w-100 main">
     <!-- admin div -->
     <div class="col-md-3 bg-dark d-md-flex flex-md-column justify-content-md-center align-items-md-center h-100">
-      <img src="../../assets/Team Members Images/Muhammad Zahid Backend Developer.JPG" alt="" class="w-50 rounded-circle img-fluid border border-3 border-white mt-1">
+      <img src="../<?php echo $_SESSION['Seller_Pic']; ?>" alt="" class="w-50 rounded-circle img-fluid border border-3 border-white mt-1">
       <h3>Welcome <?php echo $_SESSION['Seller_Name']; ?></h3>
       <ul class="text-decoration-none w-100 h-100 fs-4">
         <li><a href="./dashboard.php" class="btn btn-outline-info mt-4">Home</a></li>
         <li><a href="./buyers.php" class="btn btn-outline-info mt-4">Buyers</a></li>
         <li><a href="./order.php" class="btn btn-outline-info mt-4">Orders</a></li>
         <li><a href="./Add product.php" class="btn btn-outline-info mt-4">Add Product</a></li>
-        <li><a href="" class="btn btn-outline-info mt-4">Logout</a></li>
+        <li><a href="Logout.php" class="btn btn-outline-info mt-4">Logout</a></li>
       </ul>
     </div>
 
@@ -205,7 +237,10 @@ session_start();
         <img class="card-img-top w-25 mt-2" src="Icons/shopify.svg" alt="">
         <div class="card-body">
           <h5 class="card-title">Total Orders</h5>
-          <p class="card-text text-center">50</p>
+          <p class="card-text text-center"><?php echo $orders_Numbers ;?></p>
+
+
+          
         </div>
       </div>
     </div>

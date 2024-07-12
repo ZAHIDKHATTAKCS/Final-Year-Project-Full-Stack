@@ -1,3 +1,14 @@
+<?php
+    session_start();
+    if(!isset($_SESSION['Seller_Pic'])){
+        ?>
+        <script>
+          alert('First Login Please!');
+          location.replace('../../seller signin.php');
+        </script>
+        <?php
+      }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -102,7 +113,7 @@
                 <div class="offcanvas offcanvas-start" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
                     <div class="offcanvas-header">
                         <h5 class="offcanvas-title" id="offcanvasExampleLabel">
-                            Admin! Welcome to Menu
+                        <?php echo $_SESSION['Seller_Name']; ?> Welcome to Menu
                         </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
@@ -113,13 +124,13 @@
                                 <li><a href="../buyers.php">Buyers</a></li>
                                 <li><a href="../order.php">Orders</a></li>
                                 <li><a href="../Add product.php">Add Product</a></li>
-                                <li><a href="">Log out</a></li>
+                                <li><a href="../Logout.php">Log out</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
-            <img src="../../../assets/Team Members Images/Muhammad Zahid Backend Developer.JPG" alt=""
+            <img src="../../<?php echo $_SESSION['Seller_Pic']; ?>" alt="Seller image"
                 class="w-25 img-fluid" />
         </header>
 
@@ -185,9 +196,9 @@
     <div class="row d-md-flex align-items-md-center d-none w-100 main">
         <!-- admin div -->
         <div class="col-md-3 bg-dark d-md-flex flex-md-column justify-content-md-center align-items-md-center h-100">
-            <img src="../../../assets/Team Members Images/Muhammad Zahid Backend Developer.JPG" alt=""
+            <img src="../../<?php echo $_SESSION['Seller_Pic']; ?>" alt=""
                 class="w-50 rounded-circle img-fluid mt-1 border border-3 border-white" />
-            <h3>Welcome Admin</h3>
+            <h3>Welcome <?php echo $_SESSION['Seller_Name']; ?></h3>
             <ul class="text-decoration-none w-100 h-100 fs-4">
                 <li>
                     <a href="../dashboard.php" class="btn btn-outline-info mt-4">Home</a>
@@ -199,7 +210,7 @@
                 <li>
                     <a href="../Add product.php" class="btn btn-outline-info mt-4">Add Product</a>
                 </li>
-                <li><a href="" class="btn btn-outline-info mt-4">Logout</a></li>
+                <li><a href="../Logout.php" class="btn btn-outline-info mt-4">Logout</a></li>
             </ul>
         </div>
 

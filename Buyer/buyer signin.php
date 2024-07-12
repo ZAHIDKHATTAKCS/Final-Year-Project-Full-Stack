@@ -97,6 +97,7 @@
 
   <!-- php code -->
   <?php
+  session_start();
   
   include('../DBconnection.php');
 
@@ -118,6 +119,7 @@
 
       // fetch buyer name also for using it in other pages
       $_SESSION['Buyer_Name'] = $Fetch_Data['Buyer_Name'];
+
       $_SESSION['Buyer_Pic'] = $Fetch_Data['Buyer_Image'];
       
       // now verifying both password check if the user password and db passwords are matching

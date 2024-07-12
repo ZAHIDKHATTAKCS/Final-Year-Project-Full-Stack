@@ -1,13 +1,14 @@
 <?php
     session_start();
+    include('../../../DBconnection.php');
     if(!isset($_SESSION['Seller_Pic'])){
         ?>
         <script>
-          alert('First Login Please!');
-          location.replace('../../seller signin.php');
+        alert('First Login Please!');
+        location.replace('../../seller signin.php');
         </script>
         <?php
-      }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -141,23 +142,23 @@
             <div class="border border border-dark w-100  rounded-3 shadow-lg mb-3">
                 <img src="../../../assets/Icons/LCD/Dell LCD/1.jpg" alt="" class="w-100" />
                 <!-- Add product Form -->
-                <form class="mb-3 text-dark rounded-2 mt-3 p-2">
+                <form class="mb-3 text-dark rounded-2 mt-3 p-2" method="post" enctype="multipart/form-data">
                     <!-- Monitor title -->
                     <div class="input-group mb-3">
                         <i class="fa-solid fa-tv input-group-text"></i>
-                        <input type="text" name="" class="form-control" placeholder="Monitor Title" required />
+                        <input type="text" name="Monitor_Title" class="form-control" placeholder="Monitor Title" required />
                     </div>
 
                     <!-- Monitor Description -->
                     <div class="input-group mb-3">
                         <i class="fa-solid fa-tv input-group-text"></i>
-                        <input type="text" name="" class="form-control" placeholder="Monitor Description" required />
+                        <input type="text" name="Monitor_Description" class="form-control" placeholder="Monitor Description" required />
                     </div>
 
                     <!-- Monitor quantity -->
                     <div class="input-group mb-3">
                         <i class="fa-solid fa-plus-minus input-group-text"></i>
-                        <input type="number" name="" class="form-control" placeholder="Enetr quantity" required />
+                        <input type="number" name="Monitor_Quantity" class="form-control" placeholder="Enter quantity" required />
                     </div>
 
                     <!-- Monitor price -->
@@ -169,22 +170,22 @@
 
                     <!-- Monitor pic 1 -->
                     <div class="input-group mb-3">
-                        <input type="file" name="" class="form-control" required />
+                        <input type="file" name="Monitor_Pic_1" class="form-control" required />
                     </div>
 
                     <!-- Monitor pic 2 -->
                     <div class="input-group mb-3">
-                        <input type="file" name="" class="form-control" required />
+                        <input type="file" name="Monitor_Pic_2" class="form-control" required />
                     </div>
 
                     <!-- Monitor pic 3 -->
                     <div class="input-group mb-3">
-                        <input type="file" name="" class="form-control" required />
+                        <input type="file" name="Monitor_Pic_3" class="form-control" required />
                     </div>
 
                     <!-- Add product Button -->
                     <div class="d-flex justify-content-center">
-                        <button type="submit" class="mt-3 btn btn-success w-100">
+                        <button type="submit" name="submit" class="mt-3 btn btn-success w-100">
                             Add Product
                         </button>
                     </div>
@@ -222,26 +223,26 @@
             <div class="border border border-dark w-50  rounded-3 shadow-lg mb-3">
                 <img src="../../../assets/Icons/LCD/Dell LCD/1.jpg" alt="" class="w-100" />
                 <!-- Add product Form -->
-                <form class="mb-3 text-dark rounded-2 mt-3 p-2">
+                <form class="mb-3 text-dark rounded-2 mt-3 p-2" method="post" enctype="multipart/form-data">
                     <!-- Monitor title -->
                     <div class="input-group mb-3">
                         <i class="fa-solid fa-tv input-group-text"></i>
-                        <input type="text" name="" class="form-control" placeholder="Monitor Title" required />
+                        <input type="text" name="Monitor_Title" class="form-control" placeholder="Monitor Title" required />
                     </div>
 
                     <!-- Monitor Description -->
                     <div class="input-group mb-3">
                         <i class="fa-solid fa-tv input-group-text"></i>
-                        <input type="text" name="" class="form-control" placeholder="Monitor Description" required />
+                        <input type="text" name="Monitor_Description" class="form-control" placeholder="Monitor Description" required />
                     </div>
 
-                     <!-- Monitor quantity -->
-                     <div class="input-group mb-3">
+                    <!-- Monitor quantity -->
+                    <div class="input-group mb-3">
                         <i class="fa-solid fa-plus-minus input-group-text"></i>
-                        <input type="number" name="" class="form-control" placeholder="Enetr quantity" required />
-                       </div>
+                        <input type="number" name="Monitor_Quantity" class="form-control" placeholder="Enter quantity" required />
+                    </div>
 
-                       <!-- Monitor price -->
+                    <!-- Monitor price -->
                     <div class="input-group mb-3">
                         <i class="fa-solid fa-dollar-sign input-group-text"></i>
                         <input type="number" name="Monitor_Price" class="form-control" placeholder="Enter Price" required />
@@ -249,26 +250,89 @@
 
                     <!-- Monitor pic 1 -->
                     <div class="input-group mb-3">
-                        <input type="file" name="" class="form-control" required />
+                        <input type="file" name="Monitor_Pic_1" class="form-control" required />
                     </div>
 
                     <!-- Monitor pic 2 -->
                     <div class="input-group mb-3">
-                        <input type="file" name="" class="form-control" required />
+                        <input type="file" name="Monitor_Pic_2" class="form-control" required />
                     </div>
 
                     <!-- Monitor pic 3 -->
                     <div class="input-group mb-3">
-                        <input type="file" name="" class="form-control" required />
+                        <input type="file" name="Monitor_Pic_3" class="form-control" required />
                     </div>
 
                     <!-- Add product Button -->
                     <div class="d-flex justify-content-center">
-                        <button type="submit" class="mt-3 btn btn-success w-100">
+                        <button type="submit" name="submit" class="mt-3 btn btn-success w-100">
                             Add Product
                         </button>
                     </div>
                 </form>
+
+                <!-- PHP Code for form submission -->
+                <?php
+                    if (isset($_POST['submit'])) {
+
+                        $Monitor_Title = $_POST['Monitor_Title'];
+                        $Monitor_Description = $_POST['Monitor_Description'];
+                        $Monitor_Quantity = $_POST['Monitor_Quantity'];
+                        $Monitor_Price = $_POST['Monitor_Price'];
+
+                        // To deals with pictures we must used $_FILES
+                        $Monitor_Pic_1 = $_FILES['Monitor_Pic_1'];
+                        $Monitor_Pic_2 = $_FILES['Monitor_Pic_2'];
+                        $Monitor_Pic_3 = $_FILES['Monitor_Pic_3'];
+
+                        // Details of Pic 1
+                        $Monitor_Pic_1_Name = $Monitor_Pic_1['name'];
+                        $Monitor_Pic_1_Path = $Monitor_Pic_1['tmp_name'];
+                        $Monitor_Pic_1_Error = $Monitor_Pic_1['error'];
+
+                        // Details of Pic 2
+                        $Monitor_Pic_2_Name = $Monitor_Pic_2['name'];
+                        $Monitor_Pic_2_Path = $Monitor_Pic_2['tmp_name'];
+                        $Monitor_Pic_2_Error = $Monitor_Pic_2['error'];
+
+                        // Details of Pic 3
+                        $Monitor_Pic_3_Name = $Monitor_Pic_3['name'];
+                        $Monitor_Pic_3_Path = $Monitor_Pic_3['tmp_name'];
+                        $Monitor_Pic_3_Error = $Monitor_Pic_3['error'];
+
+                        if ($Monitor_Pic_1_Error == 0 && $Monitor_Pic_2_Error == 0 && $Monitor_Pic_3_Error == 0) {
+
+                            $Final_Destination_Monitor_Pic_1 = 'Add Monitors/' . $Monitor_Pic_1_Name;
+
+                            $Final_Destination_Monitor_Pic_2 = 'Add Monitors/' . $Monitor_Pic_2_Name;
+
+                            $Final_Destination_Monitor_Pic_3 = 'Add Monitors/' . $Monitor_Pic_3_Name;
+
+                            move_uploaded_file($Monitor_Pic_1_Path, $Final_Destination_Monitor_Pic_1);
+
+                            move_uploaded_file($Monitor_Pic_2_Path, $Final_Destination_Monitor_Pic_2);
+
+                            move_uploaded_file($Monitor_Pic_3_Path, $Final_Destination_Monitor_Pic_3);
+
+                            $insertqry = "INSERT INTO `monitors table`(`Monitor Title`, `Monitor Description`, `Monitors Quantity`, `Monitors Price`, `Picture 1`, `Picture 2`, `Picture 3`) VALUES ('$Monitor_Title','$Monitor_Description','$Monitor_Quantity','$Monitor_Price','$Final_Destination_Monitor_Pic_1','$Final_Destination_Monitor_Pic_2','$Final_Destination_Monitor_Pic_3')";
+
+                            $firqery = mysqli_query($conn, $insertqry);
+                            if ($insertqry) {
+                                ?>
+                                                <script>
+                                                    alert('New Monitors Added to Monitors Category!');
+                                                </script>
+                                                <?php
+                    } else {
+                                ?>
+                                                <script>
+                                                    alert('Error in Monitors Insertion Query');
+                                                </script>
+                                                <?php
+                    }
+                        }
+                    }
+                ?>
             </div>
         </div>
     </div>

@@ -1,13 +1,14 @@
 <?php
     session_start();
+    include('../../../DBconnection.php');
     if(!isset($_SESSION['Seller_Pic'])){
         ?>
         <script>
-          alert('First Login Please!');
-          location.replace('../../seller signin.php');
+        alert('First Login Please!');
+        location.replace('../../seller signin.php');
         </script>
         <?php
-      }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -141,26 +142,26 @@
             <div class="border border border-dark w-100  rounded-3 shadow-lg mb-3">
                 <img src="../../../assets/Icons/Computer/Tower PC/2.jpg" alt="" class="w-100" />
                 <!-- Add product Form -->
-                <form class="mb-3 text-dark rounded-2 mt-3 p-2">
+                <form class="mb-3 text-dark rounded-2 mt-3 p-2" method="post" enctype="multipart/form-data">
                     <!-- Computer title -->
                     <div class="input-group mb-3">
                         <i class="input-group-text fas fa-computer"></i>
-                        <input type="text" name="" class="form-control" placeholder="Computer Title" required />
+                        <input type="text" name="Computer_Title" class="form-control" placeholder="Computer Title" required />
                     </div>
 
                     <!-- Computer Description -->
                     <div class="input-group mb-3">
                         <i class="fas fa-computer input-group-text"></i>
-                        <input type="text" name="" class="form-control" placeholder="Computer Description" required />
+                        <input type="text" name="Computer_Description" class="form-control" placeholder="Computer Description" required />
                     </div>
 
-                     <!-- computer quantity -->
-                     <div class="input-group mb-3">
+                    <!-- computer quantity -->
+                    <div class="input-group mb-3">
                         <i class="fa-solid fa-plus-minus input-group-text"></i>
-                        <input type="number" name="" class="form-control" placeholder="Enetr quantity" required />
-                       </div>
+                        <input type="number" name="Computer_Quantity" class="form-control" placeholder="Enter quantity" required />
+                    </div>
 
-                       <!-- Computer price -->
+                    <!-- Computer price -->
                     <div class="input-group mb-3">
                         <i class="fa-solid fa-dollar-sign input-group-text"></i>
                         <input type="number" name="Computer_Price" class="form-control" placeholder="Enter Price" required />
@@ -168,22 +169,22 @@
 
                     <!-- Computer pic 1 -->
                     <div class="input-group mb-3">
-                        <input type="file" name="" class="form-control" required />
+                        <input type="file" name="Computer_Pic_1" class="form-control" required />
                     </div>
 
                     <!-- Computer pic 2 -->
                     <div class="input-group mb-3">
-                        <input type="file" name="" class="form-control" required />
+                        <input type="file" name="Computer_Pic_2" class="form-control" required />
                     </div>
 
                     <!-- Monitor pic 3 -->
                     <div class="input-group mb-3">
-                        <input type="file" name="" class="form-control" required />
+                        <input type="file" name="Computer_Pic_3" class="form-control" required />
                     </div>
 
                     <!-- Add product Button -->
                     <div class="d-flex justify-content-center">
-                        <button type="submit" class="mt-3 btn btn-success w-100">
+                        <button type="submit" name="submit" class="mt-3 btn btn-success w-100">
                             Add Product
                         </button>
                     </div>
@@ -221,23 +222,23 @@
             <div class="border border border-dark w-50  rounded-3 shadow-lg mb-3">
                 <img src="../../../assets/Icons/Computer/Tower PC/2.jpg" alt="" class="w-100" />
                 <!-- Add product Form -->
-                <form class="mb-3 text-dark rounded-2 mt-3 p-2">
+                <form class="mb-3 text-dark rounded-2 mt-3 p-2" method="post" enctype="multipart/form-data">
                     <!-- Computer title -->
                     <div class="input-group mb-3">
                         <i class="input-group-text fas fa-computer"></i>
-                        <input type="text" name="" class="form-control" placeholder="Computer Title" required />
+                        <input type="text" name="Computer_Title" class="form-control" placeholder="Computer Title" required />
                     </div>
 
                     <!-- Computer Description -->
                     <div class="input-group mb-3">
                         <i class="fas fa-computer input-group-text"></i>
-                        <input type="text" name="" class="form-control" placeholder="Computer Description" required />
+                        <input type="text" name="Computer_Description" class="form-control" placeholder="Computer Description" required />
                     </div>
 
                     <!-- computer quantity -->
                     <div class="input-group mb-3">
                         <i class="fa-solid fa-plus-minus input-group-text"></i>
-                        <input type="number" name="" class="form-control" placeholder="Enetr quantity" required />
+                        <input type="number" name="Computer_Quantity" class="form-control" placeholder="Enter quantity" required />
                     </div>
 
                     <!-- Computer price -->
@@ -248,17 +249,17 @@
 
                     <!-- Computer pic 1 -->
                     <div class="input-group mb-3">
-                        <input type="file" name="" class="form-control" required />
+                        <input type="file" name="Computer_Pic_1" class="form-control" required />
                     </div>
 
                     <!-- Computer pic 2 -->
                     <div class="input-group mb-3">
-                        <input type="file" name="" class="form-control" required />
+                        <input type="file" name="Computer_Pic_2" class="form-control" required />
                     </div>
 
                     <!-- Monitor pic 3 -->
                     <div class="input-group mb-3">
-                        <input type="file" name="" class="form-control" required />
+                        <input type="file" name="Computer_Pic_3" class="form-control" required />
                     </div>
 
                     <!-- Add product Button -->
@@ -268,6 +269,69 @@
                         </button>
                     </div>
                 </form>
+
+                <!-- PHP Code for form submission -->
+                <?php
+                    if (isset($_POST['submit'])) {
+
+                        $Computer_Title = $_POST['Computer_Title'];
+                        $Computer_Description = $_POST['Computer_Description'];
+                        $Computer_Quantity = $_POST['Computer_Quantity'];
+                        $Computer_Price = $_POST['Computer_Price'];
+
+                        // To deals with pictures we must used $_FILES
+                        $Computer_Pic_1 = $_FILES['Computer_Pic_1'];
+                        $Computer_Pic_2 = $_FILES['Computer_Pic_2'];
+                        $Computer_Pic_3 = $_FILES['Computer_Pic_3'];
+
+                        // Details of Pic 1
+                        $Computer_Pic_1_Name = $Computer_Pic_1['name'];
+                        $Computer_Pic_1_Path = $Computer_Pic_1['tmp_name'];
+                        $Computer_Pic_1_Error = $Computer_Pic_1['error'];
+
+                        // Details of Pic 2
+                        $Computer_Pic_2_Name = $Computer_Pic_2['name'];
+                        $Computer_Pic_2_Path = $Computer_Pic_2['tmp_name'];
+                        $Computer_Pic_2_Error = $Computer_Pic_2['error'];
+
+                        // Details of Pic 3
+                        $Computer_Pic_3_Name = $Computer_Pic_3['name'];
+                        $Computer_Pic_3_Path = $Computer_Pic_3['tmp_name'];
+                        $Computer_Pic_3_Error = $Computer_Pic_3['error'];
+
+                        if ($Computer_Pic_1_Error == 0 && $Computer_Pic_2_Error == 0 && $Computer_Pic_3_Error == 0) {
+
+                            $Final_Destination_Computer_Pic_1 = 'Add Computers/' . $Computer_Pic_1_Name;
+
+                            $Final_Destination_Computer_Pic_2 = 'Add Computers/' . $Computer_Pic_2_Name;
+
+                            $Final_Destination_Computer_Pic_3 = 'Add Computers/' . $Computer_Pic_3_Name;
+
+                            move_uploaded_file($Computer_Pic_1_Path, $Final_Destination_Computer_Pic_1);
+
+                            move_uploaded_file($Computer_Pic_2_Path, $Final_Destination_Computer_Pic_2);
+
+                            move_uploaded_file($Computer_Pic_3_Path, $Final_Destination_Computer_Pic_3);
+
+                            $insertqry = "INSERT INTO `personal computers table`(`Computer Title`, `Computer Description`, `Computer Quantity`, `Computer Price`, `Picture 1`, `Picture 2`, `Picture 3`) VALUES ('$Computer_Title','$Computer_Description','$Computer_Quantity','$Computer_Price','$Final_Destination_Computer_Pic_1','$Final_Destination_Computer_Pic_2','$Final_Destination_Computer_Pic_3')";
+
+                            $firqery = mysqli_query($conn, $insertqry);
+                            if ($insertqry) {
+                                ?>
+                                                <script>
+                                                    alert('New Computer Added to Computer Category!');
+                                                </script>
+                                                <?php
+                    } else {
+                                ?>
+                                                <script>
+                                                    alert('Error in Computer Insertion Query');
+                                                </script>
+                                                <?php
+                    }
+                        }
+                    }
+                ?>
             </div>
         </div>
     </div>

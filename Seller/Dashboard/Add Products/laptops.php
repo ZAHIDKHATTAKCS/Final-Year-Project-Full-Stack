@@ -275,68 +275,66 @@ if (!isset($_SESSION['Seller_Pic'])) {
 
                 <!-- PHP Code for form submission -->
                 <?php
-if (isset($_POST['submit'])) {
+                    if (isset($_POST['submit'])) {
 
-    $Laptop_Title = $_POST['Laptop_Title'];
-    $Laptop_Description = $_POST['Laptop_Description'];
-    $Laptop_Quantity = $_POST['Quantity'];
-    $Laptop_Price = $_POST['Laptop_Price'];
+                        $Laptop_Title = $_POST['Laptop_Title'];
+                        $Laptop_Description = $_POST['Laptop_Description'];
+                        $Laptop_Quantity = $_POST['Quantity'];
+                        $Laptop_Price = $_POST['Laptop_Price'];
 
-    // To deals with pictures we must used $_FILES
-    $Laptop_Pic_1 = $_FILES['Laptop_Pic_1'];
-    $Laptop_Pic_2 = $_FILES['Laptop_Pic_2'];
-    $Laptop_Pic_3 = $_FILES['Laptop_Pic_3'];
+                        // To deals with pictures we must used $_FILES
+                        $Laptop_Pic_1 = $_FILES['Laptop_Pic_1'];
+                        $Laptop_Pic_2 = $_FILES['Laptop_Pic_2'];
+                        $Laptop_Pic_3 = $_FILES['Laptop_Pic_3'];
 
-    // Details of Pic 1
-    $Laptop_Pic_1_Name = $Laptop_Pic_1['name'];
-    $Laptop_Pic_1_Path = $Laptop_Pic_1['tmp_name'];
-    $Laptop_Pic_1_Error = $Laptop_Pic_1['error'];
+                        // Details of Pic 1
+                        $Laptop_Pic_1_Name = $Laptop_Pic_1['name'];
+                        $Laptop_Pic_1_Path = $Laptop_Pic_1['tmp_name'];
+                        $Laptop_Pic_1_Error = $Laptop_Pic_1['error'];
 
-    // Details of Pic 2
-    $Laptop_Pic_2_Name = $Laptop_Pic_2['name'];
-    $Laptop_Pic_2_Path = $Laptop_Pic_2['tmp_name'];
-    $Laptop_Pic_2_Error = $Laptop_Pic_2['error'];
+                        // Details of Pic 2
+                        $Laptop_Pic_2_Name = $Laptop_Pic_2['name'];
+                        $Laptop_Pic_2_Path = $Laptop_Pic_2['tmp_name'];
+                        $Laptop_Pic_2_Error = $Laptop_Pic_2['error'];
 
-    // Details of Pic 3
-    $Laptop_Pic_3_Name = $Laptop_Pic_3['name'];
-    $Laptop_Pic_3_Path = $Laptop_Pic_3['tmp_name'];
-    $Laptop_Pic_3_Error = $Laptop_Pic_3['error'];
+                        // Details of Pic 3
+                        $Laptop_Pic_3_Name = $Laptop_Pic_3['name'];
+                        $Laptop_Pic_3_Path = $Laptop_Pic_3['tmp_name'];
+                        $Laptop_Pic_3_Error = $Laptop_Pic_3['error'];
 
-    if ($Laptop_Pic_1_Error == 0 && $Laptop_Pic_2_Error == 0 && $Laptop_Pic_3_Error == 0) {
+                        if ($Laptop_Pic_1_Error == 0 && $Laptop_Pic_2_Error == 0 && $Laptop_Pic_3_Error == 0) {
 
-        $Final_Destination_Laptop__Pic_1 = 'Add Laptops/' . $Laptop_Pic_1_Name;
+                            $Final_Destination_Laptop_Pic_1 = 'Add Laptops/' . $Laptop_Pic_1_Name;
 
-        $Final_Destination_Laptop_Pic_2 = 'Add Laptops/' . $Laptop_Pic_2_Name;
+                            $Final_Destination_Laptop_Pic_2 = 'Add Laptops/' . $Laptop_Pic_2_Name;
 
-        $Final_Destination_Laptop_Pic_3 = 'Add Laptops/' . $Laptop_Pic_3_Name;
+                            $Final_Destination_Laptop_Pic_3 = 'Add Laptops/' . $Laptop_Pic_3_Name;
 
-        move_uploaded_file($Laptop_Pic_1_Path, $Final_Destination_Laptop__Pic_1);
+                            move_uploaded_file($Laptop_Pic_1_Path, $Final_Destination_Laptop__Pic_1);
 
-        move_uploaded_file($Laptop_Pic_2_Path, $Final_Destination_Laptop_Pic_2);
+                            move_uploaded_file($Laptop_Pic_2_Path, $Final_Destination_Laptop_Pic_2);
 
-        move_uploaded_file($Laptop_Pic_3_Path, $Final_Destination_Laptop_Pic_3);
+                            move_uploaded_file($Laptop_Pic_3_Path, $Final_Destination_Laptop_Pic_3);
 
-        $insertqry = "INSERT INTO `laptops table`(`Laptop Title`, `Laptop Description`, `Laptop_Quantity`, `Picture 1`, `Picture 2`, `Picture 3`) VALUES ('$Laptop_Title','$Laptop_Description','$Laptop_Quantity','$Final_Destination_Laptop__Pic_1','$Final_Destination_Laptop_Pic_2','$Final_Destination_Laptop_Pic_3')";
+                            $insertqry = "INSERT INTO `laptops table`(`Laptop Title`, `Laptop Description`, `Laptop_Quantity`, `Laptop_Price`, `Picture 1`, `Picture 2`, `Picture 3`) VALUES ('$Laptop_Title','$Laptop_Description','$Laptop_Quantity','$Laptop_Price','$Final_Destination_Laptop_Pic_1','$Final_Destination_Laptop_Pic_2','$Final_Destination_Laptop_Pic_3')";
 
-        $firqery = mysqli_query($conn, $insertqry);
-        if ($insertqry) {
-            ?>
-                            <script>
-                                alert('New Laptop Added to Laptop Category!');
-                            </script>
-                            <?php
-} else {
-            ?>
-                            <script>
-                                alert('Error in Laptop Insertion Query');
-                            </script>
-                            <?php
-}
-    }
-
-    // TODO Add Products Laptops insertion Done ! Camera , headphones , Laptops stands, Monitors and computer are still remains
-}
-?>
+                            $firqery = mysqli_query($conn, $insertqry);
+                            if ($insertqry) {
+                                ?>
+                                                <script>
+                                                    alert('New Laptop Added to Laptop Category!');
+                                                </script>
+                                                <?php
+                    } else {
+                                ?>
+                                                <script>
+                                                    alert('Error in Laptop Insertion Query');
+                                                </script>
+                                                <?php
+                    }
+                        }
+                    }
+                ?>
             </div>
         </div>
     </div>

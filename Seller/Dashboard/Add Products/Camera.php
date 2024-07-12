@@ -1,13 +1,14 @@
 <?php
     session_start();
+    include('../../../DBconnection.php');
     if(!isset($_SESSION['Seller_Pic'])){
         ?>
         <script>
-          alert('First Login Please!');
-          location.replace('../../seller signin.php');
+        alert('First Login Please!');
+        location.replace('../../seller signin.php');
         </script>
         <?php
-      }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -141,23 +142,23 @@
             <div class="border border border-dark w-100  rounded-3 shadow-lg mb-3">
                 <img src="../../../assets/Icons/Cameras/Canon Camera/2.jpg" alt="" class="w-100" />
                 <!-- Add product Form -->
-                <form class="mb-3 text-dark rounded-2 mt-3 p-2">
+                <form class="mb-3 text-dark rounded-2 mt-3 p-2" method="post" enctype="multipart/form-data">
                     <!-- Camera title -->
                     <div class="input-group mb-3">
                         <i class="fas fa-camera input-group-text"></i>
-                        <input type="text" name="" class="form-control" placeholder="Camera Title" required />
+                        <input type="text" name="Camera_Title" class="form-control" placeholder="Camera Title" required />
                     </div>
 
                     <!-- Camera Description -->
                     <div class="input-group mb-3">
                         <i class="fas fa-camera input-group-text"></i>
-                        <input type="text" name="" class="form-control" placeholder="Camera Description" required />
+                        <input type="text" name="Camera_Description" class="form-control" placeholder="Camera Description" required />
                     </div>
 
-                     <!-- Camera quantity-->
-                     <div class="input-group mb-3">
+                    <!-- Camera quantity-->
+                    <div class="input-group mb-3">
                         <i class="fa-solid fa-plus-minus input-group-text"></i>
-                        <input type="number" name="" class="form-control" placeholder="Enter quantity" required />
+                        <input type="number" name="Camera_Quantity" class="form-control" placeholder="Enter quantity" required />
                     </div>
 
                     <!-- Camera price -->
@@ -168,22 +169,22 @@
 
                     <!-- Camera pic 1 -->
                     <div class="input-group mb-3">
-                        <input type="file" name="" class="form-control" required />
+                        <input type="file" name="Camera_Pic_1" class="form-control" required />
                     </div>
 
                     <!-- Camera pic 2 -->
                     <div class="input-group mb-3">
-                        <input type="file" name="" class="form-control" required />
+                        <input type="file" name="Camera_Pic_2" class="form-control" required />
                     </div>
 
                     <!-- Camera pic 3 -->
                     <div class="input-group mb-3">
-                        <input type="file" name="" class="form-control" required />
+                        <input type="file" name="Camera_Pic_3" class="form-control" required />
                     </div>
 
                     <!-- Add product Button -->
                     <div class="d-flex justify-content-center">
-                        <button type="submit" class="mt-3 btn btn-success w-100">
+                        <button type="submit" name="submit" class="mt-3 btn btn-success w-100">
                             Add Product
                         </button>
                     </div>
@@ -221,23 +222,23 @@
             <div class="border border border-dark w-50  rounded-3 shadow-lg mb-3">
                 <img src="../../../assets/Icons/Cameras/Canon Camera/2.jpg" alt="" class="w-100" />
                 <!-- Add product Form -->
-                <form class="mb-3 text-dark rounded-2 mt-3 p-2">
+                <form class="mb-3 text-dark rounded-2 mt-3 p-2" method="post" enctype="multipart/form-data">
                     <!-- Camera title -->
                     <div class="input-group mb-3">
                         <i class="fas fa-camera input-group-text"></i>
-                        <input type="text" name="" class="form-control" placeholder="Camera Title" required />
+                        <input type="text" name="Camera_Title" class="form-control" placeholder="Camera Title" required />
                     </div>
 
                     <!-- Camera Description -->
                     <div class="input-group mb-3">
                         <i class="fas fa-camera input-group-text"></i>
-                        <input type="text" name="" class="form-control" placeholder="Camera Description" required />
+                        <input type="text" name="Camera_Description" class="form-control" placeholder="Camera Description" required />
                     </div>
 
-                     <!-- Camera quantity-->
-                     <div class="input-group mb-3">
+                    <!-- Camera quantity-->
+                    <div class="input-group mb-3">
                         <i class="fa-solid fa-plus-minus input-group-text"></i>
-                        <input type="number" name="" class="form-control" placeholder="Enter quantity" required/>
+                        <input type="number" name="Camera_Quantity" class="form-control" placeholder="Enter quantity" required/>
                     </div>
 
                     <!-- Camera price -->
@@ -248,26 +249,89 @@
 
                     <!-- Camera pic 1 -->
                     <div class="input-group mb-3">
-                        <input type="file" name="" class="form-control" required />
+                        <input type="file" name="Camera_Pic_1" class="form-control" required />
                     </div>
 
                     <!-- Camera pic 2 -->
                     <div class="input-group mb-3">
-                        <input type="file" name="" class="form-control" required />
+                        <input type="file" name="Camera_Pic_2" class="form-control" required />
                     </div>
 
                     <!-- Camera pic 3 -->
                     <div class="input-group mb-3">
-                        <input type="file" name="" class="form-control" required />
+                        <input type="file" name="Camera_Pic_3" class="form-control" required />
                     </div>
 
                     <!-- Add product Button -->
                     <div class="d-flex justify-content-center">
-                        <button type="submit" class="mt-3 btn btn-success w-100">
+                        <button type="submit" name="submit" class="mt-3 btn btn-success w-100">
                             Add Product
                         </button>
                     </div>
                 </form>
+
+                <!-- PHP Code for form submission -->
+                <?php
+                    if (isset($_POST['submit'])) {
+
+                        $Camera_Title = $_POST['Camera_Title'];
+                        $Camera_Description = $_POST['Camera_Description'];
+                        $Camera_Quantity = $_POST['Camera_Quantity'];
+                        $Camera_Price = $_POST['Camera_Price'];
+
+                        // To deals with pictures we must used $_FILES
+                        $Camera_Pic_1 = $_FILES['Camera_Pic_1'];
+                        $Camera_Pic_2 = $_FILES['Camera_Pic_2'];
+                        $Camera_Pic_3 = $_FILES['Camera_Pic_3'];
+
+                        // Details of Pic 1
+                        $Camera_Pic_1_Name = $Camera_Pic_1['name'];
+                        $Camera_Pic_1_Path = $Camera_Pic_1['tmp_name'];
+                        $Camera_Pic_1_Error = $Camera_Pic_1['error'];
+
+                        // Details of Pic 2
+                        $Camera_Pic_2_Name = $Camera_Pic_2['name'];
+                        $Camera_Pic_2_Path = $Camera_Pic_2['tmp_name'];
+                        $Camera_Pic_2_Error = $Camera_Pic_2['error'];
+
+                        // Details of Pic 3
+                        $Camera_Pic_3_Name = $Camera_Pic_3['name'];
+                        $Camera_Pic_3_Path = $Camera_Pic_3['tmp_name'];
+                        $Camera_Pic_3_Error = $Camera_Pic_3['error'];
+
+                        if ($Camera_Pic_1_Error == 0 && $Camera_Pic_2_Error == 0 && $Camera_Pic_3_Error == 0) {
+
+                            $Final_Destination_Camera_Pic_1 = 'Add Cameras/' . $Camera_Pic_1_Name;
+
+                            $Final_Destination_Camera_Pic_2 = 'Add Cameras/' . $Camera_Pic_2_Name;
+
+                            $Final_Destination_Camera_Pic_3 = 'Add Cameras/' . $Camera_Pic_3_Name;
+
+                            move_uploaded_file($Camera_Pic_1_Path, $Final_Destination_Camera_Pic_1);
+
+                            move_uploaded_file($Camera_Pic_2_Path, $Final_Destination_Camera_Pic_2);
+
+                            move_uploaded_file($Camera_Pic_3_Path, $Final_Destination_Camera_Pic_3);
+
+                            $insertqry = "INSERT INTO `cameras table`(`Camera Title`, `Camera Description`, `Camera Quantity`, `Camera Price`, `Picture 1`, `Picture 2`, `Picture 3`) VALUES ('$Camera_Title','$Camera_Description','$Camera_Quantity','$Camera_Price','$Final_Destination_Camera_Pic_1','$Final_Destination_Camera_Pic_2','$Final_Destination_Camera_Pic_3')";
+
+                            $firqery = mysqli_query($conn, $insertqry);
+                            if ($insertqry) {
+                                ?>
+                                                <script>
+                                                    alert('New Camera Added to Camera Category!');
+                                                </script>
+                                                <?php
+                    } else {
+                                ?>
+                                                <script>
+                                                    alert('Error in Camera Insertion Query');
+                                                </script>
+                                                <?php
+                    }
+                        }
+                    }
+                ?>
             </div>
         </div>
     </div>

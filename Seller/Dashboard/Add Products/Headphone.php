@@ -1,13 +1,14 @@
 <?php
     session_start();
+    include('../../../DBconnection.php');
     if(!isset($_SESSION['Seller_Pic'])){
         ?>
         <script>
-          alert('First Login Please!');
-          location.replace('../../seller signin.php');
+        alert('First Login Please!');
+        location.replace('../../seller signin.php');
         </script>
         <?php
-      }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -141,23 +142,23 @@
             <div class="border border border-dark w-100  rounded-3 shadow-lg mb-3">
                 <img src="../../../assets/Icons/Headphones/headphone5.jpg" alt="" class="w-100" />
                 <!-- Add product Form -->
-                <form class="mb-3 text-dark rounded-2 mt-3 p-2">
+                <form class="mb-3 text-dark rounded-2 mt-3 p-2" method="post" enctype="multipart/form-data">
                     <!-- headphone title -->
                     <div class="input-group mb-3">
                         <i class="fas fa-headphones input-group-text"></i>
-                        <input type="text" name="" class="form-control" placeholder="Headphone Title" required />
+                        <input type="text" name="Headphone_Title" class="form-control" placeholder="Headphone Title" required />
                     </div>
 
                     <!-- headphone Description -->
                     <div class="input-group mb-3">
                         <i class="fas fa-headphones input-group-text"></i>
-                        <input type="text" name="" class="form-control" placeholder="Headphone Description" required />
+                        <input type="text" name="Headphone_Description" class="form-control" placeholder="Headphone Description" required />
                     </div>
 
                      <!-- headphone quantity -->
                      <div class="input-group mb-3">
                         <i class="fa-solid fa-plus-minus input-group-text"></i>
-                        <input type="number" name="" class="form-control" placeholder="Enetr quantity" required />
+                        <input type="number" name="Headphone_Quantity" class="form-control" placeholder="Enter quantity" required />
                     </div>
 
 
@@ -169,22 +170,22 @@
 
                     <!-- headphone pic 1 -->
                     <div class="input-group mb-3">
-                        <input type="file" name="" class="form-control" required />
+                        <input type="file" name="Headphone_Pic_1" class="form-control" required />
                     </div>
 
                     <!-- headphone pic 2 -->
                     <div class="input-group mb-3">
-                        <input type="file" name="" class="form-control" required />
+                        <input type="file" name="Headphone_Pic_2" class="form-control" required />
                     </div>
 
                     <!-- headphone pic 3 -->
                     <div class="input-group mb-3">
-                        <input type="file" name="" class="form-control" required />
+                        <input type="file" name="Headphone_Pic_3" class="form-control" required />
                     </div>
 
                     <!-- Add product Button -->
                     <div class="d-flex justify-content-center">
-                        <button type="submit" class="mt-3 btn btn-success w-100">
+                        <button type="submit" name="submit" class="mt-3 btn btn-success w-100">
                             Add Product
                         </button>
                     </div>
@@ -222,23 +223,23 @@
             <div class="border border border-dark w-50  rounded-3 shadow-lg mb-3">
                 <img src="../../../assets/Icons/Headphones/headphone5.jpg" alt="" class="w-100" />
                 <!-- Add product Form -->
-                <form class="mb-3 text-dark rounded-2 mt-3 p-2">
+                <form class="mb-3 text-dark rounded-2 mt-3 p-2" method="post" enctype="multipart/form-data">
                     <!-- headphone title -->
                     <div class="input-group mb-3">
                         <i class="fas fa-headphones input-group-text"></i>
-                        <input type="text" name="" class="form-control" placeholder="Headphone Title" required />
+                        <input type="text" name="Headphone_Title" class="form-control" placeholder="Headphone Title" required />
                     </div>
 
                     <!-- headphone Description -->
                     <div class="input-group mb-3">
                         <i class="fas fa-headphones input-group-text"></i>
-                        <input type="text" name="" class="form-control" placeholder="Headphone Description" required />
+                        <input type="text" name="Headphone_Description" class="form-control" placeholder="Headphone Description" required />
                     </div>
 
                     <!-- headphone quantity -->
                     <div class="input-group mb-3">
                         <i class="fa-solid fa-plus-minus input-group-text"></i>
-                        <input type="number" name="" class="form-control" placeholder="Enetr quantity" required />
+                        <input type="number" name="Headphone_Quantity" class="form-control" placeholder="Enter quantity" required />
                     </div>
 
                     <!-- headphone price -->
@@ -249,26 +250,90 @@
 
                     <!-- headphone pic 1 -->
                     <div class="input-group mb-3">
-                        <input type="file" name="" class="form-control" required />
+                        <input type="file" name="Headphone_Pic_1" class="form-control" required />
                     </div>
 
                     <!-- headphone pic 2 -->
                     <div class="input-group mb-3">
-                        <input type="file" name="" class="form-control" required />
+                        <input type="file" name="Headphone_Pic_2" class="form-control" required />
                     </div>
 
                     <!-- headphone pic 3 -->
                     <div class="input-group mb-3">
-                        <input type="file" name="" class="form-control" required />
+                        <input type="file" name="Headphone_Pic_3" class="form-control" required />
                     </div>
 
                     <!-- Add product Button -->
                     <div class="d-flex justify-content-center">
-                        <button type="submit" class="mt-3 btn btn-success w-100">
+                        <button type="submit" name="submit" class="mt-3 btn btn-success w-100">
                             Add Product
                         </button>
                     </div>
                 </form>
+
+
+                <!-- PHP Code for form submission -->
+                <?php
+                    if (isset($_POST['submit'])) {
+
+                        $Headphone_Title = $_POST['Headphone_Title'];
+                        $Headphone_Description = $_POST['Headphone_Description'];
+                        $Headphone_Quantity = $_POST['Headphone_Quantity'];
+                        $Headphone_Price = $_POST['Headphone_Price'];
+
+                        // To deals with pictures we must used $_FILES
+                        $Headphone_Pic_1 = $_FILES['Headphone_Pic_1'];
+                        $Headphone_Pic_2 = $_FILES['Headphone_Pic_2'];
+                        $Headphone_Pic_3 = $_FILES['Headphone_Pic_3'];
+
+                        // Details of Pic 1
+                        $Headphone_Pic_1_Name = $Headphone_Pic_1['name'];
+                        $Headphone_Pic_1_Path = $Headphone_Pic_1['tmp_name'];
+                        $Headphone_Pic_1_Error = $Headphone_Pic_1['error'];
+
+                        // Details of Pic 2
+                        $Headphone_Pic_2_Name = $Headphone_Pic_2['name'];
+                        $Headphone_Pic_2_Path = $Headphone_Pic_2['tmp_name'];
+                        $Headphone_Pic_2_Error = $Headphone_Pic_2['error'];
+
+                        // Details of Pic 3
+                        $Headphone_Pic_3_Name = $Headphone_Pic_3['name'];
+                        $Headphone_Pic_3_Path = $Headphone_Pic_3['tmp_name'];
+                        $Headphone_Pic_3_Error = $Headphone_Pic_3['error'];
+
+                        if ($Headphone_Pic_1_Error == 0 && $Headphone_Pic_2_Error == 0 && $Headphone_Pic_3_Error == 0) {
+
+                            $Final_Destination_Headphone_Pic_1 = 'Add Headphones/' . $Headphone_Pic_1_Name;
+
+                            $Final_Destination_Headphone_Pic_2 = 'Add Headphones/' . $Headphone_Pic_2_Name;
+
+                            $Final_Destination_Headphone_Pic_3 = 'Add Headphones/' . $Headphone_Pic_3_Name;
+
+                            move_uploaded_file($Headphone_Pic_1_Path, $Final_Destination_Headphone_Pic_1);
+
+                            move_uploaded_file($Headphone_Pic_2_Path, $Final_Destination_Headphone_Pic_2);
+
+                            move_uploaded_file($Headphone_Pic_3_Path, $Final_Destination_Headphone_Pic_3);
+
+                            $insertqry = "INSERT INTO `headphones table`(`Headphone Title`, `Headphone Description`, `Headphone Quantity`, `Headphone Price`, `Picture 1`, `Picture 2`, `Picture 3`) VALUES ('$Headphone_Title','$Headphone_Description','$Headphone_Quantity','$Headphone_Price','$Final_Destination_Headphone_Pic_1','$Final_Destination_Headphone_Pic_2','$Final_Destination_Headphone_Pic_3')";
+
+                            $firqery = mysqli_query($conn, $insertqry);
+                            if ($insertqry) {
+                                ?>
+                                                <script>
+                                                    alert('New Headphones Added to Headphones Category!');
+                                                </script>
+                                                <?php
+                    } else {
+                                ?>
+                                                <script>
+                                                    alert('Error in Headphones Insertion Query');
+                                                </script>
+                                                <?php
+                    }
+                        }
+                    }
+                ?>
             </div>
         </div>
     </div>

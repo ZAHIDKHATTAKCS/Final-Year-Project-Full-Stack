@@ -1,13 +1,14 @@
 <?php
     session_start();
+    include('../../../DBconnection.php');
     if(!isset($_SESSION['Seller_Pic'])){
         ?>
         <script>
-          alert('First Login Please!');
-          location.replace('../../seller signin.php');
+        alert('First Login Please!');
+        location.replace('../../seller signin.php');
         </script>
         <?php
-      }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -141,26 +142,26 @@
             <div class="border border border-dark w-100 rounded-3 shadow-lg mb-3">
                 <img src="../../../assets/Icons/Laptop Stands/Brand Stand/1.jpg" alt="" class="w-50" />
                 <!-- Add product Form -->
-                <form class="mb-3 text-dark rounded-2 mt-3 p-2">
+                <form class="mb-3 text-dark rounded-2 mt-3 p-2" method="post" enctype="multipart/form-data">
                     <!-- Laptop Stand title -->
                     <div class="input-group mb-3">
                         <i class="fas fa-laptop input-group-text"></i>
-                        <input type="text" name="" class="form-control" placeholder="Laptop Stand Title" required />
+                        <input type="text" name="Laptop_Stand_Title" class="form-control" placeholder="Laptop Stand Title" required />
                     </div>
 
                     <!-- Laptop Stand Description -->
                     <div class="input-group mb-3">
                         <i class="fas fa-laptop input-group-text"></i>
-                        <input type="text" name="" class="form-control" placeholder="Laptop Stand Description" required />
+                        <input type="text" name="Laptop_Stand_Description" class="form-control" placeholder="Laptop Stand Description" required />
                     </div>
 
-                       <!-- Laptop Stand quantity -->
-                       <div class="input-group mb-3">
+                    <!-- Laptop Stand quantity -->
+                    <div class="input-group mb-3">
                         <i class="fa-solid fa-plus-minus input-group-text"></i>
-                        <input type="number" name="" class="form-control" placeholder="Enetr quantity" required />
-                       </div>
+                        <input type="number" name="Lapotp_Stand_Quantity" class="form-control" placeholder="Enter quantity" required />
+                    </div>
 
-                       <!-- Laptop Stand price -->
+                    <!-- Laptop Stand price -->
                     <div class="input-group mb-3">
                         <i class="fa-solid fa-dollar-sign input-group-text"></i>
                         <input type="number" name="Laptop_Stand_Price" class="form-control" placeholder="Enter Price" required />
@@ -168,22 +169,22 @@
 
                     <!-- Laptop Stand pic 1 -->
                     <div class="input-group mb-3">
-                        <input type="file" name="" class="form-control" required />
+                        <input type="file" name="Laptop_Stand_Pic_1" class="form-control" required />
                     </div>
 
                     <!-- Laptop Stand pic 2 -->
                     <div class="input-group mb-3">
-                        <input type="file" name="" class="form-control" required />
+                        <input type="file" name="Laptop_Stand_Pic_2" class="form-control" required />
                     </div>
 
                     <!-- Laptop Stand pic 3 -->
                     <div class="input-group mb-3">
-                        <input type="file" name="" class="form-control" required />
+                        <input type="file" name="Laptop_Stand_Pic_2" class="form-control" required />
                     </div>
 
                     <!-- Add product Button -->
                     <div class="d-flex justify-content-center">
-                        <button type="submit" class="mt-3 btn btn-success w-100">
+                        <button type="submit" name="submit" class="mt-3 btn btn-success w-100">
                             Add Product
                         </button>
                     </div>
@@ -221,26 +222,26 @@
             <div class="border border border-dark w-50  rounded-3 shadow-lg mb-3">
                 <img src="../../../assets/Icons/Laptop Stands/Brand Stand/1.jpg" alt="" class="w-50" />
                 <!-- Add product Form -->
-                <form class="mb-3 text-dark rounded-2 mt-3 p-2">
+                <form class="mb-3 text-dark rounded-2 mt-3 p-2" method="post" enctype="multipart/form-data">
                     <!-- Laptop Stand title -->
                     <div class="input-group mb-3">
                         <i class="fas fa-laptop input-group-text"></i>
-                        <input type="text" name="" class="form-control" placeholder="Laptop Stand Title" required />
+                        <input type="text" name="Laptop_Stand_Title" class="form-control" placeholder="Laptop Stand Title" required />
                     </div>
 
                     <!-- Laptop Stand Description -->
                     <div class="input-group mb-3">
                         <i class="fas fa-laptop input-group-text"></i>
-                        <input type="text" name="" class="form-control" placeholder="Laptop Stand Description" required />
+                        <input type="text" name="Laptop_Stand_Description" class="form-control" placeholder="Laptop Stand Description" required />
                     </div>
 
-                      <!-- Laptop Stand quantity -->
-                      <div class="input-group mb-3">
+                    <!-- Laptop Stand quantity -->
+                    <div class="input-group mb-3">
                         <i class="fa-solid fa-plus-minus input-group-text"></i>
-                        <input type="number" name="" class="form-control" placeholder="Enetr quantity" required />
-                       </div>
+                        <input type="number" name="Laptop_Stand_Quantity" class="form-control" placeholder="Enetr quantity" required />
+                    </div>
 
-                       <!-- Laptop Stand price -->
+                    <!-- Laptop Stand price -->
                     <div class="input-group mb-3">
                         <i class="fa-solid fa-dollar-sign input-group-text"></i>
                         <input type="number" name="Laptop_Stand_Price" class="form-control" placeholder="Enter Price" required />
@@ -248,26 +249,89 @@
 
                     <!-- Laptop Stand pic 1 -->
                     <div class="input-group mb-3">
-                        <input type="file" name="" class="form-control" required />
+                        <input type="file" name="Laptop_Stand_Pic_1" class="form-control" required />
                     </div>
 
                     <!-- Laptop Stand pic 2 -->
                     <div class="input-group mb-3">
-                        <input type="file" name="" class="form-control" required />
+                        <input type="file" name="Laptop_Stand_Pic_2" class="form-control" required />
                     </div>
 
                     <!-- Laptop Stand pic 3 -->
                     <div class="input-group mb-3">
-                        <input type="file" name="" class="form-control" required />
+                        <input type="file" name="Laptop_Stand_Pic_3" class="form-control" required />
                     </div>
 
                     <!-- Add product Button -->
                     <div class="d-flex justify-content-center">
-                        <button type="submit" class="mt-3 btn btn-success w-100">
+                        <button type="submit" name="submit" class="mt-3 btn btn-success w-100">
                             Add Product
                         </button>
                     </div>
                 </form>
+
+                <!-- PHP Code for form submission -->
+                <?php
+                    if (isset($_POST['submit'])) {
+
+                        $Laptop_Stand_Title = $_POST['Laptop_Stand_Title'];
+                        $Laptop_Stand_Description = $_POST['Laptop_Stand_Description'];
+                        $Laptop_Stand_Quantity = $_POST['Laptop_Stand_Quantity'];
+                        $Laptop_Stand_Price = $_POST['Laptop_Stand_Price'];
+
+                        // To deals with pictures we must used $_FILES
+                        $Laptop_Stand_Pic_1 = $_FILES['Laptop_Stand_Pic_1'];
+                        $Laptop_Stand_Pic_2 = $_FILES['Laptop_Stand_Pic_2'];
+                        $Laptop_Stand_Pic_3 = $_FILES['Laptop_Stand_Pic_3'];
+
+                        // Details of Pic 1
+                        $Laptop_Stand_Pic_1_Name = $Laptop_Stand_Pic_1['name'];
+                        $Laptop_Stand_Pic_1_Path = $Laptop_Stand_Pic_1['tmp_name'];
+                        $Laptop_Stand_Pic_1_Error = $Laptop_Stand_Pic_1['error'];
+
+                        // Details of Pic 2
+                        $Laptop_Stand_Pic_2_Name = $Laptop_Stand_Pic_2['name'];
+                        $Laptop_Stand_Pic_2_Path = $Laptop_Stand_Pic_2['tmp_name'];
+                        $Laptop_Stand_Pic_2_Error = $Laptop_Stand_Pic_2['error'];
+
+                        // Details of Pic 3
+                        $Laptop_Stand_Pic_3_Name = $Laptop_Stand_Pic_3['name'];
+                        $Laptop_Stand_Pic_3_Path = $Laptop_Stand_Pic_3['tmp_name'];
+                        $Laptop_Stand_Pic_3_Error = $Laptop_Stand_Pic_3['error'];
+
+                        if ($Laptop_Stand_Pic_1_Error == 0 && $Laptop_Stand_Pic_2_Error == 0 && $Laptop_Stand_Pic_3_Error == 0) {
+
+                            $Final_Destination_Laptop_Stand_Pic_1 = 'Add Laptop Stands/' . $Laptop_Stand_Pic_1_Name;
+
+                            $Final_Destination_Laptop_Stand_Pic_2 = 'Add Laptop Stands/' . $Laptop_Stand_Pic_2_Name;
+
+                            $Final_Destination_Laptop_Stand_Pic_3 = 'Add Laptop Stands/' . $Laptop_Stand_Pic_3_Name;
+
+                            move_uploaded_file($Laptop_Stand_Pic_1_Path, $Final_Destination_Laptop_Stand_Pic_1);
+
+                            move_uploaded_file($Laptop_Stand_Pic_2_Path, $Final_Destination_Laptop_Stand_Pic_2);
+
+                            move_uploaded_file($Laptop_Stand_Pic_3_Path, $Final_Destination_Laptop_Stand_Pic_3);
+
+                            $insertqry = "INSERT INTO `laptop stands table`(`Laptop Stand Title`, `Laptop Stand Description`, `Laptop Stand Quantity`, `Laptop Stand Price`, `Picture 1`, `Picture 2`, `Picture 3`) VALUES ('$Laptop_Stand_Title','$Laptop_Stand_Description','$Laptop_Stand_Quantity','$Laptop_Stand_Price','$Final_Destination_Laptop_Stand_Pic_1','$Final_Destination_Laptop_Stand_Pic_2','$Final_Destination_Laptop_Stand_Pic_3')";
+
+                            $firqery = mysqli_query($conn, $insertqry);
+                            if ($insertqry) {
+                                ?>
+                                                <script>
+                                                    alert('New Laptop Stand Added to Laptop Stand Category!');
+                                                </script>
+                                                <?php
+                    } else {
+                                ?>
+                                                <script>
+                                                    alert('Error in Laptop Stand Insertion Query');
+                                                </script>
+                                                <?php
+                    }
+                        }
+                    }
+                ?>
             </div>
         </div>
     </div>

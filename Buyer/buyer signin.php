@@ -147,9 +147,6 @@
       <?php
     }
   }else{
-    ?>
-    <script>alert('Please Click on sign in button clearly');</script>
-    <?php
   }
   ?>
 </body>

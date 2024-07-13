@@ -1,3 +1,17 @@
+<?php
+session_start();
+include '../DBconnection.php';
+if (!isset($_SESSION['Buyer_Pic'])) {
+?>
+    <script>
+        alert('Please Login First');
+        location.replace('../Buyer/buyer signin.php');
+    </script>
+<?php
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,9 +27,7 @@
     <link rel="stylesheet" href="../assets/Bootstrap 4/css/bootstrap.min.css">
 
     <!-- font awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Animate.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
@@ -25,9 +37,7 @@
 
 
     <!-- font awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- css link -->
 
@@ -35,95 +45,114 @@
 
     <!-- Fav icon -->
     <link rel="icon" type="image/x-icon" href="../assets/Icons/Favicons/Laptop.svg">
+
+    <!-- css link -->
+    <link rel="stylesheet" href="../assets/Custom Css/fyp.css" />
 </head>
 
 <body class="body">
 
+
+    <!-- Navbar starts here -->
+    <div class="container-fluid navbar_container">
+
+        <nav class="navbar navbar-expand-lg d-sm-flex d-md-flex">
+            <div class="container d-flex justify-content-between">
+                <!-- Logo -->
+                <img src="../assets/Icons/main_logo.jpeg" style="width: 80px; height: 70px" alt="logo" class="rounded me-5" />
+                <!-- User Icon -->
+
+                <!-- Toggler button for mobile view -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon ">
+                        <div class="bg-dark" style="width: 20px; height:2px;">
+                        </div>
+                        <div class="bg-dark mt-2" style="width: 20px; height:2px;">
+                        </div>
+                        <div class="bg-dark mt-2" style="width: 20px; height:2px;">
+                        </div>
+                    </span>
+                </button>
+
+                <!-- Navbar items for mobile views-->
+                <div class="collapse navbar-collapse navbar" id="navbarNav">
+                    <div class="w-100">
+                        <ul class="navbar-nav d-md-flex justify-content-md-between align-items-center align-items-md-center">
+                            <li class="nav-item">
+                                <a class="nav-link text-center" href="../home.php">Home</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link text-center" href="../About.php">About Us</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link text-center" href="../Contact page/contact.php">Contact Us</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link text-center" href="../FAQ.php">FAQ</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link text-center" href="../Add to cart.php">Add To Cart</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link text-center" href="../Logout.php">Log Out</a>
+                            </li>
+
+
+                            <li class="nav-item">
+
+                                <img src="../Buyer/<?php echo $_SESSION['Buyer_Pic']; ?> " class="nav-link img-fluid rounded-circle" alt="login user" width="100px">
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </nav>
+    </div>
+    <!-- the end of navbar container -->
+
+
+
+
+
+
+    <!-- Here are the Products  -->
     <div class="container justify-content-center align-items-center">
         <!-- Products -->
 
         <!-- row 1 -->
         <div class="container d-flex justify-content-center align-items-center mt-3 text-dark text-center">
             <div class="row d-flex justify-content-between align-items-center gap-3">
-                <!-- Card 1 -->
-                <div class="card col-12 col-sm-3 col-md-3 d-flex justify-content-center align-items-center bg-light"
-                    onclick="window.location.href='../Product Pages/Laptops/HP laptop.php';">
-                    <img src="../assets/Icons/Laptops/HP laptop 1.jpeg" class="card-img-top img-fluid" alt="...">
-                    <div class="card-body">
-                        <p class="card-title">HP Laptop</p>
-                        <p class="card-text">HP Laptop Core I 5</p>
-                        <a href="../Product Pages/Laptops/HP laptop.php" class="btn btn-success w-100">Shop</a>
-                    </div>
-                </div>
 
-                <!-- Card 2 -->
-                <div class="card col-12 col-sm-3 col-md-3 d-flex justify-content-center align-items-center bg-light "
-                    onclick="window.location.href='../Product Pages/Laptops/Acer Laptop.php';">
-                    <img src="../assets/Icons/Laptops/Acer Laptop/1.jpg" class="card-img-top img-fluid" alt="...">
-                    <div class="card-body">
-                        <p class="card-title">Acer Laptop</p>
-                        <p class="card-text">Acer Laptop Core I 5</p>
-                        <a href="../Product Pages/Laptops/Acer Laptop.php" class="btn btn-success w-100">Shop</a>
+                <!-- Here is the PHP code for fetching the Laptops from Laptops Table -->
+                <?php
+                $Select_Query = "SELECT * FROM `laptops table`";
+                $Fire_Query = mysqli_query($conn, $Select_Query);
+                while ($Result = mysqli_fetch_array($Fire_Query)) {
+                ?>
+                    <!-- Card -->
+                    <div class="card col-12 col-sm-3 col-md-3 d-flex justify-content-center align-items-center bg-light" onclick="window.location.href='../Product Pages/Laptops/HP laptop.php';">
+                        <img src="../Seller/Dashboard/Add Products/<?php echo $Result['Picture 1']; ?>" class="card-img-top img-fluid" alt="Laptop Pic">
+                        <div class="card-body">
+                            <p class="card-title"><?php echo $Result['Laptop Title']; ?></p>
+                            <p class="card-text"><?php echo $Result['Laptop Description']; ?></p>
+                            <a href="../Product Pages/Laptops/HP laptop.php?id=<?php echo $Result['Id']; ?>" class="btn btn-success w-100">Shop</a>
+                        </div>
                     </div>
-                </div>
-
-
-                <!-- Card 3 -->
-                <div class="card col-12 col-sm-3 col-md-3 d-flex justify-content-center align-items-center bg-light "
-                    onclick="window.location.href='../Product Pages/Laptops/Apple Laptop.php';">
-                    <img src="../assets/Icons/Laptops/Apple Laptops/1.jpg" class="card-img-top img-fluid" alt="...">
-                    <div class="card-body">
-                        <p class="card-title">Apple Core I 3</p>
-                        <p class="card-text">Apple Core I 3 New Laptop</p>
-                        <a href="../Product Pages/Laptops/Apple Laptop.php" class="btn btn-success w-100">Shop</a>
-                    </div>
-                </div>
+                <?php
+                }
+                ?>
             </div>
         </div>
 
-
-        <!-- row 2 -->
-        <div class="container d-flex justify-content-center align-items-center mt-3 text-dark text-center mb-5">
-            <div class="row d-flex justify-content-between align-items-center gap-3">
-                <!-- Card 4 -->
-                <div class="card col-12 col-sm-3 col-md-3 d-flex justify-content-center align-items-center bg-light "
-                    onclick="window.location.href='../Product Pages/Laptops/Chrome Book.php';">
-                    <img src="../assets/Icons/Laptops/Chrome Book laptops/1.jpg" class="card-img-top img-fluid"
-                        alt="...">
-                    <div class="card-body">
-                        <p class="card-title">Chrome Book Laptop </p>
-                        <p class="card-text">Core I 5</p>
-                        <a href="../Product Pages/Laptops/Chrome Book.php" class="btn btn-success w-100">Shop</a>
-                    </div>
-                </div>
-
-                <!-- Card 5 -->
-                <div class="card col-12 col-sm-3 col-md-3 d-flex justify-content-center align-items-center bg-light "
-                    onclick="window.location.href='../Product Pages/Laptops/Dell Laptop.php';">
-                    <img src="../assets/Icons/Laptops/Dell Laptops/2.jpg" class="card-img-top img-fluid" alt="...">
-                    <div class="card-body">
-                        <p class="card-title">Dell Laptop</p>
-                        <p class="card-text">Core I 7 </p>
-                        <a href="../Product Pages/Laptops/Dell Laptop.php" class="btn btn-success w-100">Shop</a>
-                    </div>
-                </div>
-
-
-                <!-- Card 6 -->
-                <div class="card col-12 col-sm-3 col-md-3 d-flex justify-content-center align-items-center bg-light "
-                    onclick="window.location.href='../Product Pages/Laptops/PM Laptop.php';">
-                    <img src="../assets/Icons/Laptops/PM Laptop/5.jpeg" class="card-img-top img-fluid" alt="...">
-                    <div class="card-body">
-                        <p class="card-title">PM Laptop</p>
-                        <p class="card-text">Core I 7 12 Generation</p>
-                        <a href="../Product Pages/Laptops/PM Laptop.php" class="btn btn-success w-100">Shop</a>
-                    </div>
-                </div>
-
-            </div>
-
-
-        </div>
 
 
     </div>

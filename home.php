@@ -1,6 +1,14 @@
 <?php
 session_start(); //session start
 include ('DBconnection.php');
+if(!isset($_SESSION['Buyer_Pic'])){
+  ?>
+  <script>
+    alert("Please Login first");
+    location.replace('Buyer/buyer signin.php');
+  </script>
+  <?php
+}
 ?>
 
 <!DOCTYPE html>
@@ -33,6 +41,8 @@ include ('DBconnection.php');
 </head>
 
 <body class="body">
+
+  <!-- Navbar starts here -->
   <div class="container-fluid navbar_container">
 
     <nav class="navbar navbar-expand-lg d-sm-flex d-md-flex">
@@ -76,6 +86,10 @@ include ('DBconnection.php');
 
               <li class="nav-item">
                 <a class="nav-link text-center" href="Add to cart.php">Add To Cart</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link text-center" href="Logout.php">Log Out</a>
               </li>
 
               

@@ -1,3 +1,15 @@
+<?php
+session_start();
+include '../DBconnection.php';
+if (!isset($_SESSION['Buyer_Pic'])) {
+?>
+  <script>
+    alert('Please Login First');
+    location.replace('../Buyer/buyer signin.php');
+  </script>
+<?php
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,9 +47,79 @@
   <!-- Fav icon -->
   <link rel="icon" type="image/x-icon" href="../assets/Icons/Favicons/laptop stand.png">
 
+  <!-- css link -->
+  <link rel="stylesheet" href="../assets/Custom Css/fyp.css" />
+
 </head>
 
 <body class="body">
+
+
+  <!-- Navbar starts here -->
+  <div class="container-fluid navbar_container">
+
+    <nav class="navbar navbar-expand-lg d-sm-flex d-md-flex">
+      <div class="container d-flex justify-content-between">
+        <!-- Logo -->
+        <img src="../assets/Icons/main_logo.jpeg" style="width: 80px; height: 70px" alt="logo" class="rounded me-5" />
+        <!-- User Icon -->
+
+        <!-- Toggler button for mobile view -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon ">
+            <div class="bg-dark" style="width: 20px; height:2px;">
+            </div>
+            <div class="bg-dark mt-2" style="width: 20px; height:2px;">
+            </div>
+            <div class="bg-dark mt-2" style="width: 20px; height:2px;">
+            </div>
+          </span>
+        </button>
+
+        <!-- Navbar items for mobile views-->
+        <div class="collapse navbar-collapse navbar" id="navbarNav">
+          <div class="w-100">
+            <ul class="navbar-nav d-md-flex justify-content-md-between align-items-center align-items-md-center">
+              <li class="nav-item">
+                <a class="nav-link text-center" href="../home.php">Home</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link text-center" href="../About.php">About Us</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link text-center" href="../Contact page/contact.php">Contact Us</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link text-center" href="../FAQ.php">FAQ</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link text-center" href="../Add to cart.php">Add To Cart</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link text-center" href="../Logout.php">Log Out</a>
+              </li>
+
+
+              <li class="nav-item">
+
+                <img src="../Buyer/<?php echo $_SESSION['Buyer_Pic']; ?> " class="nav-link img-fluid rounded-circle" alt="login user" width="100px">
+
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
+      </div>
+
+    </nav>
+  </div>
+  <!-- the end of navbar container -->
 
   <div class="container justify-content-center align-items-center">
 

@@ -1,6 +1,14 @@
 <?php
   session_start();
   include ('DBconnection.php');
+  if(!isset($_SESSION['Buyer_Pic'])){
+    ?>
+    <script>
+      alert("Please Login First");
+      location.replace('Buyer/buyer signin.php');
+    </script>
+    <?php
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -90,6 +98,10 @@
                   <li class="nav-item">
                     <a class="nav-link text-center" href="./Add to cart.php">Add To Cart</a>
                   </li>
+
+                  <li class="nav-item">
+                <a class="nav-link text-center" href="Logout.php">Log Out</a>
+              </li>
     
                   
                   <li class="nav-item">

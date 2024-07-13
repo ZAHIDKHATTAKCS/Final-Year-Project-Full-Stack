@@ -1,5 +1,18 @@
+<?php
+session_start();
+if (!isset($_SESSION['Buyer_Pic'])) {
+?>
+  <script>
+    alert('Please Login First');
+    location.replace('../Buyer/buyer signin.php');
+  </script>
+<?php
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,9 +25,7 @@
   <link rel="stylesheet" href="../assets/Bootstrap 4/css/bootstrap.min.css">
 
   <!-- font awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Animate.css -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
@@ -29,9 +40,78 @@
   <!-- Fav icon -->
   <link rel="icon" type="image/x-icon" href="../assets/Icons/Favicons/Camera.svg">
 
+  <!-- css link -->
+  <link rel="stylesheet" href="../assets/Custom Css/fyp.css" />
+
 </head>
 
 <body class="body">
+
+  <!-- Navbar starts here -->
+  <div class="container-fluid navbar_container">
+
+    <nav class="navbar navbar-expand-lg d-sm-flex d-md-flex">
+      <div class="container d-flex justify-content-between">
+        <!-- Logo -->
+        <img src="../assets/Icons/main_logo.jpeg" style="width: 80px; height: 70px" alt="logo" class="rounded me-5" />
+        <!-- User Icon -->
+
+        <!-- Toggler button for mobile view -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon ">
+            <div class="bg-dark" style="width: 20px; height:2px;">
+            </div>
+            <div class="bg-dark mt-2" style="width: 20px; height:2px;">
+            </div>
+            <div class="bg-dark mt-2" style="width: 20px; height:2px;">
+            </div>
+          </span>
+        </button>
+
+        <!-- Navbar items for mobile views-->
+        <div class="collapse navbar-collapse navbar" id="navbarNav">
+          <div class="w-100">
+            <ul class="navbar-nav d-md-flex justify-content-md-between align-items-center align-items-md-center">
+              <li class="nav-item">
+                <a class="nav-link text-center" href="../home.php">Home</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link text-center" href="../About.php">About Us</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link text-center" href="../Contact page/contact.php">Contact Us</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link text-center" href="../FAQ.php">FAQ</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link text-center" href="../Add to cart.php">Add To Cart</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link text-center" href="../Logout.php">Log Out</a>
+              </li>
+
+
+              <li class="nav-item">
+
+                <img src="../Buyer/<?php echo $_SESSION['Buyer_Pic']; ?> " class="nav-link img-fluid rounded-circle" alt="login user" width="100px">
+
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
+      </div>
+
+    </nav>
+  </div>
+  <!-- the end of navbar container -->
 
   <div class="container justify-content-center align-items-center">
 
@@ -40,37 +120,30 @@
     <!-- row 1 -->
     <div class="container d-flex justify-content-center align-items-center mt-3 text-dark text-center">
       <div class="row d-flex justify-content-between align-items-center gap-3">
-        <!-- Card 1 -->
-        <div class="card col-12 col-sm-3 col-md-3 d-flex justify-content-center align-items-center bg-light" onclick="window.location.href='../Product Pages/Cameras/Nikon camera.php';">
-          <img src="../assets/Icons/Cameras/Nikon Camera/1.jpg" class="card-img-top img-fluid" alt="...">
-          <div class="card-body">
-            <p class="card-title">Nikon Camera</p>
-            <a href="../Product Pages/Cameras/Nikon camera.php" class="btn btn-success w-100">Shop</a>
-          </div>
-        </div>
+        <!-- Here is the PHP code for fetching the Laptops from Laptops Table -->
+        <?php
+                $Select_Query = "SELECT * FROM `cameras table`";
+                $Fire_Query = mysqli_query($conn, $Select_Query);
+                while ($Result = mysqli_fetch_array($Fire_Query)) {
+                ?>
+                    <!-- Card -->
+                    <div class="card col-12 col-sm-3 col-md-3 d-flex justify-content-center align-items-center bg-light" onclick="window.location.href='../Product Pages/Laptops/HP laptop.php';">
+                        <img src="../Seller/Dashboard/Add Products/<?php echo $Result['Picture 1']; ?>" class="card-img-top img-fluid" alt="Laptop Pic">
+                        <div class="card-body">
+                            <p class="card-title"><?php echo $Result['Camera Title']; ?></p>
+                            <p class="card-text"><?php echo $Result['Camera Description']; ?></p>
+                            <a href="../Product Pages/Cameras/" class="btn btn-success w-100">Shop</a>
 
-        <!-- Card 2 -->
-        <div class="card col-12 col-sm-3 col-md-3 d-flex justify-content-center align-items-center bg-light " onclick="window.location.href='../Product Pages/Cameras/Canon camera.php';">
-          <img src="../assets/Icons/Cameras/Canon Camera/3.jpg" class="card-img-top img-fluid" alt="...">
-          <div class="card-body">
-            <p class="card-title">Canon Camera</p>
-            <a href="../Product Pages/Cameras/Canon camera.php" class="btn btn-success w-100">Shop</a>
-          </div>
-        </div>
-
-
-        <!-- Card 3 -->
-        <div class="card col-12 col-sm-3 col-md-3 d-flex justify-content-center align-items-center bg-light " onclick="window.location.href='../Product Pages/Cameras/Drone camera.php';">
-          <img src="../assets/Icons/Cameras/Drone Camera/2.jpg" class="card-img-top img-fluid" alt="...">
-          <div class="card-body">
-            <p class="card-title">Drone Camera</p>
-            <a href="../Product Pages/Cameras/Drone camera.php" class="btn btn-success w-100">Shop</a>
-          </div>
-        </div>
+                            <!-- TODO ye sab abi rehta error all the pages are going to one page -->
+                        </div>
+                    </div>
+                <?php
+                }
+                ?>
       </div>
     </div>
-    
-    
+
+
   </div>
 </body>
 

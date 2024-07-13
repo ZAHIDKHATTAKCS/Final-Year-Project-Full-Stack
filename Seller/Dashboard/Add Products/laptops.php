@@ -310,7 +310,7 @@ if (!isset($_SESSION['Seller_Pic'])) {
 
                             $Final_Destination_Laptop_Pic_3 = 'Add Laptops/' . $Laptop_Pic_3_Name;
 
-                            move_uploaded_file($Laptop_Pic_1_Path, $Final_Destination_Laptop__Pic_1);
+                            move_uploaded_file($Laptop_Pic_1_Path, $Final_Destination_Laptop_Pic_1);
 
                             move_uploaded_file($Laptop_Pic_2_Path, $Final_Destination_Laptop_Pic_2);
 

@@ -1,3 +1,7 @@
+<?php
+session_start();
+include '../../DBconnection.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,9 +17,7 @@
     <link rel="stylesheet" href="../../assets/Bootstrap 4/css/bootstrap.min.css">
 
     <!-- font awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Animate.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
@@ -25,9 +27,7 @@
 
 
     <!-- font awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- css link -->
 
@@ -45,33 +45,36 @@
 
             <!-- images -->
             <div class="card col-sm-10 col-md-5 col-lg-4 ">
-                <!-- big img -->
-                <img src="../../assets/Icons/Laptops/hp laptop 1.jpeg" class="w-100 img-fluid" id="big-img"
-                    alt="big img">
+                <?php
+                $getid = $_GET['id'];
+
+                $Select_Query = "SELECT * FROM `Laptops Table` WHERE Id = $getid";
+
+                $Fire_Query = mysqli_query($conn, $Select_Query);
+
+                while ($Result = mysqli_fetch_array($Fire_Query)) {
+                ?>
+
+                    <!-- big img -->
+                    <img src="../../Seller/Dashboard/Add Products/<?php echo $Result['Picture 1']; ?>" class="w-100 img-fluid" id="big-img" alt="big img">
 
 
-                <!-- small images -->
-                <div class="card-body d-flex justify-content-between">
-                    <img src="../../assets/Icons/Laptops/HP Laptops/hp laptop 3.jpg" class="small-img" alt="...">
-                    <img src="../../assets/Icons/Laptops/hp laptop 2.png" class="small-img " alt="...">
-                    <img src="../../assets/Icons/Laptops/HP Laptops/hp laptop 4.jpg" class="small-img " alt="...">
-                    <img src="../../assets/Icons/Laptops/hp laptop 1.jpeg" class="small-img " alt="...">
-                </div>
+                    <!-- small images -->
+                    <div class="card-body d-flex justify-content-between">
+                        <img src="../../Seller/Dashboard/Add Products/<?php echo $Result['Picture 1']; ?>" class="small-img" alt="img1">
+                        <img src="../../Seller/Dashboard/Add Products/<?php echo $Result['Picture 3']; ?>" class="small-img " alt="img2">
+                        <img src="../../Seller/Dashboard/Add Products/<?php echo $Result['Picture 2']; ?>" class="small-img " alt="img3">
+                    </div>
             </div>
 
             <!-- Product Description -->
             <div class="text-center col-sm-10 col-md-6 col-lg-6 p-3">
-                <h2>HP laptop</h2>
-                <h4>HP Laptop core I5 7th Generation </h4>
-                <p class="font-weight-light">
-                    Ram : 8GB <br>
-                    Room : 256SSD
-                </p>
+                <h2><?php echo $Result['Laptop Title']; ?></h2>
+                <h4><?php echo $Result['Laptop Description']; ?></h4>
 
                 <!-- cart and button section -->
                 <div class="d-block p-3 d-md-flex ">
-                    <input type="number" class="form-control w-100" name="" id="" placeholder="Enter Quantity"
-                        required><br>
+                    <input type="number" class="form-control w-100" name="" id="" placeholder="Enter Quantity" required><br>
 
                     <div class="d-flex justify-content-between gap-3">
                         <!-- Add to Cart Button -->
@@ -82,98 +85,99 @@
                 </div>
                 <!-- Product Quantity -->
                 <div class="d-flex justify-content-between p-3">
-                    <h5 class="text-center text-success bg-light rounded-2 p-1 p-md-2">Quantity Available: 23</h5>
-                    <h5 class="text-center text-success bg-light rounded-2 p-1 p-md-2"><span class="">Price : 50000</span></h5>
+                    <h5 class="text-center text-success bg-light rounded-2 p-1 p-md-2">Quantity Available: <?php echo $Result['Laptop_Quantity']; ?></h5>
+                    <h5 class="text-center text-success bg-light rounded-2 p-1 p-md-2"><span class="">Price : <?php echo $Result['Laptop_Price']; ?></span></h5>
+                </div>
+            </div>
+        </div>
+    <?php
+                }
+    ?>
+
+
+
+    <!-- Explore More Products -->
+    <div class="row container-fluid Explore-row d-flex align-item-center justify-content-evenly text-center mt-5">
+
+        <h2 class="mt-4">Explore More</h2>
+
+        <!-- row 1 -->
+        <div class="container d-flex justify-content-center align-items-center mt-3 text-dark text-center">
+            <div class="row d-flex justify-content-between align-items-center gap-3">
+                <!-- Card 1 -->
+                <div class="card col-12 col-sm-3 col-md-3 d-flex justify-content-center align-items-center bg-light" onclick="window.location.href='../../Products.php';">
+                    <img src="../../assets/Icons/Laptops/laptop3.jpg" class="card-img-top img-fluid" alt="...">
+                    <div class="card-body">
+                        <p class="card-title">Hp Core i7</p>
+                        <p class="card-text text-success">Price : 550000 PKR</p>
+                        <a href="../../Products.php" class="btn btn-success">Explore More</a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card col-12 col-sm-3 col-md-3 d-flex justify-content-center align-items-center bg-light " onclick="window.location.href='../../Products.php';">
+                    <img src="../../assets/Icons/Headphones/Bluedeo Headphones/2.jpg" class="card-img-top img-fluid" alt="...">
+                    <div class="card-body">
+                        <p class="card-title">Bludio Headphones</p>
+                        <p class="card-text text-success">Price : 3500 PKR</p>
+                        <a href="../../Products.php" class="btn btn-success">Explore More</a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card col-12 col-sm-3 col-md-3 d-flex justify-content-center align-items-center bg-light " onclick="window.location.href='../../Products.php';">
+                    <img src="../../assets/Icons/Cameras/camera3.jpg" class="card-img-top img-fluid" alt="...">
+                    <div class="card-body">
+                        <p class="card-title">Nikon Camera</p>
+                        <p class="card-text text-success">Price : 45000 PKR</p>
+                        <a href="../../Products.php" class="btn btn-success">Explore More</a>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Explore More Products -->
-        <div class="row container-fluid Explore-row d-flex align-item-center justify-content-evenly text-center mt-5">
 
-            <h2 class="mt-4">Explore More</h2>
-
-            <!-- row 1 -->
-            <div class="container d-flex justify-content-center align-items-center mt-3 text-dark text-center">
-                <div class="row d-flex justify-content-between align-items-center gap-3">
-                    <!-- Card 1 -->
-                    <div class="card col-12 col-sm-3 col-md-3 d-flex justify-content-center align-items-center bg-light"
-                        onclick="window.location.href='../../Products.php';">
-                        <img src="../../assets/Icons/Laptops/laptop3.jpg" class="card-img-top img-fluid" alt="...">
-                        <div class="card-body">
-                            <p class="card-title">Hp Core i7</p>
-                            <p class="card-text text-success">Price : 550000 PKR</p>
-                            <a href="../../Products.php" class="btn btn-success">Explore More</a>
-                        </div>
+        <!-- row 2 -->
+        <div class="container d-flex justify-content-center align-items-center mt-3 text-dark text-center mb-5">
+            <div class="row d-flex justify-content-between align-items-center gap-3">
+                <!-- Card 4 -->
+                <div class="card col-12 col-sm-3 col-md-3 d-flex justify-content-center align-items-center bg-light" onclick="window.location.href='../../Products.php';">
+                    <img src="../../assets/Icons/Mobile/mobile4.jpg" class="card-img-top img-fluid" alt="...">
+                    <div class="card-body">
+                        <p class="card-title">Infinix Mobile</p>
+                        <p class="card-text text-success">Price 34000 PKR</p>
+                        <a href="../../Products.php" class="btn btn-success">Explore More</a>
                     </div>
+                </div>
 
-                    <!-- Card 2 -->
-                    <div class="card col-12 col-sm-3 col-md-3 d-flex justify-content-center align-items-center bg-light "
-                        onclick="window.location.href='../../Products.php';">
-                        <img src="../../assets/Icons/Headphones/Bluedeo Headphones/2.jpg" class="card-img-top img-fluid"
-                            alt="...">
-                        <div class="card-body">
-                            <p class="card-title">Bludio Headphones</p>
-                            <p class="card-text text-success">Price : 3500 PKR</p>
-                            <a href="../../Products.php" class="btn btn-success">Explore More</a>
-                        </div>
+                <!-- Card 5 -->
+                <div class="card col-12 col-sm-3 col-md-3 d-flex justify-content-center align-items-center bg-light " onclick="window.location.href='../../Products.php';">
+                    <img src="../../assets/Icons/Laptops/Apple Laptops/1.jpg" class="card-img-top img-fluid" alt="...">
+                    <div class="card-body">
+                        <p class="card-title">Apple Core I 3</p>
+                        <p class="card-text text-success">98000 PKR</p>
+                        <a href="../../Products.php" class="btn btn-success">Explore More</a>
                     </div>
+                </div>
 
-                    <!-- Card 3 -->
-                    <div class="card col-12 col-sm-3 col-md-3 d-flex justify-content-center align-items-center bg-light "
-                        onclick="window.location.href='../../Products.php';">
-                        <img src="../../assets/Icons/Cameras/camera3.jpg" class="card-img-top img-fluid" alt="...">
-                        <div class="card-body">
-                            <p class="card-title">Nikon Camera</p>
-                            <p class="card-text text-success">Price : 45000 PKR</p>
-                            <a href="../../Products.php" class="btn btn-success">Explore More</a>
-                        </div>
+                <!-- Card 6 -->
+                <div class="card col-12 col-sm-3 col-md-3 d-flex justify-content-center align-items-center bg-light " onclick="window.location.href='../../Products.php';">
+                    <img src="../../assets/Icons/Computer/Tower PC/1.jpg" class="card-img-top img-fluid" alt="...">
+                    <div class="card-body">
+                        <p class="card-title">Gamming PC Core I 7</p>
+                        <p class="card-text text-success">55000 PKR</p>
+                        <a href="../../Products.php" class="btn btn-success">Explore More</a>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <!-- JavaScript file link -->
+        <script src="../single-product.js"></script>
+    </div>
+    </div>
 
 
-            <!-- row 2 -->
-            <div class="container d-flex justify-content-center align-items-center mt-3 text-dark text-center mb-5">
-                <div class="row d-flex justify-content-between align-items-center gap-3">
-                    <!-- Card 4 -->
-                    <div class="card col-12 col-sm-3 col-md-3 d-flex justify-content-center align-items-center bg-light"
-                        onclick="window.location.href='../../Products.php';">
-                        <img src="../../assets/Icons/Mobile/mobile4.jpg" class="card-img-top img-fluid" alt="...">
-                        <div class="card-body">
-                            <p class="card-title">Infinix Mobile</p>
-                            <p class="card-text text-success">Price 34000 PKR</p>
-                            <a href="../../Products.php" class="btn btn-success">Explore More</a>
-                        </div>
-                    </div>
-
-                    <!-- Card 5 -->
-                    <div class="card col-12 col-sm-3 col-md-3 d-flex justify-content-center align-items-center bg-light "
-                        onclick="window.location.href='../../Products.php';">
-                        <img src="../../assets/Icons/Laptops/Apple Laptops/1.jpg" class="card-img-top img-fluid"
-                            alt="...">
-                        <div class="card-body">
-                            <p class="card-title">Apple Core I 3</p>
-                            <p class="card-text text-success">98000 PKR</p>
-                            <a href="../../Products.php" class="btn btn-success">Explore More</a>
-                        </div>
-                    </div>
-
-                    <!-- Card 6 -->
-                    <div class="card col-12 col-sm-3 col-md-3 d-flex justify-content-center align-items-center bg-light "
-                        onclick="window.location.href='../../Products.php';">
-                        <img src="../../assets/Icons/Computer/Tower PC/1.jpg" class="card-img-top img-fluid" alt="...">
-                        <div class="card-body">
-                            <p class="card-title">Gamming PC Core I 7</p>
-                            <p class="card-text text-success">55000 PKR</p>
-                            <a href="../../Products.php" class="btn btn-success">Explore More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- JavaScript file link -->
-            <script src="../single-product.js"></script>
 </body>
 
 </html>

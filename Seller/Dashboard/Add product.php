@@ -294,7 +294,7 @@
 
             <!-- Card 3 -->
             <div class="card col-md-3 d-flex justify-content-center align-items-center col-sm-8">
-              <img src="../../assets/Icons/Computer/Tower PC/1.jpg" class="card-img-top img-fluid"
+              <img src="../../assets/Icons/Computer/Tower PC/Tower 1.jpg" class="card-img-top img-fluid"
                 alt="Card top image" />
               <div class="card-body d-flex flex-column justify-content-center align-items-center">
                 <h5 class="card-title text-dark">Personal Computers</h5>

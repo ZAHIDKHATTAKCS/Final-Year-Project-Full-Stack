@@ -140,7 +140,7 @@
             <h4>Add Product to Computer Category</h4>
             <!-- Add product section -->
             <div class="border border border-dark w-100  rounded-3 shadow-lg mb-3">
-                <img src="../../../assets/Icons/Computer/Tower PC/2.jpg" alt="" class="w-100" />
+                <img src="../../../assets/Icons/Computer/Tower PC/Tower 3.jpg" alt="image " class="w-100" />
                 <!-- Add product Form -->
                 <form class="mb-3 text-dark rounded-2 mt-3 p-2" method="post" enctype="multipart/form-data">
                     <!-- Computer title -->
@@ -220,7 +220,7 @@
             <h3>Add Product to Computer Category</h3>
             <!-- Add product section -->
             <div class="border border border-dark w-50  rounded-3 shadow-lg mb-3">
-                <img src="../../../assets/Icons/Computer/Tower PC/2.jpg" alt="" class="w-100" />
+                <img src="../../../assets/Icons/Computer/Tower PC/Tower 3.jpg" alt="" class="w-100" />
                 <!-- Add product Form -->
                 <form class="mb-3 text-dark rounded-2 mt-3 p-2" method="post" enctype="multipart/form-data">
                     <!-- Computer title -->

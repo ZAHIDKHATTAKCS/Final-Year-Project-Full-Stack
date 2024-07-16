@@ -179,9 +179,7 @@
     }
 
   }else{
-    ?>
-    <script>alert('Create account button not clicked yet');</script>
-    <?php
+    
   }
   ?>
 

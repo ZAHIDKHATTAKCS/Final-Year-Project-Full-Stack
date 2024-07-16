@@ -136,10 +136,19 @@ if (!isset($_SESSION['Buyer_Pic'])) {
                 <?php
                 $Select_Query = "SELECT * FROM `laptops table`";
                 $Fire_Query = mysqli_query($conn, $Select_Query);
-                while ($Result = mysqli_fetch_array($Fire_Query)) {
-                ?>
+                while($Result = mysqli_fetch_array($Fire_Query)){
+
+                    $_SESSION['Laptop_Title']=$Result['Laptop Title'];
+    
+                    $_SESSION['Id']=$Result['Id'];
+    
+                    $_SESSION["Laptop_Price"]=$Result['Laptop_Price'];
+    
+                    $_SESSION['Laptop_Quantity']=$Result['Laptop_Quantity'];
+                    ?>
+
                     <!-- Card -->
-                    <div class="card col-12 col-sm-3 col-md-3 d-flex justify-content-center align-items-center bg-light" onclick="window.location.href='../Product Pages/Laptops/HP laptop.php';">
+                    <div class="card col-12 col-sm-3 col-md-3 d-flex justify-content-center align-items-center bg-light">
                         <img src="../Seller/Dashboard/Add Products/<?php echo $Result['Picture 1']; ?>" class="card-img-top img-fluid" alt="Laptop Pic">
                         <div class="card-body">
                             <p class="card-title"><?php echo $Result['Laptop Title']; ?></p>
@@ -147,9 +156,13 @@ if (!isset($_SESSION['Buyer_Pic'])) {
                             <a href="../Product Pages/Laptops/HP laptop.php?id=<?php echo $Result['Id']; ?>" class="btn btn-success w-100">Shop</a>
                         </div>
                     </div>
-                <?php
+
+                    <?php
+
                 }
+
                 ?>
+                    
             </div>
         </div>
 

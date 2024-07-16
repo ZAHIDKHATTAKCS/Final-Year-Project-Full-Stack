@@ -314,7 +314,7 @@
 
                             move_uploaded_file($Monitor_Pic_3_Path, $Final_Destination_Monitor_Pic_3);
 
-                            $insertqry = "INSERT INTO `monitors table`(`Monitor Title`, `Monitor Description`, `Monitors Quantity`, `Monitors Price`, `Picture 1`, `Picture 2`, `Picture 3`) VALUES ('$Monitor_Title','$Monitor_Description','$Monitor_Quantity','$Monitor_Price','$Final_Destination_Monitor_Pic_1','$Final_Destination_Monitor_Pic_2','$Final_Destination_Monitor_Pic_3')";
+                            $insertqry = "INSERT INTO `monitors table`(`Monitor Title`, `Monitor Description`, `Monitor Quantity`, `Monitor Price`, `Picture 1`, `Picture 2`, `Picture 3`) VALUES ('$Monitor_Title','$Monitor_Description','$Monitor_Quantity','$Monitor_Price','$Final_Destination_Monitor_Pic_1','$Final_Destination_Monitor_Pic_2','$Final_Destination_Monitor_Pic_3')";
 
                             $firqery = mysqli_query($conn, $insertqry);
                             if ($insertqry) {

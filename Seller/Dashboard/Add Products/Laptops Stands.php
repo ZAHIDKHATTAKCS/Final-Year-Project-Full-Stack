@@ -220,7 +220,7 @@
             <h3>Add Product to Laptop Stands Category</h3>
             <!-- Add product section -->
             <div class="border border border-dark w-50  rounded-3 shadow-lg mb-3">
-                <img src="../../../assets/Icons/Laptop Stands/Brand Stand/1.jpg" alt="" class="w-50" />
+                <img src="../../../assets/Icons/Laptop Stands/Brand Stand/Brand Stand 1.jpg" alt="" class="w-50" />
                 <!-- Add product Form -->
                 <form class="mb-3 text-dark rounded-2 mt-3 p-2" method="post" enctype="multipart/form-data">
                     <!-- Laptop Stand title -->

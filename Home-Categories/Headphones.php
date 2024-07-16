@@ -3,160 +3,172 @@ session_start();
 include '../DBconnection.php';
 if (!isset($_SESSION['Buyer_Pic'])) {
 ?>
-  <script>
-    alert('Please Login First');
-    location.replace('../Buyer/buyer signin.php');
-  </script>
+    <script>
+        alert('Please Login First');
+        location.replace('../Buyer/buyer signin.php');
+    </script>
 <?php
 }
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Headphones</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Headphones</title>
 
-  <!-- Bootstrap CSS v5.0.2 -->
-  <link rel="stylesheet" href="../assets/Bootstrap 5/css/bootstrap.min.css" />
+    <!-- Bootstrap CSS v5.0.2 -->
+    <link rel="stylesheet" href="../assets/Bootstrap 5/css/bootstrap.min.css" />
 
-  <!-- Bootstrap 4 link -->
-  <link rel="stylesheet" href="../assets/Bootstrap 4/css/bootstrap.min.css">
+    <!-- Bootstrap 4 link -->
+    <link rel="stylesheet" href="../assets/Bootstrap 4/css/bootstrap.min.css">
 
-  <!-- font awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <!-- Animate.css -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
-  <!-- min.js link -->
-  <script type="text/JavaScript" src="../assets/Bootstrap 5/js/bootstrap.min.js"></script>
+    <!-- min.js link -->
+    <script type="text/JavaScript" src="../assets/Bootstrap 5/js/bootstrap.min.js"></script>
 
 
-  <!-- font awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <!-- css link -->
+    <!-- css link -->
 
-  <link rel="stylesheet" href="../assets/Custom Css/products.css" />
+    <link rel="stylesheet" href="../assets/Custom Css/products.css" />
 
-  <!-- Fav icon -->
-  <link rel="icon" type="image/x-icon" href="../assets/Icons/Favicons/Headphone.svg">
+    <!-- Fav icon -->
+    <link rel="icon" type="image/x-icon" href="../assets/Icons/Favicons/Headphone.svg">
 
-  <!-- css link -->
-  <link rel="stylesheet" href="../assets/Custom Css/fyp.css" />
-
+    <!-- css link -->
+    <link rel="stylesheet" href="../assets/Custom Css/fyp.css" />
 </head>
 
 <body class="body">
 
 
-  <!-- Navbar starts here -->
-  <div class="container-fluid navbar_container">
+    <!-- Navbar starts here -->
+    <div class="container-fluid navbar_container">
 
-    <nav class="navbar navbar-expand-lg d-sm-flex d-md-flex">
-      <div class="container d-flex justify-content-between">
-        <!-- Logo -->
-        <img src="../assets/Icons/main_logo.jpeg" style="width: 80px; height: 70px" alt="logo" class="rounded me-5" />
-        <!-- User Icon -->
+        <nav class="navbar navbar-expand-lg d-sm-flex d-md-flex">
+            <div class="container d-flex justify-content-between">
+                <!-- Logo -->
+                <img src="../assets/Icons/main_logo.jpeg" style="width: 80px; height: 70px" alt="logo" class="rounded me-5" />
+                <!-- User Icon -->
 
-        <!-- Toggler button for mobile view -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon ">
-            <div class="bg-dark" style="width: 20px; height:2px;">
+                <!-- Toggler button for mobile view -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon ">
+                        <div class="bg-dark" style="width: 20px; height:2px;">
+                        </div>
+                        <div class="bg-dark mt-2" style="width: 20px; height:2px;">
+                        </div>
+                        <div class="bg-dark mt-2" style="width: 20px; height:2px;">
+                        </div>
+                    </span>
+                </button>
+
+                <!-- Navbar items for mobile views-->
+                <div class="collapse navbar-collapse navbar" id="navbarNav">
+                    <div class="w-100">
+                        <ul class="navbar-nav d-md-flex justify-content-md-between align-items-center align-items-md-center">
+                            <li class="nav-item">
+                                <a class="nav-link text-center" href="../home.php">Home</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link text-center" href="../About.php">About Us</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link text-center" href="../Contact page/contact.php">Contact Us</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link text-center" href="../FAQ.php">FAQ</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link text-center" href="../Add to cart.php">Add To Cart</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link text-center" href="../Logout.php">Log Out</a>
+                            </li>
+
+
+                            <li class="nav-item">
+
+                                <img src="../Buyer/<?php echo $_SESSION['Buyer_Pic']; ?> " class="nav-link img-fluid rounded-circle" alt="login user" width="100px">
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
             </div>
-            <div class="bg-dark mt-2" style="width: 20px; height:2px;">
-            </div>
-            <div class="bg-dark mt-2" style="width: 20px; height:2px;">
-            </div>
-          </span>
-        </button>
 
-        <!-- Navbar items for mobile views-->
-        <div class="collapse navbar-collapse navbar" id="navbarNav">
-          <div class="w-100">
-            <ul class="navbar-nav d-md-flex justify-content-md-between align-items-center align-items-md-center">
-              <li class="nav-item">
-                <a class="nav-link text-center" href="../home.php">Home</a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link text-center" href="../About.php">About Us</a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link text-center" href="../Contact page/contact.php">Contact Us</a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link text-center" href="../FAQ.php">FAQ</a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link text-center" href="../Add to cart.php">Add To Cart</a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link text-center" href="../Logout.php">Log Out</a>
-              </li>
-
-
-              <li class="nav-item">
-
-                <img src="../Buyer/<?php echo $_SESSION['Buyer_Pic']; ?> " class="nav-link img-fluid rounded-circle" alt="login user" width="100px">
-
-              </li>
-            </ul>
-          </div>
-        </div>
-
-
-      </div>
-
-    </nav>
-  </div>
-  <!-- the end of navbar container -->
-
-  <div class="container justify-content-center align-items-center">
-
-    <!-- Products -->
-
-    <!-- row 1 -->
-    <div class="container d-flex justify-content-center align-items-center mt-3 text-dark text-center">
-      <div class="row d-flex justify-content-between align-items-center gap-3">
-        <!-- Card 1 -->
-        <div class="card col-12 col-sm-3 col-md-3 d-flex justify-content-center align-items-center bg-light" onclick="window.location.href='../Product Pages/Headphones/Beats headphone.php';">
-          <img src="../assets/Icons/Headphones/Beats Headphones/2.jpg" class="card-img-top img-fluid" alt="...">
-          <div class="card-body">
-            <p class="card-title">Beats Headphone</p>
-            <a href="../Product Pages/Headphones/Beats headphone.php" class="btn btn-success w-100">Shop</a>
-          </div>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="card col-12 col-sm-3 col-md-3 d-flex justify-content-center align-items-center bg-light " onclick="window.location.href='../Product Pages/Headphones/Bose headphone.php';">
-          <img src="../assets/Icons/Headphones/Bose Headphones/1.jpg" class="card-img-top img-fluid" alt="...">
-          <div class="card-body">
-            <p class="card-title">Bose Headphone</p>
-            <a href="../Product Pages/Headphones/Bose headphone.php" class="btn btn-success w-100">Shop</a>
-          </div>
-        </div>
-
-
-        <!-- Card 3 -->
-        <div class="card col-12 col-sm-3 col-md-3 d-flex justify-content-center align-items-center bg-light " onclick="window.location.href='../Product Pages/Headphones/Bluedio headphone.php';">
-          <img src="../assets/Icons/Headphones/Bluedeo Headphones/1.jpg" class="card-img-top img-fluid" alt="...">
-          <div class="card-body">
-            <p class="card-title">Bludeio Headphone</p>
-            <a href="../Product Pages/Headphones/Bluedio headphone.php" class="btn btn-success w-100">Shop</a>
-          </div>
-        </div>
-      </div>
+        </nav>
     </div>
+    <!-- the end of navbar container -->
 
 
-  </div>
+
+
+
+
+    <!-- Here are the Products  -->
+    <div class="container justify-content-center align-items-center">
+        <!-- Products -->
+
+        <!-- row 1 -->
+        <div class="container d-flex justify-content-center align-items-center mt-3 text-dark text-center">
+            <div class="row d-flex justify-content-between align-items-center gap-3">
+
+                <!-- Here is the PHP code for fetching the Laptops from Laptops Table -->
+                <?php
+                $Select_Query = "SELECT * FROM `headphones table`";
+                $Fire_Query = mysqli_query($conn, $Select_Query);
+                while($Result = mysqli_fetch_array($Fire_Query)){
+
+                    $_SESSION['Headphone_Title']=$Result['Headphone Title'];
+    
+                    $_SESSION['Id']=$Result['Id'];
+    
+                    $_SESSION["Headphone_Price"]=$Result['Headphone Price'];
+    
+                    $_SESSION['Headphone_Quantity']=$Result['Headphone Quantity'];
+                    ?>
+
+                    <!-- Card -->
+                    <div class="card col-12 col-sm-3 col-md-3 d-flex justify-content-center align-items-center bg-light">
+                        <img src="../Seller/Dashboard/Add Products/<?php echo $Result['Picture 1']; ?>" class="card-img-top img-fluid" alt="Laptop Pic">
+                        <div class="card-body">
+                            <p class="card-title"><?php echo $Result['Headphone Title']; ?></p>
+                            <p class="card-text"><?php echo $Result['Headphone Description']; ?></p>
+                            <a href="../Product Pages/Headphones/Headphones.php?id=<?php echo $Result['Id']; ?>" class="btn btn-success w-100">Shop</a>
+                        </div>
+                    </div>
+
+                    <?php
+
+                }
+
+                ?>
+                    
+            </div>
+        </div>
+
+
+
+    </div>
 </body>
 
 </html>

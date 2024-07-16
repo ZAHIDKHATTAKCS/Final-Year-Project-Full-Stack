@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 13, 2024 at 11:21 AM
+-- Generation Time: Jul 16, 2024 at 08:22 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -26,6 +26,22 @@ USE `final_year_project_database`;
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `add to cart`
+--
+
+CREATE TABLE `add to cart` (
+  `Id` int(255) NOT NULL,
+  `Product Title` varchar(255) NOT NULL,
+  `Product Description` varchar(255) NOT NULL,
+  `Product Quantity` varchar(255) NOT NULL,
+  `Product Price` varchar(255) NOT NULL,
+  `Total` varchar(255) NOT NULL,
+  `Product Picture` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `buyers table`
 --
 
@@ -38,13 +54,6 @@ CREATE TABLE `buyers table` (
   `Confirm_Password` varchar(255) NOT NULL,
   `Buyer_Image` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `buyers table`
---
-
-INSERT INTO `buyers table` (`Id`, `Buyer_Name`, `Buyer_Email`, `Buyer_Phone`, `Password`, `Confirm_Password`, `Buyer_Image`) VALUES
-(1, 'Muhammad Zahid', 'zahidkhattakcs@gmail.com', '03348854074', '$2y$10$mOOi.ua665L8qJqg5nwJ/Op58/RvonjHiMOvcT0B44aFEP6XqVnnS', '$2y$10$LfQhrvZ/A2SBTc/o1kUTWOuDCWhZSZfUEHaUAliaDKedjIXwcuTPy', 'Buyer Images/_DSC0045.JPG');
 
 -- --------------------------------------------------------
 
@@ -63,13 +72,6 @@ CREATE TABLE `cameras table` (
   `Picture 3` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `cameras table`
---
-
-INSERT INTO `cameras table` (`Id`, `Camera Title`, `Camera Description`, `Camera Quantity`, `Camera Price`, `Picture 1`, `Picture 2`, `Picture 3`) VALUES
-(1, 'DSLR', 'DSLR 7720', 23, 232323, 'Add Cameras/_DSC1127.JPG', 'Add Cameras/_DSC1136.JPG', 'Add Cameras/DSC_0762.JPG');
-
 -- --------------------------------------------------------
 
 --
@@ -86,14 +88,6 @@ CREATE TABLE `headphones table` (
   `Picture 2` varchar(255) NOT NULL,
   `Picture 3` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `headphones table`
---
-
-INSERT INTO `headphones table` (`Id`, `Headphone Title`, `Headphone Description`, `Headphone Quantity`, `Headphone Price`, `Picture 1`, `Picture 2`, `Picture 3`) VALUES
-(1, 'Bludieo', 'Bludieo orignal company Headphones', 12, 1200, 'Add Headphones/zahid pic.JPG', 'Add Headphones/DSC_0919.JPG', 'Add Headphones/DSC_0885.JPG'),
-(2, 'Bludieo', 'Bludieo orignal company Headphones', 12, 0, 'Add Headphones/DSC_0885.JPG', 'Add Headphones/DSC_0762.JPG', 'Add Headphones/_DSC1136.JPG');
 
 -- --------------------------------------------------------
 
@@ -112,22 +106,6 @@ CREATE TABLE `laptops table` (
   `Picture 3` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `laptops table`
---
-
-INSERT INTO `laptops table` (`Id`, `Laptop Title`, `Laptop Description`, `Laptop_Quantity`, `Laptop_Price`, `Picture 1`, `Picture 2`, `Picture 3`) VALUES
-(5, 'Apple laptop ', 'core i 5 3rd Generation', '12', 12000, 'Add Laptops/_DSC1063.JPG', 'Add Laptops/_DSC1065.JPG', 'Add Laptops/_DSC1109.JPG'),
-(6, 'Dell Laptop', 'Core i 3 4 generation', '45', 12000, 'Add Laptops/DSC_0762.JPG', 'Add Laptops/DSC_0762.JPG', 'Add Laptops/DSC_0762.JPG'),
-(7, 'Acer Laptop', 'Core i 5 12 Generation', '12', 15000, 'Add Laptops/DSC_0885.JPG', 'Add Laptops/DSC_0885.JPG', 'Add Laptops/DSC_0885.JPG'),
-(8, 'Apple laptop ', 'core i 5 3rd Generation', '12', 12000, 'Add Laptops/laptop 3.JPG', 'Add Laptops/laptop 3.JPG', 'Add Laptops/laptop 3.JPG'),
-(9, 'Apple laptop ', 'core i 5 3rd Generation', '12', 120, 'Add Laptops/_DSC1127.JPG', 'Add Laptops/_DSC1127.JPG', 'Add Laptops/_DSC1127.JPG'),
-(10, 'Acer Laptop', 'Core i 3 4 generation', '123', 123, 'Add Laptops/_DSC1136.JPG', 'Add Laptops/_DSC1136.JPG', 'Add Laptops/_DSC1136.JPG'),
-(11, 'Acer Laptop', 'Core i 5 12 Generation', '125', 12500, 'Add Laptops/DSC_0919.JPG', 'Add Laptops/DSC_0919.JPG', 'Add Laptops/DSC_0919.JPG'),
-(12, 'Apple laptop ', 'Core i 5 12 Generation', '12', 12, 'Add Laptops/DSC_2538.JPG', 'Add Laptops/DSC_2538.JPG', 'Add Laptops/DSC_2538.JPG'),
-(13, 'Acer Laptop', 'Core i 3 4 generation', '120', 120005, 'Add Laptops/DSC_2484.JPG', 'Add Laptops/DSC_2484.JPG', 'Add Laptops/DSC_2484.JPG'),
-(14, 'Acer Laptop', 'Core i 3 4 generation', '1200', 125000, 'Add Laptops/DSC_2631.JPG', 'Add Laptops/DSC_2631.JPG', 'Add Laptops/DSC_2631.JPG');
-
 -- --------------------------------------------------------
 
 --
@@ -145,14 +123,6 @@ CREATE TABLE `laptop stands table` (
   `Picture 3` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `laptop stands table`
---
-
-INSERT INTO `laptop stands table` (`Id`, `Laptop Stand Title`, `Laptop Stand Description`, `Laptop Stand Quantity`, `Laptop Stand Price`, `Picture 1`, `Picture 2`, `Picture 3`) VALUES
-(1, 'GH4', 'made by apple company', 14, 1400, 'Add Laptop Stands/_DSC1065.JPG', 'Add Laptop Stands/_DSC1063.JPG', 'Add Laptop Stands/_DSC1109.JPG'),
-(2, 'GH4', 'made by apple company', 0, 1200, 'Add Laptop Stands/_DSC1109.JPG', 'Add Laptop Stands/_DSC1127.JPG', 'Add Laptop Stands/');
-
 -- --------------------------------------------------------
 
 --
@@ -163,20 +133,12 @@ CREATE TABLE `monitors table` (
   `Id` int(255) NOT NULL,
   `Monitor Title` varchar(255) NOT NULL,
   `Monitor Description` varchar(255) NOT NULL,
-  `Monitors Quantity` int(255) NOT NULL,
-  `Monitors Price` int(255) NOT NULL,
+  `Monitor Quantity` int(255) NOT NULL,
+  `Monitor Price` int(255) NOT NULL,
   `Picture 1` varchar(255) NOT NULL,
   `Picture 2` varchar(255) NOT NULL,
   `Picture 3` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `monitors table`
---
-
-INSERT INTO `monitors table` (`Id`, `Monitor Title`, `Monitor Description`, `Monitors Quantity`, `Monitors Price`, `Picture 1`, `Picture 2`, `Picture 3`) VALUES
-(1, 'Acer', 'Orignal LCD ', 12, 12000, 'Add Monitors/_DSC1109.JPG', 'Add Monitors/_DSC1136.JPG', 'Add Monitors/DSC_0885.JPG'),
-(2, 'Acer', 'Orignal LCD ', 1200, 12000, 'Add Monitors/_DSC1109.JPG', 'Add Monitors/_DSC1109.JPG', 'Add Monitors/_DSC1109.JPG');
 
 -- --------------------------------------------------------
 
@@ -186,21 +148,15 @@ INSERT INTO `monitors table` (`Id`, `Monitor Title`, `Monitor Description`, `Mon
 
 CREATE TABLE `orders` (
   `Id` int(255) NOT NULL,
+  `Buyer Name` varchar(255) NOT NULL,
+  `Buyer_Image` varchar(255) NOT NULL,
   `Product Name` varchar(255) NOT NULL,
   `Product Description` varchar(255) NOT NULL,
   `Product Quantity` varchar(255) NOT NULL,
   `Product Price` varchar(255) NOT NULL,
-  `Product Pic 1` varchar(255) NOT NULL,
-  `Product Pic 2` varchar(255) NOT NULL,
-  `Product Pic 3` varchar(255) NOT NULL
+  `Total` varchar(255) NOT NULL,
+  `Product Pic 1` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `orders`
---
-
-INSERT INTO `orders` (`Id`, `Product Name`, `Product Description`, `Product Quantity`, `Product Price`, `Product Pic 1`, `Product Pic 2`, `Product Pic 3`) VALUES
-(1, 'adf', 'asdf', '45', '4500', 'asdf', 'asdf', 'asdf');
 
 -- --------------------------------------------------------
 
@@ -218,14 +174,6 @@ CREATE TABLE `personal computers table` (
   `Picture 2` varchar(255) NOT NULL,
   `Picture 3` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `personal computers table`
---
-
-INSERT INTO `personal computers table` (`Id`, `Computer Title`, `Computer Description`, `Computer Quantity`, `Computer Price`, `Picture 1`, `Picture 2`, `Picture 3`) VALUES
-(1, 'pentium 4', 'ram 4GB Room 500', 112, 12000, 'Add Computers/_DSC1127.JPG', 'Add Computers/_DSC1136.JPG', 'Add Computers/DSC_0762.JPG'),
-(2, 'pentium 4', 'ram 4GB Room 500', 12, 15000, 'Add Computers/_DSC1136.JPG', 'Add Computers/DSC_0885.JPG', 'Add Computers/DSC_0885.JPG');
 
 -- --------------------------------------------------------
 
@@ -254,6 +202,12 @@ INSERT INTO `seller_table` (`Id`, `Seller_Name`, `Seller_Email`, `Seller_Phone`,
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `add to cart`
+--
+ALTER TABLE `add to cart`
+  ADD PRIMARY KEY (`Id`);
 
 --
 -- Indexes for table `buyers table`
@@ -314,52 +268,58 @@ ALTER TABLE `seller_table`
 --
 
 --
+-- AUTO_INCREMENT for table `add to cart`
+--
+ALTER TABLE `add to cart`
+  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `buyers table`
 --
 ALTER TABLE `buyers table`
-  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `cameras table`
 --
 ALTER TABLE `cameras table`
-  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `headphones table`
 --
 ALTER TABLE `headphones table`
-  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `laptops table`
 --
 ALTER TABLE `laptops table`
-  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `laptop stands table`
 --
 ALTER TABLE `laptop stands table`
-  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `monitors table`
 --
 ALTER TABLE `monitors table`
-  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `personal computers table`
 --
 ALTER TABLE `personal computers table`
-  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `seller_table`

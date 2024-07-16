@@ -69,7 +69,7 @@ if(!isset($_SESSION['Buyer_Pic'])){
           <div class="w-100">
             <ul class="navbar-nav d-md-flex justify-content-md-between align-items-center align-items-md-center">
               <li class="nav-item">
-                <a class="nav-link text-center" href="#">Home</a>
+                <a class="nav-link text-center" href="home.php">Home</a>
               </li>
 
               <li class="nav-item">

@@ -144,6 +144,8 @@ if(!isset($_SESSION['Seller_Pic'])){
         <table class="table table-bordered table-hover border border-dark ">
             <thead class="table-dark">
                 <tr>
+                    <th scope="col">Buyer Name</th>
+                    <th scope="col">Buyer Pic</th>
                     <th scope="col">Product Name</th>
                     <th scope="col">Product Quantity</th>
                     <th scope="col">Product Price</th>
@@ -151,24 +153,27 @@ if(!isset($_SESSION['Seller_Pic'])){
                 </tr>
             </thead>
             <tbody>
-              <!-- PHP code for fetching Orders from DB for mobile views -->
-                <?php 
+            <!-- PHP code for fetching orders From DB -->
+            <?php 
                   $selectqry = "select * from `Orders`";
                   $firequery = mysqli_query($conn,$selectqry);
 
                   while($Result = mysqli_fetch_array($firequery)){
                     ?>
-                    <tr class="text-center">
+                    <tr>
+                    <td><?php echo $Result['Buyer Name']; ?></td>
+                    <td><img src="../../Buyer/<?php echo $Result['Buyer_Image'];?>" alt="Product Image" class="img-thumbnail" style="width: 100px;"></td>
                     <td><?php echo $Result['Product Name']; ?></td>
                     <td><?php echo $Result['Product Quantity']; ?></td>
                     <td><?php echo $Result['Product Price']; ?></td>
-                    <td><img src="<?php // Here fetch the orders pics ?>" alt="Product Image" class="img-thumbnail" style="width: 100px;"></td>
+                    <td><img src="Add Products/<?php echo $Result['Product Pic 1'];?>" alt="Product Image" class="img-thumbnail" style="width: 100px;"></td>
                 </tr>
                 <?php
                   }
                 ?>
+
             </tbody>
-        </table>
+          </table>
     </div>
   </div>
 
@@ -197,6 +202,8 @@ if(!isset($_SESSION['Seller_Pic'])){
           <table class="table table-bordered table-hover border border-dark ">
             <thead class="table-dark">
                 <tr>
+                    <th scope="col">Buyer Name</th>
+                    <th scope="col">Buyer Pic</th>
                     <th scope="col">Product Name</th>
                     <th scope="col">Product Quantity</th>
                     <th scope="col">Product Price</th>
@@ -212,10 +219,12 @@ if(!isset($_SESSION['Seller_Pic'])){
                   while($Result = mysqli_fetch_array($firequery)){
                     ?>
                     <tr>
+                    <td><?php echo $Result['Buyer Name']; ?></td>
+                    <td><img src="../../Buyer/<?php echo $Result['Buyer_Image'];?>" alt="Product Image" class="img-thumbnail" style="width: 100px;"></td>
                     <td><?php echo $Result['Product Name']; ?></td>
                     <td><?php echo $Result['Product Quantity']; ?></td>
                     <td><?php echo $Result['Product Price']; ?></td>
-                    <td><img src="<?php // Here fetch the orders pics ?>" alt="Product Image" class="img-thumbnail" style="width: 100px;"></td>
+                    <td><img src="Add Products/<?php echo $Result['Product Pic 1'];?>" alt="Product Image" class="img-thumbnail" style="width: 100px;"></td>
                 </tr>
                 <?php
                   }

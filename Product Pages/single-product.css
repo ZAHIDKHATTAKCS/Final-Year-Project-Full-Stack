@@ -21,20 +21,17 @@
   font-weight: bold;
 }
 
-.row {
-  /* background-color: rgb(127, 221, 189); */
-  background-color: lightskyblue;
-}
+
 .small-img {
   width: 60px;
   height: 60px;
   border-radius: 10px;
 }
 
-.small-img:hover{
+.small-img:hover {
   cursor: pointer;
 }
 
-.explore-card{
+.explore-card {
   background-color: aquamarine;
 }

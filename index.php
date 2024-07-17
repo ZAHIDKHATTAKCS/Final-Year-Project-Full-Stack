@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>Home</title>
   <!-- Required meta tags -->
@@ -10,9 +11,7 @@
   <link rel="stylesheet" href="assets/Bootstrap 5/css/bootstrap.min.css" />
 
   <!-- font awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Animate.css -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
@@ -32,15 +31,14 @@
       <!-- User Icon -->
       <div>
         <div class="dropdown">
-          <img src="assets/Icons/User icon.png" alt="..." width="70px" class="dropdown-toggle me-sm-5" type="button"
-            id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" />
+          <img src="assets/Icons/User icon.png" alt="..." width="70px" class="dropdown-toggle me-sm-5" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" />
           <ul class="dropdown-menu" style="left: auto; right: 0;" aria-labelledby="dropdownMenuButton1">
             <li>
               <a class="dropdown-item" href="./Seller/seller signin.php">Seller</a>
             </li>
             <li class="dropdown-divider"></li>
             <li>
-              <a class="dropdown-item" href="./Buyer/buyer.php">Buyer</a>
+              <a class="dropdown-item" href="./Buyer/buyer signin.php">Buyer</a>
             </li>
           </ul>
         </div>
@@ -109,7 +107,7 @@
 
   <!-- Row 1 -->
   <div class="container d-sm-block d-md-flex justify-content-md-between align-items-center p-3">
-    <div class="row popular-categories-cards gap-3 d-flex justify-content-between" >
+    <div class="row popular-categories-cards gap-3 d-flex justify-content-between">
       <!-- Card 1 -->
       <div class="card col-9 col-md-3 d-flex justify-content-center align-items-center col-sm-8">
         <img src="assets/Icons/Laptops/laptop.png" class="card-img-top img-fluid" alt="Card top image" />
@@ -158,8 +156,7 @@
 
       <!-- Card 5 -->
       <div class="card col-9 col-md-3 d-flex justify-content-center align-items-center col-sm-8">
-        <img src="assets/Icons/Laptop Stands/Normal Stand/1.jpg" class="card-img-top img-fluid w-75 mt-3"
-          alt="Card top image" />
+        <img src="assets/Icons/Laptop Stands/Normal Stand/1.jpg" class="card-img-top img-fluid w-75 mt-3" alt="Card top image" />
         <div class="card-body d-flex flex-column justify-content-center align-items-center">
           <h5 class="card-title text-dark">Laptop Stands</h5>
         </div>
@@ -252,8 +249,7 @@
 
         <!-- Card 6 -->
         <div class="card col-10 col-md-3 col-sm-8 d-flex justify-content-center align-items-center">
-          <img src="assets/Icons/Mobile/lucian-alexe-yh0UtueiZ-I-unsplash.jpg" class="card-img-top img-fluid"
-            alt="Card top image" />
+          <img src="assets/Icons/Mobile/lucian-alexe-yh0UtueiZ-I-unsplash.jpg" class="card-img-top img-fluid" alt="Card top image" />
           <div class="card-body d-flex flex-column justify-content-center align-items-center">
             <h5 class="card-title text-dark">4 in 1 Cable</h5>
             <p class="card-text text-success">Price 1000 Rs</p>
@@ -301,38 +297,76 @@
 
 
   <!-- Footer -->
-  <footer class="container-fluid" style="background-color: #36cad1;">
-    <div class="row border border-success text-dark text-center">
-      <h2 class="fw-bolder">Online Shop Tracking System</h2>
-      <div class="d-block justify-content-between d-md-flex g-3">
+  <div class="container-fluid p-0 m-0">
+    <!-- Footer -->
+    <footer class="text-center text-white w-100" style="background-color: #36cad1;">
+      <!-- Grid container -->
+      <div class="container">
+        <!-- Section: Links -->
+        <section class="mt-5">
+          <!-- Grid row-->
+          <div class="row text-center d-flex justify-content-center pt-5">
+            <!-- Grid column -->
+            <div class="col-md-2">
+              <h6 class=" font-weight-bold">
+                <a href="./Seller/seller signin.php" class="text-white text-decoration-none">Seller</a>
+              </h6>
+            </div>
+            <!-- Grid column -->
 
-        <!-- Social Links -->
-        <div class="w-100">
-          <h2>Social Links</h2><br><br>
-          <div class="d-flex justify-content-between align-items-center w-100">
-            <i class="fa-brands fa-facebook"><a href=""></a></i>
-            <i class="fa-brands fa-linkedin"><a href=""></a></i>
-            <i class="fa-brands fa-instagram"><a href=""></a></i>
-            <i class="fa-brands fa-twitter"><a href=""></a></i>
-            <i class="fa-brands fa-tiktok">
-            </i>
+            <!-- Grid column -->
+            <div class="col-md-2">
+              <h6 class="font-weight-bold">
+                <a href="./Buyer/buyer.php" class="text-white text-decoration-none">Buyer</a>
+              </h6>
+            </div>
+            <!-- Grid column -->
           </div>
-        </div><br><br>
+          <!-- Grid row-->
+        </section>
+        <!-- Section: Links -->
 
-        <!-- Pagination -->
-        <div class="w-100">
-          <h2>Links</h2><br>
-          <a href="#Popular categories" class="text-dark fw-bolder fs-5 ">Popular Categories</a><br><br>
-          <a href="#newarrivals" class="text-dark fw-bolder fs-5">New Arrivals</a><br><br>
-        </div>
+        <hr class="my-5" />
+
+
+
+        <!-- Section: Social -->
+        <section class="text-center mb-5">
+          <a href="" class="text-white me-4">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="" class="text-white me-4">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="" class="text-white me-4">
+            <i class="fab fa-google"></i>
+          </a>
+          <a href="" class="text-white me-4">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="" class="text-white me-4">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="" class="text-white me-4">
+            <i class="fab fa-github"></i>
+          </a>
+        </section>
+        <!-- Section: Social -->
       </div>
+      <!-- Grid container -->
 
       <!-- Copyright -->
-      <div class="d-flex justify-content-center align-items-center">
-        <p class="fs-5 fw-bolder">&copy; Copyright 2024</p>
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2024 Copyright:
+        <a class="text-white " href="https://zahidkhattak.vercel.app/" target="_blank">Zahidkhattak.com</a>
       </div>
-    </div>
-  </footer>
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+  </div>
+  <!-- End of Footer -->
+
+  <!-- End of .container -->
 </body>
 
 </html>

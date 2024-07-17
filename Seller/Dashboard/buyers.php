@@ -144,7 +144,7 @@ if(!isset($_SESSION['Seller_Pic'])){
     <!-- table section for Mobile-->
       <div class="mt-3 table-responsive w-100 bg-light text-dark">
         <h4 class="text-center p-3">Hi Admin these are the all Buyers</h4>
-        <table class="table table-bordered table-hover border border-dark ">
+        <table class="table table-bordered table-hover border border-dark text-center">
           <thead class="table-dark">
             <tr>
               <th>Customer Name</th>
@@ -170,7 +170,7 @@ if(!isset($_SESSION['Seller_Pic'])){
 
                 <!-- here keep in mind that if your images folder are placed somewhere else you have to enter the proper path till the path that stored in db -->
                 <td><img src="../../Buyer/<?php echo $Result['Buyer_Image']; ?>" alt="profile image"
-                    class="w-50"></td> 
+                    class="w-100"></td> 
               </tr>
                 <?php
               }

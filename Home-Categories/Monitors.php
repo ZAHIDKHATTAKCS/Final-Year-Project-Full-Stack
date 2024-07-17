@@ -169,6 +169,112 @@ if (!isset($_SESSION['Buyer_Pic'])) {
 
 
     </div>
+          <!-- Footer -->
+  <div class="container-fluid p-0 m-0">
+    <!-- Footer -->
+    <footer class="text-center text-white w-100" style="background-color: #36cad1;">
+      <!-- Grid container -->
+      <div class="container">
+        <!-- Section: Links -->
+        <section class="mt-5">
+          <!-- Grid row-->
+          <div class="row text-center d-flex justify-content-center pt-5">
+            <!-- Grid column -->
+            <div class="col-md-2">
+              <h6 class=" font-weight-bold">
+                <a href="../home.php" class="text-white text-decoration-none">Home</a>
+              </h6>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-2">
+              <h6 class="font-weight-bold">
+                <a href="../About.php" class="text-white text-decoration-none">About Us</a>
+              </h6>
+            </div>
+            <!-- Grid column -->
+            
+            <!-- Grid column -->
+            <div class="col-md-2">
+              <h6 class="font-weight-bold">
+                <a href="../Contact page/contact.php" class="text-white text-decoration-none">Contact Us</a>
+              </h6>
+            </div>
+            <!-- Grid column -->
+            
+
+            <!-- Grid column -->
+            <div class="col-md-2">
+              <h6 class="font-weight-bold">
+                <a href="../FAQ.php" class="text-white text-decoration-none">FAQ</a>
+              </h6>
+            </div>
+            <!-- Grid column -->
+
+
+            <!-- Grid column -->
+            <div class="col-md-2">
+              <h6 class="font-weight-bold">
+                <a href="../Add to cart.php" class="text-white text-decoration-none">Add To Cart</a>
+              </h6>
+            </div>
+            <!-- Grid column -->
+
+
+            <!-- Grid column -->
+            <div class="col-md-2">
+              <h6 class="font-weight-bold">
+                <a href="../Logout.php" class="text-white text-decoration-none">Log Out</a>
+              </h6>
+            </div>
+            <!-- Grid column -->
+            
+
+          </div>
+          <!-- Grid row-->
+        </section>
+        <!-- Section: Links -->
+
+        <hr class="my-5" />
+
+
+
+        <!-- Section: Social -->
+        <section class="text-center mb-5">
+          <a href="" class="text-white me-4">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="" class="text-white me-4">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="" class="text-white me-4">
+            <i class="fab fa-google"></i>
+          </a>
+          <a href="" class="text-white me-4">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="" class="text-white me-4">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="" class="text-white me-4">
+            <i class="fab fa-github"></i>
+          </a>
+        </section>
+        <!-- Section: Social -->
+      </div>
+      <!-- Grid container -->
+
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2024 Copyright:
+        <a class="text-white " href="https://zahidkhattak.vercel.app/" target="_blank">Zahidkhattak.com</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+  </div>
+  <!-- End of Footer -->
 </body>
 
 </html>

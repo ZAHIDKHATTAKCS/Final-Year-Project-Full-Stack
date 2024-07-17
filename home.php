@@ -37,7 +37,7 @@ if(!isset($_SESSION['Buyer_Pic'])){
   <link rel="stylesheet" href="assets/Custom Css/fyp.css" />
 
   <!-- Favicon -->
-  <link rel="shortcut icon" href="assets/Team Members Images/Muhammad Zahid Backend Developer.JPG" type="image/x-icon">
+  <link rel="shortcut icon" href="Buyer/<?php echo $_SESSION['Buyer_Pic']; ?>" type="image/x-icon">
 </head>
 
 <body class="body">
@@ -182,7 +182,7 @@ if(!isset($_SESSION['Buyer_Pic'])){
 
       <!-- Card 2 -->
       <div class="card col-9 col-md-3 d-flex justify-content-center align-items-center col-sm-8">
-        <img src="assets/Icons/Cameras/camera1.png" class="card-img-top img-fluid w-75 mt-3" alt="Card top image" />
+        <img src="assets/Icons/Cameras/Nikon Camera/Nikon 1.jpg" class="card-img-top img-fluid w-75 mt-3" alt="Card top image" />
         <div class="card-body d-flex flex-column justify-content-center align-items-center">
           <h5 class="card-title text-dark">Cameras</h5>
         </div>
@@ -208,7 +208,7 @@ if(!isset($_SESSION['Buyer_Pic'])){
     <div class="row popular-categories-cards gap-3 d-flex justify-content-between">
       <!-- Card 4 -->
       <div class="card col-9 col-md-3 d-flex justify-content-center align-items-center col-sm-8">
-        <img src="assets/Icons/LCD/Dell LCD/1.jpg" class="card-img-top img-fluid" alt="Card top image" />
+        <img src="assets/Icons/LCD/Dell LCD/Dell LCD 1.jpg" class="card-img-top img-fluid" alt="Card top image" />
         <div class="card-body d-flex flex-column justify-content-center align-items-center">
           <h5 class="card-title text-dark">Monitors</h5>
         </div>
@@ -218,7 +218,7 @@ if(!isset($_SESSION['Buyer_Pic'])){
 
       <!-- Card 5 -->
       <div class="card col-9 col-md-3 d-flex justify-content-center align-items-center col-sm-8">
-        <img src="assets/Icons/Laptop Stands/Normal Stand/1.jpg" class="card-img-top img-fluid w-75 mt-3"
+        <img src="assets/Icons/Laptop Stands/Normal Stand/Normal Stand 1.jpg" class="card-img-top img-fluid w-75 mt-3"
           alt="Card top image" />
         <div class="card-body d-flex flex-column justify-content-center align-items-center">
           <h5 class="card-title text-dark">Laptop Stands</h5>
@@ -229,7 +229,7 @@ if(!isset($_SESSION['Buyer_Pic'])){
 
       <!-- Card 6 -->
       <div class="card col-9 col-md-3 d-flex justify-content-center align-items-center col-sm-8">
-        <img src="assets/Icons/Computer/Tower PC/1.jpg" class="card-img-top img-fluid" alt="Card top image" />
+        <img src="assets/Icons/Computer/Tower PC/Tower 1.jpg" class="card-img-top img-fluid" alt="Card top image" />
         <div class="card-body d-flex flex-column justify-content-center align-items-center">
           <h5 class="card-title text-dark">Personal Computers</h5>
         </div>
@@ -336,7 +336,7 @@ if(!isset($_SESSION['Buyer_Pic'])){
 
         <!-- Card 8 -->
         <div class="card col-10 col-md-3 col-sm-8 d-flex justify-content-center align-items-center text-center">
-          <img src="assets/Icons/Cameras/camera2.jpg" class="card-img-top img-fluid" alt="Card top image" />
+          <img src="assets/Icons/Cameras/Nikon Camera/Nikon 2.jpg" class="card-img-top img-fluid" alt="Card top image" />
           <div class="card-body d-flex flex-column justify-content-center align-items-center">
             <h5 class="card-title text-dark">High Resolution Nikon Camera</h5>
             <p class="card-text text-success">Price 50000 Rs</p>
@@ -385,38 +385,111 @@ if(!isset($_SESSION['Buyer_Pic'])){
 
 
   <!-- Footer -->
-  <footer class="container-fluid mt-5" style="background-color: #36cad1;">
-    <div class="row border border-success text-dark text-center">
-      <h2 class="fw-bolder">Online Shop Tracking System</h2>
-      <div class="d-block justify-content-between d-md-flex g-3">
+  <div class="container-fluid p-0 m-0">
+    <!-- Footer -->
+    <footer class="text-center text-white w-100" style="background-color: #36cad1;">
+      <!-- Grid container -->
+      <div class="container">
+        <!-- Section: Links -->
+        <section class="mt-5">
+          <!-- Grid row-->
+          <div class="row text-center d-flex justify-content-center pt-5">
+            <!-- Grid column -->
+            <div class="col-md-2">
+              <h6 class=" font-weight-bold">
+                <a href="home.php" class="text-white text-decoration-none">Home</a>
+              </h6>
+            </div>
+            <!-- Grid column -->
 
-        <!-- Social Links -->
-        <div class="w-100">
-          <h2>Social Links</h2><br><br>
-          <div class="d-flex justify-content-between align-items-center w-100">
-            <i class="fa-brands fa-facebook"><a href=""></a></i>
-            <i class="fa-brands fa-linkedin"><a href=""></a></i>
-            <i class="fa-brands fa-instagram"><a href=""></a></i>
-            <i class="fa-brands fa-twitter"><a href=""></a></i>
-            <i class="fa-brands fa-tiktok">
-            </i>
+            <!-- Grid column -->
+            <div class="col-md-2">
+              <h6 class="font-weight-bold">
+                <a href="About.php" class="text-white text-decoration-none">About Us</a>
+              </h6>
+            </div>
+            <!-- Grid column -->
+            
+            <!-- Grid column -->
+            <div class="col-md-2">
+              <h6 class="font-weight-bold">
+                <a href="Contact page/contact.php" class="text-white text-decoration-none">Contact Us</a>
+              </h6>
+            </div>
+            <!-- Grid column -->
+            
+
+            <!-- Grid column -->
+            <div class="col-md-2">
+              <h6 class="font-weight-bold">
+                <a href="FAQ.php" class="text-white text-decoration-none">FAQ</a>
+              </h6>
+            </div>
+            <!-- Grid column -->
+
+
+            <!-- Grid column -->
+            <div class="col-md-2">
+              <h6 class="font-weight-bold">
+                <a href="Add to cart.php" class="text-white text-decoration-none">Add To Cart</a>
+              </h6>
+            </div>
+            <!-- Grid column -->
+
+
+            <!-- Grid column -->
+            <div class="col-md-2">
+              <h6 class="font-weight-bold">
+                <a href="Logout.php" class="text-white text-decoration-none">Log Out</a>
+              </h6>
+            </div>
+            <!-- Grid column -->
+            
+
           </div>
-        </div><br><br>
+          <!-- Grid row-->
+        </section>
+        <!-- Section: Links -->
 
-        <!-- Pagination -->
-        <div class="w-100">
-          <h2>Links</h2><br>
-          <a href="#Popular categories" class="text-dark fw-bolder fs-5 ">Popular Categories</a><br><br>
-          <a href="#newarrivals" class="text-dark fw-bolder fs-5">New Arrivals</a><br><br>
-        </div>
+        <hr class="my-5" />
+
+
+
+        <!-- Section: Social -->
+        <section class="text-center mb-5">
+          <a href="" class="text-white me-4">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="" class="text-white me-4">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="" class="text-white me-4">
+            <i class="fab fa-google"></i>
+          </a>
+          <a href="" class="text-white me-4">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="" class="text-white me-4">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="" class="text-white me-4">
+            <i class="fab fa-github"></i>
+          </a>
+        </section>
+        <!-- Section: Social -->
       </div>
+      <!-- Grid container -->
 
       <!-- Copyright -->
-      <div class="d-flex justify-content-center align-items-center">
-        <p class="fs-5 fw-bolder">&copy; Copyright 2024</p>
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2024 Copyright:
+        <a class="text-white " href="https://zahidkhattak.vercel.app/" target="_blank">Zahidkhattak.com</a>
       </div>
-    </div>
-  </footer>
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+  </div>
+  <!-- End of Footer -->
 
 </body>
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 16, 2024 at 08:22 PM
+-- Generation Time: Jul 17, 2024 at 02:43 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -31,6 +31,7 @@ USE `final_year_project_database`;
 
 CREATE TABLE `add to cart` (
   `Id` int(255) NOT NULL,
+  `Buyer Name` varchar(255) NOT NULL,
   `Product Title` varchar(255) NOT NULL,
   `Product Description` varchar(255) NOT NULL,
   `Product Quantity` varchar(255) NOT NULL,
@@ -38,6 +39,14 @@ CREATE TABLE `add to cart` (
   `Total` varchar(255) NOT NULL,
   `Product Picture` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `add to cart`
+--
+
+INSERT INTO `add to cart` (`Id`, `Buyer Name`, `Product Title`, `Product Description`, `Product Quantity`, `Product Price`, `Total`, `Product Picture`) VALUES
+(2, 'Muhammad Zahid', 'Canon Camera', 'Camera canon 7700', '2', '200', '400', 'Add Cameras/Canon 4.jpg'),
+(3, 'Huzaifa Khan', 'Apple laptop ', 'core i 5 3rd Generation', '7', '10000', '70000', 'Add Laptops/Apple Laptop 8.jpg');
 
 -- --------------------------------------------------------
 
@@ -54,6 +63,14 @@ CREATE TABLE `buyers table` (
   `Confirm_Password` varchar(255) NOT NULL,
   `Buyer_Image` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `buyers table`
+--
+
+INSERT INTO `buyers table` (`Id`, `Buyer_Name`, `Buyer_Email`, `Buyer_Phone`, `Password`, `Confirm_Password`, `Buyer_Image`) VALUES
+(1, 'Muhammad Zahid', 'zahidkhattakcs@gmail.com', '03348854074', '$2y$10$FbZEiusRbqNMfuD2FrhLJus2ARn/JUuVeBBo4wNTEniOGlWZPvvW.', '$2y$10$nO8k4SD4d5j1yFU.WZi0UuSc5csX2yiaAGXWLJhSACwjhEnzXjcni', 'Buyer Images/mypic.JPG'),
+(2, 'Huzaifa Khan', 'huzaifa@gmail.com', '3456497998', '$2y$10$QN4n1GlMCM9Ho4L3qBO.xuiTalKuka.nAKQI0Euer3HN65v0OpUcu', '$2y$10$M5bny54aZEVHfPK5Fs0t5OJYbgHHOBrsCTGjkBn/9QnbW5yjccoMu', 'Buyer Images/DSC_0762.JPG');
 
 -- --------------------------------------------------------
 
@@ -72,6 +89,13 @@ CREATE TABLE `cameras table` (
   `Picture 3` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `cameras table`
+--
+
+INSERT INTO `cameras table` (`Id`, `Camera Title`, `Camera Description`, `Camera Quantity`, `Camera Price`, `Picture 1`, `Picture 2`, `Picture 3`) VALUES
+(1, 'Canon Camera', 'Camera canon 7700', 20, 200, 'Add Cameras/Canon 4.jpg', 'Add Cameras/Canon 5.jpg', 'Add Cameras/Canon 6.jpg');
+
 -- --------------------------------------------------------
 
 --
@@ -88,6 +112,13 @@ CREATE TABLE `headphones table` (
   `Picture 2` varchar(255) NOT NULL,
   `Picture 3` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `headphones table`
+--
+
+INSERT INTO `headphones table` (`Id`, `Headphone Title`, `Headphone Description`, `Headphone Quantity`, `Headphone Price`, `Picture 1`, `Picture 2`, `Picture 3`) VALUES
+(1, 'Bludieo', 'Bludieo orignal company Headphones', 25, 3000, 'Add Headphones/Bluedio Headphones 1.jpg', 'Add Headphones/Bluedio Headphones 2.jpg', 'Add Headphones/Bluedio Headphones 3.jpg');
 
 -- --------------------------------------------------------
 
@@ -106,6 +137,13 @@ CREATE TABLE `laptops table` (
   `Picture 3` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `laptops table`
+--
+
+INSERT INTO `laptops table` (`Id`, `Laptop Title`, `Laptop Description`, `Laptop_Quantity`, `Laptop_Price`, `Picture 1`, `Picture 2`, `Picture 3`) VALUES
+(1, 'Apple laptop ', 'core i 5 3rd Generation', '60', 10000, 'Add Laptops/Apple Laptop 8.jpg', 'Add Laptops/Apple Laptop 6.jpg', 'Add Laptops/Apple Laptop 2.jpg');
+
 -- --------------------------------------------------------
 
 --
@@ -123,6 +161,13 @@ CREATE TABLE `laptop stands table` (
   `Picture 3` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `laptop stands table`
+--
+
+INSERT INTO `laptop stands table` (`Id`, `Laptop Stand Title`, `Laptop Stand Description`, `Laptop Stand Quantity`, `Laptop Stand Price`, `Picture 1`, `Picture 2`, `Picture 3`) VALUES
+(1, 'normal laptop stand', 'made by apple company', 20, 300, 'Add Laptop Stands/Normal Stand 1.jpg', 'Add Laptop Stands/Normal Stand 2.jpg', 'Add Laptop Stands/Normal Stand 3.jpg');
+
 -- --------------------------------------------------------
 
 --
@@ -139,6 +184,13 @@ CREATE TABLE `monitors table` (
   `Picture 2` varchar(255) NOT NULL,
   `Picture 3` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `monitors table`
+--
+
+INSERT INTO `monitors table` (`Id`, `Monitor Title`, `Monitor Description`, `Monitor Quantity`, `Monitor Price`, `Picture 1`, `Picture 2`, `Picture 3`) VALUES
+(1, 'Dell LCD', 'Dell LCD 12 inches', 195, 15000, 'Add Monitors/Dell LCD 2.jpg', 'Add Monitors/Dell LCD 3.jpg', 'Add Monitors/Dell LCD 4.jpg');
 
 -- --------------------------------------------------------
 
@@ -158,6 +210,19 @@ CREATE TABLE `orders` (
   `Product Pic 1` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`Id`, `Buyer Name`, `Buyer_Image`, `Product Name`, `Product Description`, `Product Quantity`, `Product Price`, `Total`, `Product Pic 1`) VALUES
+(1, 'Muhammad Zahid', 'Buyer Images/mypic.JPG', 'Bludieo', 'Bludieo orignal company Headphones', '50', '3000', '150000', 'Add Headphones/Bluedio Headphones 1.jpg'),
+(2, 'Muhammad Zahid', 'Buyer Images/mypic.JPG', 'normal laptop stand', 'made by apple company', '100', '300', '30000', 'Add Laptop Stands/Normal Stand 1.jpg'),
+(3, 'Muhammad Zahid', 'Buyer Images/mypic.JPG', 'Apple laptop ', 'core i 5 3rd Generation', '120', '10000', '1200000', 'Add Laptops/Apple Laptop 8.jpg'),
+(4, 'Muhammad Zahid', 'Buyer Images/mypic.JPG', 'Apple laptop ', 'core i 5 3rd Generation', '20', '10000', '200000', 'Add Laptops/Apple Laptop 8.jpg'),
+(5, 'Muhammad Zahid', 'Buyer Images/mypic.JPG', 'Dell LCD', 'Dell LCD 12 inches', '30', '15000', '450000', 'Add Monitors/Dell LCD 2.jpg'),
+(6, 'Muhammad Zahid', 'Buyer Images/mypic.JPG', 'Bludieo', 'Bludieo orignal company Headphones', '5', '3000', '15000', 'Add Headphones/Bluedio Headphones 1.jpg'),
+(7, 'Muhammad Zahid', 'Buyer Images/mypic.JPG', 'Dell LCD', 'Dell LCD 12 inches', '5', '15000', '75000', 'Add Monitors/Dell LCD 2.jpg');
+
 -- --------------------------------------------------------
 
 --
@@ -174,6 +239,13 @@ CREATE TABLE `personal computers table` (
   `Picture 2` varchar(255) NOT NULL,
   `Picture 3` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `personal computers table`
+--
+
+INSERT INTO `personal computers table` (`Id`, `Computer Title`, `Computer Description`, `Computer Quantity`, `Computer Price`, `Picture 1`, `Picture 2`, `Picture 3`) VALUES
+(1, 'core due 2 Tower pc', 'ram 4GB Room 500', 20, 30000, 'Add Computers/Tower 1.jpg', 'Add Computers/Tower 2.jpg', 'Add Computers/Tower 3.jpg');
 
 -- --------------------------------------------------------
 
@@ -271,55 +343,55 @@ ALTER TABLE `seller_table`
 -- AUTO_INCREMENT for table `add to cart`
 --
 ALTER TABLE `add to cart`
-  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `buyers table`
 --
 ALTER TABLE `buyers table`
-  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `cameras table`
 --
 ALTER TABLE `cameras table`
-  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `headphones table`
 --
 ALTER TABLE `headphones table`
-  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `laptops table`
 --
 ALTER TABLE `laptops table`
-  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `laptop stands table`
 --
 ALTER TABLE `laptop stands table`
-  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `monitors table`
 --
 ALTER TABLE `monitors table`
-  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `personal computers table`
 --
 ALTER TABLE `personal computers table`
-  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `seller_table`

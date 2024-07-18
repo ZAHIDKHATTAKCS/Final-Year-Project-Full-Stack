@@ -139,7 +139,7 @@ if (!isset($_SESSION['Seller_Pic'])) {
         <div class="d-flex flex-column justify-content-center align-items-center  text-dark text-center h-100 bg-white overflow-scroll ">
             <!-- Add product section -->
             <div class="col-10 mt-5 border border border-dark rounded-3 shadow-lg mb-3 h-100 overflow-scroll">
-                <img src="../../../assets/Icons/Laptops/Apple Laptops/1.jpg" alt="" class="w-100" />
+                <img src="../../../assets/Icons/Laptops/Apple Laptops/Apple Laptop 1.jpg" alt="" class="w-100" />
 
                 <!-- Add product Form -->
                 <form class="mb-3 text-dark rounded-2 mt-3 p-2" method="POST" enctype="multipart/form-data">
@@ -223,7 +223,7 @@ if (!isset($_SESSION['Seller_Pic'])) {
             <h3>Add Product to Laptop Category</h3>
             <!-- Add product section -->
             <div class="border border border-dark w-50  rounded-3 shadow-lg mb-3">
-                <img src="../../../assets/Icons/Laptops/Apple Laptops/1.jpg" alt="" class="w-100" />
+                <img src="../../../assets/Icons/Laptops/Apple Laptops/Apple Laptop 1.jpg" alt="" class="w-100" />
                 <!-- Add product Form -->
                 <form class="mb-3 text-dark rounded-2 mt-3 p-2" method="POST" enctype="multipart/form-data">
                     <!-- Laptop title -->

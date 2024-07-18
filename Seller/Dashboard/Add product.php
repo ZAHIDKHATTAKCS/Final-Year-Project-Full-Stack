@@ -142,7 +142,7 @@
         <div class="d-flex flex-column gap-4  ">
           <!-- Card 1 -->
           <div class="card d-flex justify-content-center align-items-center ">
-            <img src="../../assets/Icons/Laptops/laptop.png" class="card-img-top img-fluid" alt="Card top image" />
+            <img src="../../assets/Icons/Laptops/Apple Laptops/Apple Laptop 1.jpg" class="card-img-top img-fluid" alt="Card top image" />
             <div class="card-body d-flex flex-column justify-content-center align-items-center">
               <h5 class="card-title text-dark">Laptops</h5>
             </div>
@@ -152,7 +152,7 @@
 
           <!-- Card 2 -->
           <div class="card d-flex justify-content-center align-items-center">
-            <img src="../../assets/Icons/Cameras/camera1.png" class="card-img-top img-fluid w-75 mt-3"
+            <img src="../../assets/Icons/Cameras/Canon Camera/Canon 2.jpg" class="card-img-top img-fluid w-100 mt-3"
               alt="Card top image" />
             <div class="card-body d-flex flex-column justify-content-center align-items-center">
               <h5 class="card-title text-dark">Cameras</h5>
@@ -179,7 +179,7 @@
       <div class="d-flex flex-column gap-4 p-3">
         <!-- Card 4 -->
         <div class="card d-flex justify-content-center align-items-center">
-          <img src="../../assets/Icons/LCD/Dell LCD/1.jpg" class="card-img-top img-fluid" alt="Card top image" />
+          <img src="../../assets/Icons/LCD/Dell LCD/Dell LCD 1.jpg" class="card-img-top img-fluid" alt="Card top image" />
           <div class="card-body d-flex flex-column justify-content-center align-items-center">
             <h5 class="card-title text-dark">Monitors</h5>
           </div>
@@ -189,7 +189,7 @@
 
         <!-- Card 5 -->
         <div class="card d-flex justify-content-center align-items-center ">
-          <img src="../../assets/Icons/Laptop Stands/Normal Stand/1.jpg" class="card-img-top img-fluid w-75 mt-3"
+          <img src="../../assets/Icons/Laptop Stands/Normal Stand/Normal Stand 1.jpg" class="card-img-top img-fluid w-75 mt-3"
             alt="Card top image" />
           <div class="card-body d-flex flex-column justify-content-center align-items-center">
             <h5 class="card-title text-dark">Laptops Stand</h5>
@@ -200,7 +200,7 @@
 
         <!-- Card 6 -->
         <div class="card d-flex justify-content-center align-items-center">
-          <img src="../../assets/Icons/Computer/Tower PC/1.jpg" class="card-img-top img-fluid" alt="Card top image" />
+          <img src="../../assets/Icons/Computer/Tower PC//Tower 1.jpg" class="card-img-top img-fluid" alt="Card top image" />
           <div class="card-body d-flex flex-column justify-content-center align-items-center">
             <h5 class="card-title text-dark">Personal Computers</h5>
           </div>

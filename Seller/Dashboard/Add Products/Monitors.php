@@ -140,7 +140,7 @@
             <h4>Add Product to Monitors Category</h4>
             <!-- Add product section -->
             <div class="border border border-dark w-100  rounded-3 shadow-lg mb-3">
-                <img src="../../../assets/Icons/LCD/Dell LCD/1.jpg" alt="" class="w-100" />
+                <img src="../../../assets/Icons/LCD/Dell LCD/Dell LCD 1.jpg" alt="" class="w-100" />
                 <!-- Add product Form -->
                 <form class="mb-3 text-dark rounded-2 mt-3 p-2" method="post" enctype="multipart/form-data">
                     <!-- Monitor title -->
@@ -221,7 +221,7 @@
             <h3>Add Product to Monitors Category</h3>
             <!-- Add product section -->
             <div class="border border border-dark w-50  rounded-3 shadow-lg mb-3">
-                <img src="../../../assets/Icons/LCD/Dell LCD/1.jpg" alt="" class="w-100" />
+                <img src="../../../assets/Icons/LCD/Dell LCD/Dell LCD 1.jpg" alt="" class="w-100" />
                 <!-- Add product Form -->
                 <form class="mb-3 text-dark rounded-2 mt-3 p-2" method="post" enctype="multipart/form-data">
                     <!-- Monitor title -->

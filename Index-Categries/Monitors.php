@@ -97,7 +97,7 @@ include '../DBconnection.php';
                         <img src="../Seller/Dashboard/Add Products/<?php echo $_SESSION['Monitor_Picture']; ?>" class="card-img-top img-fluid" alt="...">
                         <div class="card-body">
                             <p class="card-title"><?php echo $Result['Monitor Title']; ?></p>
-                            <p class="bg-success text-white fs-6 p-1 rounded-3 "><?php echo $Result['Monitor Quantity']; ?></p>
+                            <p class="bg-success text-white fs-6 p-1 rounded-3 ">Quantity : <?php echo $Result['Monitor Quantity']; ?></p>
 
                         </div>
                     </div>

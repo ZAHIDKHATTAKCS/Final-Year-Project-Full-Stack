@@ -98,7 +98,7 @@ include '../DBconnection.php';
                         <img src="../Seller/Dashboard/Add Products/<?php echo $_SESSION['Laptop_Stand_Picture']; ?>" class="card-img-top img-fluid" alt="...">
                         <div class="card-body">
                             <p class="card-title"><?php echo $Result['Laptop Stand Title']; ?></p>
-                            <p class="bg-success text-white fs-6 p-1 rounded-3 "><?php echo $Result['Laptop Stand Quantity']; ?></p>
+                            <p class="bg-success text-white fs-6 p-1 rounded-3 ">Quantity : <?php echo $Result['Laptop Stand Quantity']; ?></p>
 
                         </div>
                     </div>

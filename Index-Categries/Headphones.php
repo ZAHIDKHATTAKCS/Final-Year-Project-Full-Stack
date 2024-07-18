@@ -99,7 +99,7 @@ include '../DBconnection.php';
                         <img src="../Seller/Dashboard/Add Products/<?php echo $_SESSION['Headphone_Picture']; ?>" class="card-img-top img-fluid" alt="...">
                         <div class="card-body">
                             <p class="card-title"><?php echo $Result['Headphone Title']; ?></p>
-                            <p class="bg-success text-white fs-6 p-1 rounded-3 "><?php echo $Result['Headphone Quantity']; ?></p>
+                            <p class="bg-success text-white fs-6 p-1 rounded-3 ">Quantity : <?php echo $Result['Headphone Quantity']; ?></p>
 
                         </div>
                     </div>

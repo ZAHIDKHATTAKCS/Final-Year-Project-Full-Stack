@@ -24,6 +24,7 @@
 </head>
 
 <body class="body d-sm-block d-md-flex">
+  <!-- Navbar Starts here -->
   <nav class="navbar w-100 navbar_container">
     <div class="container-fluid container-md d-flex d-sm-flex justify-content-sm-around justify-content-md-between">
       <!-- Logo -->
@@ -120,7 +121,7 @@
 
       <!-- Card 2 -->
       <div class="card col-9 col-md-3 d-flex justify-content-center align-items-center col-sm-8">
-        <img src="assets/Icons/Cameras/camera1.png" class="card-img-top img-fluid w-75 mt-3" alt="Card top image" />
+        <img src="assets/Icons/Cameras/Canon Camera/Canon 2.jpg" class="card-img-top img-fluid w-100 mt-3" alt="Card top image" />
         <div class="card-body d-flex flex-column justify-content-center align-items-center">
           <h5 class="card-title text-dark">Cameras</h5>
         </div>
@@ -146,7 +147,7 @@
     <div class="row popular-categories-cards gap-3 d-flex justify-content-between">
       <!-- Card 4 -->
       <div class="card col-9 col-md-3 d-flex justify-content-center align-items-center col-sm-8">
-        <img src="assets/Icons/LCD/Dell LCD/1.jpg" class="card-img-top img-fluid" alt="Card top image" />
+        <img src="assets/Icons/LCD/Dell LCD/Dell LCD 1.jpg" class="card-img-top img-fluid" alt="Card top image" />
         <div class="card-body d-flex flex-column justify-content-center align-items-center">
           <h5 class="card-title text-dark">Monitors</h5>
         </div>
@@ -156,7 +157,7 @@
 
       <!-- Card 5 -->
       <div class="card col-9 col-md-3 d-flex justify-content-center align-items-center col-sm-8">
-        <img src="assets/Icons/Laptop Stands/Normal Stand/1.jpg" class="card-img-top img-fluid w-75 mt-3" alt="Card top image" />
+        <img src="assets/Icons/Laptop Stands/Normal Stand/Normal Stand 1.jpg" class="card-img-top img-fluid w-75 mt-3" alt="Card top image" />
         <div class="card-body d-flex flex-column justify-content-center align-items-center">
           <h5 class="card-title text-dark">Laptop Stands</h5>
         </div>
@@ -166,7 +167,7 @@
 
       <!-- Card 6 -->
       <div class="card col-9 col-md-3 d-flex justify-content-center align-items-center col-sm-8">
-        <img src="assets/Icons/Computer/Tower PC/1.jpg" class="card-img-top img-fluid" alt="Card top image" />
+        <img src="assets/Icons/Computer/Tower PC/Tower 1.jpg" class="card-img-top img-fluid" alt="Card top image" />
         <div class="card-body d-flex flex-column justify-content-center align-items-center">
           <h5 class="card-title text-dark">Personal Computers</h5>
         </div>
@@ -272,7 +273,7 @@
 
         <!-- Card 8 -->
         <div class="card col-10 col-md-3 col-sm-8 d-flex justify-content-center align-items-center text-center">
-          <img src="assets/Icons/Cameras/camera2.jpg" class="card-img-top img-fluid" alt="Card top image" />
+          <img src="assets/Icons/Cameras/camera11.jpg" class="card-img-top img-fluid" alt="Card top image" />
           <div class="card-body d-flex flex-column justify-content-center align-items-center">
             <h5 class="card-title text-dark">High Resolution Nikon Camera</h5>
             <p class="card-text text-success">Price 50000 Rs</p>

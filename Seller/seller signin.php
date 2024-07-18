@@ -70,7 +70,7 @@
             <!-- Password -->
             <div class="mt-3 input-group">
                 <i class="fa-solid fa-lock input-group-text"></i>
-                <input type="password" name="password" class="form-control" placeholder="Create Password" required />
+                <input type="password" name="password" class="form-control" placeholder="Enter your Password" required />
             </div>
 
             <!-- Sign in Button -->
@@ -140,6 +140,76 @@
             }
         }
     ?>
+
+        <!-- Footer -->
+  <div class="container-fluid p-0 m-0">
+    <!-- Footer -->
+    <footer class="text-center text-white w-100" style="background-color: #36cad1;">
+      <!-- Grid container -->
+      <div class="container">
+        <!-- Section: Links -->
+        <section class="mt-5">
+          <!-- Grid row-->
+          <div class="row text-center d-flex justify-content-center pt-5">
+            <!-- Grid column -->
+            <div class="col-md-2">
+              <h6 class=" font-weight-bold">
+                <a href="../Seller/seller signin.php" class="text-white text-decoration-none">Seller</a>
+              </h6>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-2">
+              <h6 class="font-weight-bold">
+                <a href="../Buyer/buyer.php" class="text-white text-decoration-none">Buyer</a>
+              </h6>
+            </div>
+            <!-- Grid column -->
+          </div>
+          <!-- Grid row-->
+        </section>
+        <!-- Section: Links -->
+
+        <hr class="my-5" />
+
+
+
+        <!-- Section: Social -->
+        <section class="text-center mb-5">
+          <a href="" class="text-white me-4">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="" class="text-white me-4">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="" class="text-white me-4">
+            <i class="fab fa-google"></i>
+          </a>
+          <a href="" class="text-white me-4">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="" class="text-white me-4">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="" class="text-white me-4">
+            <i class="fab fa-github"></i>
+          </a>
+        </section>
+        <!-- Section: Social -->
+      </div>
+      <!-- Grid container -->
+
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2024 Copyright:
+        <a class="text-white " href="https://zahidkhattak.vercel.app/" target="_blank">Zahidkhattak.com</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+  </div>
+  <!-- End of Footer -->
 </body>
 
 </html>

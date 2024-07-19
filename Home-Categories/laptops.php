@@ -149,7 +149,7 @@ if (!isset($_SESSION['Buyer_Pic'])) {
 
                     <!-- Card -->
                     <div class="card col-12 col-sm-3 col-md-3 d-flex justify-content-center align-items-center bg-light">
-                        <img src="../Seller/Dashboard/Add Products/<?php echo $Result['Picture 1']; ?>" class="card-img-top img-fluid" alt="Laptop Pic">
+                        <img src="../Seller/Dashboard/Add Products/<?php echo $Result['Picture 1']; ?>" class="card-img-top img-fluid" alt="Product Pic">
                         <div class="card-body">
                             <p class="card-title"><?php echo $Result['Laptop Title']; ?></p>
                             <p class="card-text"><?php echo $Result['Laptop Description']; ?></p>

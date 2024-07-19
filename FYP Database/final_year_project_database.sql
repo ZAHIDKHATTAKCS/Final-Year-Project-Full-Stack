@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 17, 2024 at 02:43 PM
+-- Generation Time: Jul 18, 2024 at 07:26 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -45,8 +45,11 @@ CREATE TABLE `add to cart` (
 --
 
 INSERT INTO `add to cart` (`Id`, `Buyer Name`, `Product Title`, `Product Description`, `Product Quantity`, `Product Price`, `Total`, `Product Picture`) VALUES
-(2, 'Muhammad Zahid', 'Canon Camera', 'Camera canon 7700', '2', '200', '400', 'Add Cameras/Canon 4.jpg'),
-(3, 'Huzaifa Khan', 'Apple laptop ', 'core i 5 3rd Generation', '7', '10000', '70000', 'Add Laptops/Apple Laptop 8.jpg');
+(1, 'Muhammad Zahid', 'Dell Laptop', 'core i 5 3rd Generation', '2', '3000', '6000', 'Add Laptops/Dell Laptop 7.jpg'),
+(2, 'Muhammad Zahid', 'Apple laptop ', 'core i 5 3rd Generation', '23', '3000', '69000', 'Add Laptops/Apple Laptop 1.jpg'),
+(3, 'Muhammad Zahid', 'DSLR', 'DSLR 7720', '12', '4000', '48000', 'Add Cameras/Canon 1.jpg'),
+(4, 'Muhammad Zahid', 'HP laptop', 'HP laptop core i 5', '8', '3000', '24000', 'Add Laptops/hp laptop 1.jpg'),
+(5, 'Muhammad Zahid', 'core i 5 ', 'Gamming Pc', '12', '4000', '48000', 'Add Computers/Tower 2.jpg');
 
 -- --------------------------------------------------------
 
@@ -94,7 +97,8 @@ CREATE TABLE `cameras table` (
 --
 
 INSERT INTO `cameras table` (`Id`, `Camera Title`, `Camera Description`, `Camera Quantity`, `Camera Price`, `Picture 1`, `Picture 2`, `Picture 3`) VALUES
-(1, 'Canon Camera', 'Camera canon 7700', 20, 200, 'Add Cameras/Canon 4.jpg', 'Add Cameras/Canon 5.jpg', 'Add Cameras/Canon 6.jpg');
+(1, 'DSLR', 'DSLR 7720', 6, 9000, 'Add Cameras/Canon 1.jpg', 'Add Cameras/Canon 2.jpg', 'Add Cameras/Canon 3.jpg'),
+(2, 'Drone Camera ', 'Drone Camera with original charger', 4, 4000, 'Add Cameras/Drone 2.jpg', 'Add Cameras/Drone 6.jpg', 'Add Cameras/Drone 7.jpg');
 
 -- --------------------------------------------------------
 
@@ -106,8 +110,8 @@ CREATE TABLE `headphones table` (
   `Id` int(255) NOT NULL,
   `Headphone Title` varchar(255) NOT NULL,
   `Headphone Description` varchar(255) NOT NULL,
-  `Headphone Quantity` int(255) NOT NULL,
-  `Headphone Price` int(255) NOT NULL,
+  `Headphone Quantity` varchar(255) NOT NULL,
+  `Headphone Price` varchar(255) NOT NULL,
   `Picture 1` varchar(255) NOT NULL,
   `Picture 2` varchar(255) NOT NULL,
   `Picture 3` varchar(255) NOT NULL
@@ -118,7 +122,8 @@ CREATE TABLE `headphones table` (
 --
 
 INSERT INTO `headphones table` (`Id`, `Headphone Title`, `Headphone Description`, `Headphone Quantity`, `Headphone Price`, `Picture 1`, `Picture 2`, `Picture 3`) VALUES
-(1, 'Bludieo', 'Bludieo orignal company Headphones', 25, 3000, 'Add Headphones/Bluedio Headphones 1.jpg', 'Add Headphones/Bluedio Headphones 2.jpg', 'Add Headphones/Bluedio Headphones 3.jpg');
+(1, 'Bludieo', 'Bludieo orignal company Headphones', '3', '3000', 'Add Headphones/Bluedio Headphones 1.jpg', 'Add Headphones/Bluedio Headphones 2.jpg', 'Add Headphones/Bluedio Headphones 4.jpg'),
+(2, 'Bose Headphone', 'bose', '2', '200', 'Add Headphones/Bose Headphone 1.jpg', 'Add Headphones/Bose Headphone 2.jpg', 'Add Headphones/Bose Headphone 5.jpg');
 
 -- --------------------------------------------------------
 
@@ -142,7 +147,9 @@ CREATE TABLE `laptops table` (
 --
 
 INSERT INTO `laptops table` (`Id`, `Laptop Title`, `Laptop Description`, `Laptop_Quantity`, `Laptop_Price`, `Picture 1`, `Picture 2`, `Picture 3`) VALUES
-(1, 'Apple laptop ', 'core i 5 3rd Generation', '60', 10000, 'Add Laptops/Apple Laptop 8.jpg', 'Add Laptops/Apple Laptop 6.jpg', 'Add Laptops/Apple Laptop 2.jpg');
+(1, 'Apple laptop ', 'core i 5 3rd Generation', '5', 5000, 'Add Laptops/Apple Laptop 1.jpg', 'Add Laptops/Apple Laptop 2.jpg', 'Add Laptops/Apple Laptop 3.jpg'),
+(2, 'HP laptop', 'HP laptop core i 5', '0', 5000, 'Add Laptops/hp laptop 1.jpg', 'Add Laptops/hp laptop 4.jpg', 'Add Laptops/hp laptop 6.jpg'),
+(3, 'Dell Laptop', 'core i 5 3rd Generation', '3', 3000, 'Add Laptops/Dell Laptop 7.jpg', 'Add Laptops/Dell Laptop 4.jpg', 'Add Laptops/Dell Laptop 2.jpg');
 
 -- --------------------------------------------------------
 
@@ -166,7 +173,8 @@ CREATE TABLE `laptop stands table` (
 --
 
 INSERT INTO `laptop stands table` (`Id`, `Laptop Stand Title`, `Laptop Stand Description`, `Laptop Stand Quantity`, `Laptop Stand Price`, `Picture 1`, `Picture 2`, `Picture 3`) VALUES
-(1, 'normal laptop stand', 'made by apple company', 20, 300, 'Add Laptop Stands/Normal Stand 1.jpg', 'Add Laptop Stands/Normal Stand 2.jpg', 'Add Laptop Stands/Normal Stand 3.jpg');
+(1, 'normal laptop stand', 'normal laptop stand for sell', 1, 10000, 'Add Laptop Stands/Normal Stand 1.jpg', 'Add Laptop Stands/Normal Stand 2.jpg', 'Add Laptop Stands/Normal Stand 3.jpg'),
+(2, 'Brand Stand', 'Brand stand made in china', 6, 6000, 'Add Laptop Stands/Brand Stand 1.jpg', 'Add Laptop Stands/Brand Stand 3.jpg', 'Add Laptop Stands/Brand Stand 4.jpg');
 
 -- --------------------------------------------------------
 
@@ -190,7 +198,8 @@ CREATE TABLE `monitors table` (
 --
 
 INSERT INTO `monitors table` (`Id`, `Monitor Title`, `Monitor Description`, `Monitor Quantity`, `Monitor Price`, `Picture 1`, `Picture 2`, `Picture 3`) VALUES
-(1, 'Dell LCD', 'Dell LCD 12 inches', 195, 15000, 'Add Monitors/Dell LCD 2.jpg', 'Add Monitors/Dell LCD 3.jpg', 'Add Monitors/Dell LCD 4.jpg');
+(1, 'Dell LCD', 'Dell LCD 12 inches', 2, 2000, 'Add Monitors/Dell LCD 5.jpg', 'Add Monitors/Dell LCD 4.jpg', 'Add Monitors/Dell LCD 3.jpg'),
+(2, 'LG LCD', 'LG original LCD 17 inches', 3, 3000, 'Add Monitors/LG LCD 3.jpg', 'Add Monitors/LG LCD 1.jpg', 'Add Monitors/LG LCD 2.jpg');
 
 -- --------------------------------------------------------
 
@@ -215,13 +224,10 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`Id`, `Buyer Name`, `Buyer_Image`, `Product Name`, `Product Description`, `Product Quantity`, `Product Price`, `Total`, `Product Pic 1`) VALUES
-(1, 'Muhammad Zahid', 'Buyer Images/mypic.JPG', 'Bludieo', 'Bludieo orignal company Headphones', '50', '3000', '150000', 'Add Headphones/Bluedio Headphones 1.jpg'),
-(2, 'Muhammad Zahid', 'Buyer Images/mypic.JPG', 'normal laptop stand', 'made by apple company', '100', '300', '30000', 'Add Laptop Stands/Normal Stand 1.jpg'),
-(3, 'Muhammad Zahid', 'Buyer Images/mypic.JPG', 'Apple laptop ', 'core i 5 3rd Generation', '120', '10000', '1200000', 'Add Laptops/Apple Laptop 8.jpg'),
-(4, 'Muhammad Zahid', 'Buyer Images/mypic.JPG', 'Apple laptop ', 'core i 5 3rd Generation', '20', '10000', '200000', 'Add Laptops/Apple Laptop 8.jpg'),
-(5, 'Muhammad Zahid', 'Buyer Images/mypic.JPG', 'Dell LCD', 'Dell LCD 12 inches', '30', '15000', '450000', 'Add Monitors/Dell LCD 2.jpg'),
-(6, 'Muhammad Zahid', 'Buyer Images/mypic.JPG', 'Bludieo', 'Bludieo orignal company Headphones', '5', '3000', '15000', 'Add Headphones/Bluedio Headphones 1.jpg'),
-(7, 'Muhammad Zahid', 'Buyer Images/mypic.JPG', 'Dell LCD', 'Dell LCD 12 inches', '5', '15000', '75000', 'Add Monitors/Dell LCD 2.jpg');
+(1, 'Muhammad Zahid', 'Buyer Images/mypic.JPG', 'DSLR', 'DSLR 7720', '3', '4000', '12000', 'Add Cameras/Canon 1.jpg'),
+(2, 'Muhammad Zahid', 'Buyer Images/mypic.JPG', 'HP laptop', 'HP laptop core i 5', '2', '3000', '6000', 'Add Laptops/hp laptop 1.jpg'),
+(3, 'Muhammad Zahid', 'Buyer Images/mypic.JPG', 'HP laptop', 'HP laptop core i 5', '3', '3000', '9000', 'Add Laptops/hp laptop 1.jpg'),
+(4, 'Muhammad Zahid', 'Buyer Images/mypic.JPG', 'pentium 4', '8 GB Ram 320GB HDD', '1', '4000', '4000', 'Add Computers/Desktop 3.jpg');
 
 -- --------------------------------------------------------
 
@@ -245,7 +251,8 @@ CREATE TABLE `personal computers table` (
 --
 
 INSERT INTO `personal computers table` (`Id`, `Computer Title`, `Computer Description`, `Computer Quantity`, `Computer Price`, `Picture 1`, `Picture 2`, `Picture 3`) VALUES
-(1, 'core due 2 Tower pc', 'ram 4GB Room 500', 20, 30000, 'Add Computers/Tower 1.jpg', 'Add Computers/Tower 2.jpg', 'Add Computers/Tower 3.jpg');
+(1, 'pentium 4', '8 GB Ram 320GB HDD', 2, 3000, 'Add Computers/Desktop 3.jpg', 'Add Computers/Desktop 2.jpg', 'Add Computers/Desktop 1.jpeg'),
+(2, 'core i 5 ', 'Gamming Pc', 4, 4000, 'Add Computers/Tower 2.jpg', 'Add Computers/Tower 3.jpg', 'Add Computers/Tower 4.jpg');
 
 -- --------------------------------------------------------
 
@@ -343,7 +350,7 @@ ALTER TABLE `seller_table`
 -- AUTO_INCREMENT for table `add to cart`
 --
 ALTER TABLE `add to cart`
-  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `buyers table`
@@ -355,43 +362,43 @@ ALTER TABLE `buyers table`
 -- AUTO_INCREMENT for table `cameras table`
 --
 ALTER TABLE `cameras table`
-  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `headphones table`
 --
 ALTER TABLE `headphones table`
-  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `laptops table`
 --
 ALTER TABLE `laptops table`
-  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `laptop stands table`
 --
 ALTER TABLE `laptop stands table`
-  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `monitors table`
 --
 ALTER TABLE `monitors table`
-  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `personal computers table`
 --
 ALTER TABLE `personal computers table`
-  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `Id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `seller_table`

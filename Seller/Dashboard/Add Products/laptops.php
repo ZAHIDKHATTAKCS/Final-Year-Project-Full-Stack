@@ -1,3 +1,6 @@
+<!-- checking laptops mean checking everything is posting well from mobile and big screen as well keep in mind that watch it on small screen -->
+
+
 <?php
 session_start();
 include '../../../DBconnection.php';
@@ -158,7 +161,7 @@ if (!isset($_SESSION['Seller_Pic'])) {
                      <!-- Laptop quantity -->
                        <div class="input-group mb-3">
                         <i class="fa-solid fa-plus-minus input-group-text"></i>
-                        <input type="number" name="Quantity" class="form-control" placeholder="Enetr quantity" required />
+                        <input type="number" name="Quantity" class="form-control" placeholder="Enter quantity" required />
                        </div>
 
                        <!-- Laptop price -->
@@ -174,12 +177,12 @@ if (!isset($_SESSION['Seller_Pic'])) {
 
                     <!-- Laptop pic 2 -->
                     <div class="input-group mb-3">
-                        <input type="file" name="Laptop_Pic_1" class="form-control" required />
+                        <input type="file" name="Laptop_Pic_2" class="form-control" required />
                     </div>
 
                     <!-- Laptop pic 3 -->
                     <div class="input-group mb-3">
-                        <input type="file" name="Laptop_Pic_1" class="form-control" required />
+                        <input type="file" name="Laptop_Pic_3" class="form-control" required />
                     </div>
 
                     <!-- Add product Button -->

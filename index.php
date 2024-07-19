@@ -48,6 +48,8 @@
   </nav>
   <!-- the end of navbar container -->
 
+  <br><br>
+
   <!-- main -->
   <div class="container-fluid">
     <div class="row">

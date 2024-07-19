@@ -108,9 +108,14 @@ if (!isset($_SESSION['Buyer_Pic'])) {
   <!-- the end of navbar container -->
 
 
+
+
   <!-- Here is the PHP code for fetching Add to cart products -->
   <h2 class="text-center mb-4 fw-bolder mt-3">Your Cart Products</h2>
 
+
+
+  <!-- PHP code for small screen -->
   <?php
   $Buyer_Name = $_SESSION['Buyer_Name'];
 
@@ -120,7 +125,54 @@ if (!isset($_SESSION['Buyer_Pic'])) {
   ?>
 
   <!-- Add to cart Card -->
-  <div class="container mt-4 ">
+  <div class="container d-block d-md-flex mt-4 ">
+
+    <!-- Product Info Section -->
+
+    <!-- image, description and remove button row -->
+    <div class="row d-sm-block d-md-none justify-content-md-between align-items-center p-2 m-2 bg-light shadow-lg p-0 m-0">
+      <!-- image -->
+      <div class="img col-md-3 col-sm-8 d-flex justify-content-center align-items-center p-3 border-primary ">
+        <img src="seller/Dashboard/Add Products/<?php echo $fetch['Product Picture']; ?>"  class="img-fluid" alt="Product Image">
+      </div>
+      <div class="img-description d-sm-block d-md-none fw-bold text-center col-sm-8 justify-content-center align-items-center text-left w-100">
+        <h6 class="fw-bold">Product Title : <?php echo $fetch['Product Title']; ?></h6>
+        <p>Product Description: <?php echo $fetch['Product Description']; ?></p>
+        <p>Product Quantity: <?php echo $fetch['Product Quantity']; ?></p>
+        <p>Product Price : <?php echo $fetch['Product Price']; ?> PKR</p>
+        <p>Total : <?php echo $fetch['Total']; ?> PKR</p>
+      </div>
+
+      <div class="remove col-md-3 col-sm-8 justify-content-center align-items-center text-center">
+        <a href="remove_from_cart.php?id=<?php echo $fetch['Id']; ?>" class="btn btn-danger">Remove from Cart</a>
+      </div>
+    </div> <br>
+
+    <!-- Product Summary row -->
+  </div>
+
+  <?php
+  }
+  ?>
+
+
+
+
+
+
+
+
+  <!-- PHP code for big screen -->
+  <?php
+  $Buyer_Name = $_SESSION['Buyer_Name'];
+
+  $select = "SELECT * FROM `add to cart` WHERE `Buyer Name` = '$Buyer_Name'";
+  $query = mysqli_query($conn, $select);
+  while ($fetch = mysqli_fetch_array($query)) {
+  ?>
+
+  <!-- Add to cart Card -->
+  <div class="container d-none d-md-flex mt-4 ">
 
     <!-- Product Info Section -->
 

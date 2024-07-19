@@ -165,7 +165,7 @@
                     <!-- headphone price -->
                     <div class="input-group mb-3">
                         <i class="fa-solid fa-dollar-sign input-group-text"></i>
-                        <input type="number" name="headphone_Price" class="form-control" placeholder="Enter Price" required />
+                        <input type="number" name="Headphone_Price" class="form-control" placeholder="Enter Price" required />
                     </div>
 
                     <!-- headphone pic 1 -->

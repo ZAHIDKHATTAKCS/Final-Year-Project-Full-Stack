@@ -82,7 +82,7 @@ include '../DBconnection.php';
         <div class="container d-flex justify-content-center align-items-center mt-3 text-dark text-center">
             <div class="row d-flex justify-content-between align-items-center gap-3">
 
-                <!-- Here is the PHP code for fetching the Laptops from Laptops Table -->
+                <!-- Here is the PHP code for fetching the computers from computers Table -->
                 <?php
                 $Select_Query = "SELECT * FROM `personal computers table`";
                 $Fire_Query = mysqli_query($conn, $Select_Query);

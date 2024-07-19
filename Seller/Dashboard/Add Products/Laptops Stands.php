@@ -158,7 +158,7 @@
                     <!-- Laptop Stand quantity -->
                     <div class="input-group mb-3">
                         <i class="fa-solid fa-plus-minus input-group-text"></i>
-                        <input type="number" name="Lapotp_Stand_Quantity" class="form-control" placeholder="Enter quantity" required />
+                        <input type="number" name="Laptop_Stand_Quantity" class="form-control" placeholder="Enter quantity" required />
                     </div>
 
                     <!-- Laptop Stand price -->
@@ -179,7 +179,7 @@
 
                     <!-- Laptop Stand pic 3 -->
                     <div class="input-group mb-3">
-                        <input type="file" name="Laptop_Stand_Pic_2" class="form-control" required />
+                        <input type="file" name="Laptop_Stand_Pic_3" class="form-control" required />
                     </div>
 
                     <!-- Add product Button -->
@@ -238,7 +238,7 @@
                     <!-- Laptop Stand quantity -->
                     <div class="input-group mb-3">
                         <i class="fa-solid fa-plus-minus input-group-text"></i>
-                        <input type="number" name="Laptop_Stand_Quantity" class="form-control" placeholder="Enetr quantity" required />
+                        <input type="number" name="Laptop_Stand_Quantity" class="form-control" placeholder="Enter quantity" required />
                     </div>
 
                     <!-- Laptop Stand price -->

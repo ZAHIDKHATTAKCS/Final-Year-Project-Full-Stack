@@ -109,6 +109,7 @@ if(!isset($_SESSION['Buyer_Pic'])){
   </div>
   <!-- the end of navbar container -->
 
+  <br><br>
   <!-- main -->
   <div class="container-fluid">
     <div class="row">

@@ -13,7 +13,6 @@ if(!isset($_SESSION['Seller_Pic'])){
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<!-- TODO only fetching Orders table data and logout page are remains -->
 
 <head>
   <title>Dashboard</title>

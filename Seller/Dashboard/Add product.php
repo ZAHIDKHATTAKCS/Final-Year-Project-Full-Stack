@@ -136,7 +136,7 @@
 
     <!-- Add product -->
     <div class="d-blcok text-dark text-center bg-white p-4">
-      <h5>Hi <?Php echo $_SESSION['Seller_Name']; ?> Select Category to Add Products</h5>
+      <h3>Hi Admin Select Category to Add Products</h3>
       <!-- category section -->
       <div class=" w-100 overflow-scroll p-3 rounded-3">
         <div class="d-flex flex-column gap-4  ">
@@ -232,7 +232,7 @@
     <!-- Content div -->
     <div
       class="col-md-9 d-none d-md-flex flex-md-column justify-content-md-between align-items-md-center text-dark text-center h-100 bg-white p-4">
-      <h3>Hi <?Php echo $_SESSION['Seller_Name']; ?> Select Category to Add Products</h3>
+      <h3>Hi Admin Select Category to Add Products</h3>
       <!-- category section -->
       <div class="border border border-dark w-100 overflow-scroll p-3 rounded-3">
         <div class="popular-categories-cards gap-4 d-md-flex flex-column justify-content-between">

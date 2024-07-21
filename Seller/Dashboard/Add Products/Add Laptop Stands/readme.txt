@@ -1,0 +1,1 @@
+all Lapotop stands pics will be saved here when seller just add product to laptop stands category 

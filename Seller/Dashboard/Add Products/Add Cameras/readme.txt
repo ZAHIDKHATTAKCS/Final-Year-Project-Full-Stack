@@ -1,0 +1,1 @@
+all cameras pics will be saved here when seller just add product to camera category 

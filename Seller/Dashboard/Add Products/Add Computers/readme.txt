@@ -1,0 +1,1 @@
+all computers pics will be saved here when seller just add product to computer category 

@@ -1,0 +1,1 @@
+all laptops pics will be saved here when seller just add product to laptops category 

@@ -1,0 +1,1 @@
+all monitors pics will be saved here when seller just add product to monitor category 

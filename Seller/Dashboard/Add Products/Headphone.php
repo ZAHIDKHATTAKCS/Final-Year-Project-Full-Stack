@@ -1,14 +1,14 @@
 <?php
-    session_start();
-    include('../../../DBconnection.php');
-    if(!isset($_SESSION['Seller_Pic'])){
-        ?>
-        <script>
+session_start();
+include('../../../DBconnection.php');
+if (!isset($_SESSION['Seller_Pic'])) {
+?>
+    <script>
         alert('First Login Please!');
         location.replace('../../seller signin.php');
-        </script>
-        <?php
-    }
+    </script>
+<?php
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,9 +29,7 @@
     <script type="text/JavaScript" src="../../../assets/Bootstrap 5/js/bootstrap.min.js"></script>
 
     <!-- font awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- css link -->
     <link rel="stylesheet" href="../../../assets/Custom Css/fyp.css" />
@@ -105,8 +103,7 @@
 
             <div class="container mt-2 text-dark w-25 h-25">
                 <!-- Button to trigger offcanvas -->
-                <button class="btn btn-outline-primary" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                <button class="btn btn-outline-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
                     Menu
                 </button>
 
@@ -114,25 +111,26 @@
                 <div class="offcanvas offcanvas-start" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
                     <div class="offcanvas-header">
                         <h5 class="offcanvas-title" id="offcanvasExampleLabel">
-                        <?php echo $_SESSION['Seller_Name']; ?> Welcome to Menu
+                            <?php echo $_SESSION['Seller_Name']; ?> Welcome to Menu
                         </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
                         <div class="h-100">
                             <ul class="d-flex flex-column justify-content-between fs-3">
-                                <li><a href="../dashboard.php">Home</a></li>
-                                <li><a href="../buyers.php">Buyers</a></li>
-                                <li><a href="../order.php">Orders</a></li>
-                                <li><a href="../Add product.php">Add Product</a></li>
-                                <li><a href="../Logout.php">Log out</a></li>
+                                <li><a href="../dashboard.php" class="btn btn-outline-info mt-2">Home</a></li>
+                                <li><a href="../buyers.php" class="btn btn-outline-info mt-2">Buyers</a></li>
+                                <li><a href="../order.php" class="btn btn-outline-info mt-2">Orders</a></li>
+                                <li><a href="../Add product.php" class="btn btn-outline-info mt-2">Add Product</a></li>
+                                <li><a href="../Delete product.php" class="btn btn-outline-info mt-2">Delete Product</a></li>
+
+                                <li><a href="../Logout.php" class="btn btn-outline-info mt-2">Log out</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
-            <img src="../../<?php echo $_SESSION['Seller_Pic']; ?>" alt=""
-                class="w-25 img-fluid" />
+            <img src="../../<?php echo $_SESSION['Seller_Pic']; ?>" alt="" class="w-25 img-fluid" />
         </header>
 
         <!-- Content div -->
@@ -155,8 +153,8 @@
                         <input type="text" name="Headphone_Description" class="form-control" placeholder="Headphone Description" required />
                     </div>
 
-                     <!-- headphone quantity -->
-                     <div class="input-group mb-3">
+                    <!-- headphone quantity -->
+                    <div class="input-group mb-3">
                         <i class="fa-solid fa-plus-minus input-group-text"></i>
                         <input type="number" name="Headphone_Quantity" class="form-control" placeholder="Enter quantity" required />
                     </div>
@@ -198,8 +196,7 @@
     <div class="row d-md-flex align-items-md-center d-none w-100 main">
         <!-- admin div -->
         <div class="col-md-3 bg-dark d-md-flex flex-md-column justify-content-md-center align-items-md-center h-100">
-            <img src="../../<?php echo $_SESSION['Seller_Pic']; ?>" alt=""
-                class="w-50 rounded-circle img-fluid mt-1 border border-3 border-white" />
+            <img src="../../<?php echo $_SESSION['Seller_Pic']; ?>" alt="" class="w-50 rounded-circle img-fluid mt-1 border border-3 border-white" />
             <h3>Welcome <?php echo $_SESSION['Seller_Name']; ?></h3>
             <ul class="text-decoration-none w-100 h-100 fs-4">
                 <li>
@@ -212,6 +209,7 @@
                 <li>
                     <a href="../Add product.php" class="btn btn-outline-info mt-4">Add Product</a>
                 </li>
+                <li><a href="../Delete product.php" class="btn btn-outline-info mt-4">Delete Product</a></li>
                 <li><a href="../Logout.php" class="btn btn-outline-info mt-4">Logout</a></li>
             </ul>
         </div>
@@ -274,65 +272,65 @@
 
                 <!-- PHP Code for form submission -->
                 <?php
-                    if (isset($_POST['submit'])) {
+                if (isset($_POST['submit'])) {
 
-                        $Headphone_Title = $_POST['Headphone_Title'];
-                        $Headphone_Description = $_POST['Headphone_Description'];
-                        $Headphone_Quantity = $_POST['Headphone_Quantity'];
-                        $Headphone_Price = $_POST['Headphone_Price'];
+                    $Headphone_Title = $_POST['Headphone_Title'];
+                    $Headphone_Description = $_POST['Headphone_Description'];
+                    $Headphone_Quantity = $_POST['Headphone_Quantity'];
+                    $Headphone_Price = $_POST['Headphone_Price'];
 
-                        // To deals with pictures we must used $_FILES
-                        $Headphone_Pic_1 = $_FILES['Headphone_Pic_1'];
-                        $Headphone_Pic_2 = $_FILES['Headphone_Pic_2'];
-                        $Headphone_Pic_3 = $_FILES['Headphone_Pic_3'];
+                    // To deals with pictures we must used $_FILES
+                    $Headphone_Pic_1 = $_FILES['Headphone_Pic_1'];
+                    $Headphone_Pic_2 = $_FILES['Headphone_Pic_2'];
+                    $Headphone_Pic_3 = $_FILES['Headphone_Pic_3'];
 
-                        // Details of Pic 1
-                        $Headphone_Pic_1_Name = $Headphone_Pic_1['name'];
-                        $Headphone_Pic_1_Path = $Headphone_Pic_1['tmp_name'];
-                        $Headphone_Pic_1_Error = $Headphone_Pic_1['error'];
+                    // Details of Pic 1
+                    $Headphone_Pic_1_Name = $Headphone_Pic_1['name'];
+                    $Headphone_Pic_1_Path = $Headphone_Pic_1['tmp_name'];
+                    $Headphone_Pic_1_Error = $Headphone_Pic_1['error'];
 
-                        // Details of Pic 2
-                        $Headphone_Pic_2_Name = $Headphone_Pic_2['name'];
-                        $Headphone_Pic_2_Path = $Headphone_Pic_2['tmp_name'];
-                        $Headphone_Pic_2_Error = $Headphone_Pic_2['error'];
+                    // Details of Pic 2
+                    $Headphone_Pic_2_Name = $Headphone_Pic_2['name'];
+                    $Headphone_Pic_2_Path = $Headphone_Pic_2['tmp_name'];
+                    $Headphone_Pic_2_Error = $Headphone_Pic_2['error'];
 
-                        // Details of Pic 3
-                        $Headphone_Pic_3_Name = $Headphone_Pic_3['name'];
-                        $Headphone_Pic_3_Path = $Headphone_Pic_3['tmp_name'];
-                        $Headphone_Pic_3_Error = $Headphone_Pic_3['error'];
+                    // Details of Pic 3
+                    $Headphone_Pic_3_Name = $Headphone_Pic_3['name'];
+                    $Headphone_Pic_3_Path = $Headphone_Pic_3['tmp_name'];
+                    $Headphone_Pic_3_Error = $Headphone_Pic_3['error'];
 
-                        if ($Headphone_Pic_1_Error == 0 && $Headphone_Pic_2_Error == 0 && $Headphone_Pic_3_Error == 0) {
+                    if ($Headphone_Pic_1_Error == 0 && $Headphone_Pic_2_Error == 0 && $Headphone_Pic_3_Error == 0) {
 
-                            $Final_Destination_Headphone_Pic_1 = 'Add Headphones/' . $Headphone_Pic_1_Name;
+                        $Final_Destination_Headphone_Pic_1 = 'Add Headphones/' . $Headphone_Pic_1_Name;
 
-                            $Final_Destination_Headphone_Pic_2 = 'Add Headphones/' . $Headphone_Pic_2_Name;
+                        $Final_Destination_Headphone_Pic_2 = 'Add Headphones/' . $Headphone_Pic_2_Name;
 
-                            $Final_Destination_Headphone_Pic_3 = 'Add Headphones/' . $Headphone_Pic_3_Name;
+                        $Final_Destination_Headphone_Pic_3 = 'Add Headphones/' . $Headphone_Pic_3_Name;
 
-                            move_uploaded_file($Headphone_Pic_1_Path, $Final_Destination_Headphone_Pic_1);
+                        move_uploaded_file($Headphone_Pic_1_Path, $Final_Destination_Headphone_Pic_1);
 
-                            move_uploaded_file($Headphone_Pic_2_Path, $Final_Destination_Headphone_Pic_2);
+                        move_uploaded_file($Headphone_Pic_2_Path, $Final_Destination_Headphone_Pic_2);
 
-                            move_uploaded_file($Headphone_Pic_3_Path, $Final_Destination_Headphone_Pic_3);
+                        move_uploaded_file($Headphone_Pic_3_Path, $Final_Destination_Headphone_Pic_3);
 
-                            $insertqry = "INSERT INTO `headphones table`(`Headphone Title`, `Headphone Description`, `Headphone Quantity`, `Headphone Price`, `Picture 1`, `Picture 2`, `Picture 3`) VALUES ('$Headphone_Title','$Headphone_Description','$Headphone_Quantity','$Headphone_Price','$Final_Destination_Headphone_Pic_1','$Final_Destination_Headphone_Pic_2','$Final_Destination_Headphone_Pic_3')";
+                        $insertqry = "INSERT INTO `headphones table`(`Headphone Title`, `Headphone Description`, `Headphone Quantity`, `Headphone Price`, `Picture 1`, `Picture 2`, `Picture 3`) VALUES ('$Headphone_Title','$Headphone_Description','$Headphone_Quantity','$Headphone_Price','$Final_Destination_Headphone_Pic_1','$Final_Destination_Headphone_Pic_2','$Final_Destination_Headphone_Pic_3')";
 
-                            $firqery = mysqli_query($conn, $insertqry);
-                            if ($insertqry) {
-                                ?>
-                                                <script>
-                                                    alert('New Headphones Added to Headphones Category!');
-                                                </script>
-                                                <?php
-                    } else {
-                                ?>
-                                                <script>
-                                                    alert('Error in Headphones Insertion Query');
-                                                </script>
-                                                <?php
-                    }
+                        $firqery = mysqli_query($conn, $insertqry);
+                        if ($insertqry) {
+                ?>
+                            <script>
+                                alert('New Headphones Added to Headphones Category!');
+                            </script>
+                        <?php
+                        } else {
+                        ?>
+                            <script>
+                                alert('Error in Headphones Insertion Query');
+                            </script>
+                <?php
                         }
                     }
+                }
                 ?>
             </div>
         </div>

@@ -6,16 +6,17 @@ session_start();
 include '../../../DBconnection.php';
 
 if (!isset($_SESSION['Seller_Pic'])) {
-    ?>
-        <script>
+?>
+    <script>
         alert('First Login Please!');
         location.replace('../../seller signin.php');
-        </script>
-        <?php
+    </script>
+<?php
 }
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Add Laptop</title>
     <!-- Required meta tags -->
@@ -32,9 +33,7 @@ if (!isset($_SESSION['Seller_Pic'])) {
     <script type="text/JavaScript" src="../../../assets/Bootstrap 5/js/bootstrap.min.js"></script>
 
     <!-- font awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- css link -->
     <link rel="stylesheet" href="../../../assets/Custom Css/fyp.css" />
@@ -108,8 +107,7 @@ if (!isset($_SESSION['Seller_Pic'])) {
 
             <div class="container mt-2 text-dark w-25 h-25">
                 <!-- Button to trigger offcanvas -->
-                <button class="btn btn-outline-primary" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                <button class="btn btn-outline-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
                     Menu
                 </button>
 
@@ -124,18 +122,18 @@ if (!isset($_SESSION['Seller_Pic'])) {
                     <div class="offcanvas-body">
                         <div class="h-100">
                             <ul class="d-flex flex-column justify-content-between fs-3">
-                                <li><a href="../dashboard.php">Home</a></li>
-                                <li><a href="../buyers.php">Buyers</a></li>
-                                <li><a href="../order.php">Orders</a></li>
-                                <li><a href="../Add product.php">Add Product</a></li>
-                                <li><a href="../Logout.php">Log out</a></li>
+                                <li><a href="../dashboard.php" class="btn btn-outline-info mt-2">Home</a></li>
+                                <li><a href="../buyers.php" class="btn btn-outline-info mt-2">Buyers</a></li>
+                                <li><a href="../order.php" class="btn btn-outline-info mt-2">Orders</a></li>
+                                <li><a href="../Add product.php" class="btn btn-outline-info mt-2">Add Product</a></li>
+                                <li><a href="../Delete product.php" class="btn btn-outline-info mt-2">Delete Product</a></li>
+                                <li><a href="../Logout.php" class="btn btn-outline-info mt-2">Log out</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
-            <img src="../../<?php echo $_SESSION['Seller_Pic']; ?>" alt=""
-                class="w-25 img-fluid" />
+            <img src="../../<?php echo $_SESSION['Seller_Pic']; ?>" alt="" class="w-25 img-fluid" />
         </header>
 
         <!-- Content div -->
@@ -158,17 +156,17 @@ if (!isset($_SESSION['Seller_Pic'])) {
                         <input type="text" name="Laptop_Description" class="form-control" placeholder="Laptop Description" required />
                     </div>
 
-                     <!-- Laptop quantity -->
-                       <div class="input-group mb-3">
+                    <!-- Laptop quantity -->
+                    <div class="input-group mb-3">
                         <i class="fa-solid fa-plus-minus input-group-text"></i>
                         <input type="number" name="Quantity" class="form-control" placeholder="Enter quantity" required />
-                       </div>
+                    </div>
 
-                       <!-- Laptop price -->
-                      <div class="input-group mb-3">
+                    <!-- Laptop price -->
+                    <div class="input-group mb-3">
                         <i class="fa-solid fa-dollar-sign input-group-text"></i>
                         <input type="number" name="Laptop_Price" class="form-control" placeholder="Enter Price" required />
-                       </div>
+                    </div>
 
                     <!-- Laptop pic 1 -->
                     <div class="input-group mb-3">
@@ -203,8 +201,7 @@ if (!isset($_SESSION['Seller_Pic'])) {
     <div class="row d-md-flex align-items-md-center d-none w-100 main">
         <!-- admin div -->
         <div class="col-md-3 bg-dark d-md-flex flex-md-column justify-content-md-center align-items-md-center h-100">
-            <img src="../../<?php echo $_SESSION['Seller_Pic']; ?>" alt=""
-                class="w-50 rounded-circle img-fluid mt-1 border border-3 border-white" />
+            <img src="../../<?php echo $_SESSION['Seller_Pic']; ?>" alt="" class="w-50 rounded-circle img-fluid mt-1 border border-3 border-white" />
             <h3>Welcome <?php echo $_SESSION['Seller_Name']; ?></h3>
             <ul class="text-decoration-none w-100 h-100 fs-4">
                 <li>
@@ -217,6 +214,8 @@ if (!isset($_SESSION['Seller_Pic'])) {
                 <li>
                     <a href="../Add product.php" class="btn btn-outline-info mt-4">Add Product</a>
                 </li>
+                <li><a href="../Delete product.php" class="btn btn-outline-info mt-4">Delete Product</a></li>
+
                 <li><a href="../Logout.php" class="btn btn-outline-info mt-4">Logout</a></li>
             </ul>
         </div>
@@ -270,7 +269,7 @@ if (!isset($_SESSION['Seller_Pic'])) {
 
                     <!-- Add product Button -->
                     <div class="d-flex justify-content-center">
-                        <button type="submit" name="submit"  class="mt-3 btn btn-success w-100">
+                        <button type="submit" name="submit" class="mt-3 btn btn-success w-100">
                             Add Product
                         </button>
                     </div>
@@ -278,65 +277,65 @@ if (!isset($_SESSION['Seller_Pic'])) {
 
                 <!-- PHP Code for form submission -->
                 <?php
-                    if (isset($_POST['submit'])) {
+                if (isset($_POST['submit'])) {
 
-                        $Laptop_Title = $_POST['Laptop_Title'];
-                        $Laptop_Description = $_POST['Laptop_Description'];
-                        $Laptop_Quantity = $_POST['Quantity'];
-                        $Laptop_Price = $_POST['Laptop_Price'];
+                    $Laptop_Title = $_POST['Laptop_Title'];
+                    $Laptop_Description = $_POST['Laptop_Description'];
+                    $Laptop_Quantity = $_POST['Quantity'];
+                    $Laptop_Price = $_POST['Laptop_Price'];
 
-                        // To deals with pictures we must used $_FILES
-                        $Laptop_Pic_1 = $_FILES['Laptop_Pic_1'];
-                        $Laptop_Pic_2 = $_FILES['Laptop_Pic_2'];
-                        $Laptop_Pic_3 = $_FILES['Laptop_Pic_3'];
+                    // To deals with pictures we must used $_FILES
+                    $Laptop_Pic_1 = $_FILES['Laptop_Pic_1'];
+                    $Laptop_Pic_2 = $_FILES['Laptop_Pic_2'];
+                    $Laptop_Pic_3 = $_FILES['Laptop_Pic_3'];
 
-                        // Details of Pic 1
-                        $Laptop_Pic_1_Name = $Laptop_Pic_1['name'];
-                        $Laptop_Pic_1_Path = $Laptop_Pic_1['tmp_name'];
-                        $Laptop_Pic_1_Error = $Laptop_Pic_1['error'];
+                    // Details of Pic 1
+                    $Laptop_Pic_1_Name = $Laptop_Pic_1['name'];
+                    $Laptop_Pic_1_Path = $Laptop_Pic_1['tmp_name'];
+                    $Laptop_Pic_1_Error = $Laptop_Pic_1['error'];
 
-                        // Details of Pic 2
-                        $Laptop_Pic_2_Name = $Laptop_Pic_2['name'];
-                        $Laptop_Pic_2_Path = $Laptop_Pic_2['tmp_name'];
-                        $Laptop_Pic_2_Error = $Laptop_Pic_2['error'];
+                    // Details of Pic 2
+                    $Laptop_Pic_2_Name = $Laptop_Pic_2['name'];
+                    $Laptop_Pic_2_Path = $Laptop_Pic_2['tmp_name'];
+                    $Laptop_Pic_2_Error = $Laptop_Pic_2['error'];
 
-                        // Details of Pic 3
-                        $Laptop_Pic_3_Name = $Laptop_Pic_3['name'];
-                        $Laptop_Pic_3_Path = $Laptop_Pic_3['tmp_name'];
-                        $Laptop_Pic_3_Error = $Laptop_Pic_3['error'];
+                    // Details of Pic 3
+                    $Laptop_Pic_3_Name = $Laptop_Pic_3['name'];
+                    $Laptop_Pic_3_Path = $Laptop_Pic_3['tmp_name'];
+                    $Laptop_Pic_3_Error = $Laptop_Pic_3['error'];
 
-                        if ($Laptop_Pic_1_Error == 0 && $Laptop_Pic_2_Error == 0 && $Laptop_Pic_3_Error == 0) {
+                    if ($Laptop_Pic_1_Error == 0 && $Laptop_Pic_2_Error == 0 && $Laptop_Pic_3_Error == 0) {
 
-                            $Final_Destination_Laptop_Pic_1 = 'Add Laptops/' . $Laptop_Pic_1_Name;
+                        $Final_Destination_Laptop_Pic_1 = 'Add Laptops/' . $Laptop_Pic_1_Name;
 
-                            $Final_Destination_Laptop_Pic_2 = 'Add Laptops/' . $Laptop_Pic_2_Name;
+                        $Final_Destination_Laptop_Pic_2 = 'Add Laptops/' . $Laptop_Pic_2_Name;
 
-                            $Final_Destination_Laptop_Pic_3 = 'Add Laptops/' . $Laptop_Pic_3_Name;
+                        $Final_Destination_Laptop_Pic_3 = 'Add Laptops/' . $Laptop_Pic_3_Name;
 
-                            move_uploaded_file($Laptop_Pic_1_Path, $Final_Destination_Laptop_Pic_1);
+                        move_uploaded_file($Laptop_Pic_1_Path, $Final_Destination_Laptop_Pic_1);
 
-                            move_uploaded_file($Laptop_Pic_2_Path, $Final_Destination_Laptop_Pic_2);
+                        move_uploaded_file($Laptop_Pic_2_Path, $Final_Destination_Laptop_Pic_2);
 
-                            move_uploaded_file($Laptop_Pic_3_Path, $Final_Destination_Laptop_Pic_3);
+                        move_uploaded_file($Laptop_Pic_3_Path, $Final_Destination_Laptop_Pic_3);
 
-                            $insertqry = "INSERT INTO `laptops table`(`Laptop Title`, `Laptop Description`, `Laptop_Quantity`, `Laptop_Price`, `Picture 1`, `Picture 2`, `Picture 3`) VALUES ('$Laptop_Title','$Laptop_Description','$Laptop_Quantity','$Laptop_Price','$Final_Destination_Laptop_Pic_1','$Final_Destination_Laptop_Pic_2','$Final_Destination_Laptop_Pic_3')";
+                        $insertqry = "INSERT INTO `laptops table`(`Laptop Title`, `Laptop Description`, `Laptop_Quantity`, `Laptop_Price`, `Picture 1`, `Picture 2`, `Picture 3`) VALUES ('$Laptop_Title','$Laptop_Description','$Laptop_Quantity','$Laptop_Price','$Final_Destination_Laptop_Pic_1','$Final_Destination_Laptop_Pic_2','$Final_Destination_Laptop_Pic_3')";
 
-                            $firqery = mysqli_query($conn, $insertqry);
-                            if ($insertqry) {
-                                ?>
-                                                <script>
-                                                    alert('New Laptop Added to Laptop Category!');
-                                                </script>
-                                                <?php
-                    } else {
-                                ?>
-                                                <script>
-                                                    alert('Error in Laptop Insertion Query');
-                                                </script>
-                                                <?php
-                    }
+                        $firqery = mysqli_query($conn, $insertqry);
+                        if ($insertqry) {
+                ?>
+                            <script>
+                                alert('New Laptop Added to Laptop Category!');
+                            </script>
+                        <?php
+                        } else {
+                        ?>
+                            <script>
+                                alert('Error in Laptop Insertion Query');
+                            </script>
+                <?php
                         }
                     }
+                }
                 ?>
             </div>
         </div>

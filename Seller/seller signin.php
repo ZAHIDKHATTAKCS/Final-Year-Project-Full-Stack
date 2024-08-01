@@ -39,7 +39,10 @@
     <nav class="navbar w-100 navbar_container">
         <div class="container-fluid container-md d-flex d-sm-flex justify-content-sm-around justify-content-md-between">
             <!-- Logo -->
+            <a href="../index.php">
             <img src="../assets/Icons/main_logo.jpeg" style="width: 80px; height: 70px" alt="logo" class="rounded" />
+            </a>
+            
             <!-- User Icon -->
             <div>
                 <div class="dropdown">

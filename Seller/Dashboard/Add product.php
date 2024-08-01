@@ -1,14 +1,14 @@
 <?php
-  session_start();
+session_start();
 
-  if(!isset($_SESSION['Seller_Pic'])){
-    ?>
-    <script>
-      alert('First Login Please!');
-      location.replace('../seller signin.php');
-    </script>
-    <?php
-  }
+if (!isset($_SESSION['Seller_Pic'])) {
+?>
+  <script>
+    alert('First Login Please!');
+    location.replace('../seller signin.php');
+  </script>
+<?php
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,9 +29,7 @@
   <script type="text/JavaScript" src="../../assets/Bootstrap 5/js/bootstrap.min.js"></script>
 
   <!-- font awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- css link -->
   <link rel="stylesheet" href="../../assets/Custom Css/fyp.css" />
@@ -107,8 +105,7 @@
 
       <div class="container mt-2 text-dark w-25 h-25">
         <!-- Button to trigger offcanvas -->
-        <button class="btn btn-outline-primary" type="button" data-bs-toggle="offcanvas"
-          data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+        <button class="btn btn-outline-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
           Menu
         </button>
 
@@ -125,6 +122,7 @@
                 <li><a href="buyers.php">Buyers</a></li>
                 <li><a href="order.php">Orders</a></li>
                 <li><a href="Add product.php">Add Product</a></li>
+                <li><a href="./Delete product.php" class="btn btn-outline-info mt-4">Delete Product</a></li>
                 <li><a href="Logout.php">Log out</a></li>
               </ul>
             </div>
@@ -135,8 +133,8 @@
     </header>
 
     <!-- Add product -->
-    <div class="d-blcok text-dark text-center bg-white p-4">
-      <h3>Hi Admin Select Category to Add Products</h3>
+    <div class="d-block text-dark text-center bg-white p-4">
+      <h3>Hi <?php echo $_SESSION['Seller_Name']; ?> Select Category to Add Products</h3>
       <!-- category section -->
       <div class=" w-100 overflow-scroll p-3 rounded-3">
         <div class="d-flex flex-column gap-4  ">
@@ -152,8 +150,7 @@
 
           <!-- Card 2 -->
           <div class="card d-flex justify-content-center align-items-center">
-            <img src="../../assets/Icons/Cameras/Canon Camera/Canon 2.jpg" class="card-img-top img-fluid w-100 mt-3"
-              alt="Card top image" />
+            <img src="../../assets/Icons/Cameras/Canon Camera/Canon 2.jpg" class="card-img-top img-fluid w-100 mt-3" alt="Card top image" />
             <div class="card-body d-flex flex-column justify-content-center align-items-center">
               <h5 class="card-title text-dark">Cameras</h5>
             </div>
@@ -163,8 +160,7 @@
 
           <!-- Card 3 -->
           <div class="card d-flex justify-content-center align-items-center">
-            <img src="../../assets/Icons/Headphones/headphones.jpg" class="card-img-top img-fluid"
-              alt="Card top image" />
+            <img src="../../assets/Icons/Headphones/headphones.jpg" class="card-img-top img-fluid" alt="Card top image" />
             <div class="card-body d-flex flex-column justify-content-center align-items-center">
               <h5 class="card-title text-dark">Headphones</h5>
             </div>
@@ -189,8 +185,7 @@
 
         <!-- Card 5 -->
         <div class="card d-flex justify-content-center align-items-center ">
-          <img src="../../assets/Icons/Laptop Stands/Normal Stand/Normal Stand 1.jpg" class="card-img-top img-fluid w-75 mt-3"
-            alt="Card top image" />
+          <img src="../../assets/Icons/Laptop Stands/Normal Stand/Normal Stand 1.jpg" class="card-img-top img-fluid w-75 mt-3" alt="Card top image" />
           <div class="card-body d-flex flex-column justify-content-center align-items-center">
             <h5 class="card-title text-dark">Laptops Stand</h5>
           </div>
@@ -217,21 +212,20 @@
   <div class="row d-md-flex align-items-md-center d-none w-100 main">
     <!-- admin div -->
     <div class="col-md-3 bg-dark d-md-flex flex-md-column justify-content-md-center align-items-md-center h-100">
-      <img src="../<?Php echo $_SESSION['Seller_Pic']; ?>" alt=""
-        class="w-50 rounded-circle img-fluid mt-1 border border-3 border-white">
+      <img src="../<?Php echo $_SESSION['Seller_Pic']; ?>" alt="" class="w-50 rounded-circle img-fluid mt-1 border border-3 border-white">
       <h3>Welcome <?Php echo $_SESSION['Seller_Name']; ?></h3>
       <ul class="text-decoration-none w-100 h-100 fs-4">
         <li><a href="./dashboard.php" class="btn btn-outline-info mt-4">Home</a></li>
         <li><a href="./buyers.php" class="btn btn-outline-info mt-4">Buyers</a></li>
         <li><a href="./order.php" class="btn btn-outline-info mt-4">Orders</a></li>
         <li><a href="./Add product.php" class="btn btn-outline-info mt-4">Add Product</a></li>
+        <li><a href="./Delete product.php" class="btn btn-outline-info mt-4">Delete Product</a></li>
         <li><a href="Logout.php" class="btn btn-outline-info mt-4">Logout</a></li>
       </ul>
     </div>
 
     <!-- Content div -->
-    <div
-      class="col-md-9 d-none d-md-flex flex-md-column justify-content-md-between align-items-md-center text-dark text-center h-100 bg-white p-4">
+    <div class="col-md-9 d-none d-md-flex flex-md-column justify-content-md-between align-items-md-center text-dark text-center h-100 bg-white p-4">
       <h3>Hi Admin Select Category to Add Products</h3>
       <!-- category section -->
       <div class="border border border-dark w-100 overflow-scroll p-3 rounded-3">
@@ -249,8 +243,7 @@
 
             <!-- Card 2 -->
             <div class="card col-md-3 d-flex justify-content-center align-items-center col-sm-8">
-              <img src="../../assets/Icons/Cameras/Canon Camera/Canon 2.jpg" class="card-img-top img-fluid w-100 mt-3"
-                alt="Card top image" />
+              <img src="../../assets/Icons/Cameras/Canon Camera/Canon 2.jpg" class="card-img-top img-fluid w-100 mt-3" alt="Card top image" />
               <div class="card-body d-flex flex-column justify-content-center align-items-center">
                 <h5 class="card-title text-dark">Cameras</h5>
               </div>
@@ -260,8 +253,7 @@
 
             <!-- Card 3 -->
             <div class="card col-md-3 d-flex justify-content-center align-items-center">
-              <img src="../../assets/Icons/Headphones/headphones.jpg" class="card-img-top img-fluid"
-                alt="Card top image" />
+              <img src="../../assets/Icons/Headphones/headphones.jpg" class="card-img-top img-fluid" alt="Card top image" />
               <div class="card-body d-flex flex-column justify-content-center align-items-center">
                 <h5 class="card-title text-dark">Headphones</h5>
               </div>
@@ -283,8 +275,7 @@
 
             <!-- Card 5 -->
             <div class="card col-md-3 d-flex justify-content-center align-items-center col-sm-8">
-              <img src="../../assets/Icons/Laptop Stands/Normal Stand/Normal Stand 1.jpg" class="card-img-top img-fluid w-75 mt-3"
-                alt="Card top image" />
+              <img src="../../assets/Icons/Laptop Stands/Normal Stand/Normal Stand 1.jpg" class="card-img-top img-fluid w-75 mt-3" alt="Card top image" />
               <div class="card-body d-flex flex-column justify-content-center align-items-center">
                 <h5 class="card-title text-dark">Laptops Stand</h5>
               </div>
@@ -294,8 +285,7 @@
 
             <!-- Card 3 -->
             <div class="card col-md-3 d-flex justify-content-center align-items-center col-sm-8">
-              <img src="../../assets/Icons/Computer/Tower PC/Tower 1.jpg" class="card-img-top img-fluid"
-                alt="Card top image" />
+              <img src="../../assets/Icons/Computer/Tower PC/Tower 1.jpg" class="card-img-top img-fluid" alt="Card top image" />
               <div class="card-body d-flex flex-column justify-content-center align-items-center">
                 <h5 class="card-title text-dark">Personal Computers</h5>
               </div>

@@ -118,18 +118,18 @@ if(!isset($_SESSION['Seller_Pic'])){
         <!-- Offcanvas component -->
         <div class="offcanvas offcanvas-start" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
           <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasExampleLabel"><?php echo $_SESSION['Seller_Name']; ?>! Welcome to Menu</h5>
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel"><?php echo $_SESSION['Seller_Name']; ?> Welcome to Menu</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body">
             <div class=" h-100">
               <ul class="d-flex flex-column justify-content-between fs-3">
-                <li><a href="dashboard.php">Home</a></li>
-                <li><a href="buyers.php">Buyers</a></li>
-                <li><a href="order.php">Orders</a></li>
-                <li><a href="Add product.php">Add Product</a></li>
-                <li><a href="./Delete product.php" class="btn btn-outline-info mt-4">Delete Product</a></li>
-                <li><a href="Logout.php">Log out</a></li>
+                <li><a href="dashboard.php" class="btn btn-outline-info mt-2">Home</a></li>
+                <li><a href="buyers.php" class="btn btn-outline-info mt-2">Buyers</a></li>
+                <li><a href="order.php" class="btn btn-outline-info mt-2">Orders</a></li>
+                <li><a href="Add product.php" class="btn btn-outline-info mt-2">Add Product</a></li>
+                <li><a href="./Delete product.php" class="btn btn-outline-info mt-2">Delete Product</a></li>
+                <li><a href="Logout.php" class="btn btn-outline-info mt-2">Log out</a></li>
               </ul>
             </div>
           </div>

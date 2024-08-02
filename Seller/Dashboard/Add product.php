@@ -118,12 +118,12 @@ if (!isset($_SESSION['Seller_Pic'])) {
           <div class="offcanvas-body">
             <div class=" h-100">
               <ul class="d-flex flex-column justify-content-between fs-3">
-                <li><a href="dashboard.php">Home</a></li>
-                <li><a href="buyers.php">Buyers</a></li>
-                <li><a href="order.php">Orders</a></li>
-                <li><a href="Add product.php">Add Product</a></li>
-                <li><a href="./Delete product.php" class="btn btn-outline-info mt-4">Delete Product</a></li>
-                <li><a href="Logout.php">Log out</a></li>
+                <li><a href="dashboard.php" class="btn btn-outline-info mt-2">Home</a></li>
+                <li><a href="buyers.php" class="btn btn-outline-info mt-2">Buyers</a></li>
+                <li><a href="order.php" class="btn btn-outline-info mt-2">Orders</a></li>
+                <li><a href="Add product.php" class="btn btn-outline-info mt-2">Add Product</a></li>
+                <li><a href="./Delete product.php" class="btn btn-outline-info mt-2">Delete Product</a></li>
+                <li><a href="Logout.php" class="btn btn-outline-info mt-2">Log out</a></li>
               </ul>
             </div>
           </div>

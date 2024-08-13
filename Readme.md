@@ -5,7 +5,7 @@
 <br><br>
 
 ## Our Final Year Project Proposal
-<a href="Final Year Project Extra Documents/Final Year Project Proposal.pdf">Download</a> 
+<a href="Final Year Project Extra Documents/Final Year Project Proposal.pdf" Download>Download</a> 
 
 
 ## Our Final Year Project Figma Design

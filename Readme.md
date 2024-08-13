@@ -1,6 +1,6 @@
 ## University of Agriculture Peshawar
 
-<img src="Final Year Project Extra Documents/our uni.png">
+<img src="Final Year Project Extra Documents/our uni.png" width="100%">
 
 <br><br>
 

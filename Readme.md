@@ -1,3 +1,22 @@
+## University of Agriculture Peshawar
+
+<img src="Final Year Project Extra Documents/our uni.png">
+
+<br><br>
+
+## Our Final Year Project Proposal
+<a href="Final Year Project Extra Documents/Final Year Project Proposal.pdf">Download</a> 
+
+
+## Our Final Year Project Figma Design
+<a href="Final Year Project Extra Documents/Our Final Year Project Figma Design.pdf">Download</a> 
+
+## Our Final Year Project Thesis
+<a href="Final Year Project Extra Documents/Our Final Year Project Thesis.pdf">Download</a> 
+
+<br>
+
+
 ## Team Members for our Final Year Project 
 `Muhammad Shahzad` 
 
@@ -37,3 +56,4 @@
 <img src="assets/Team Members Images/Muhammad Zahid Backend Developer.JPG" width="200px">
  
 #### Hi, this is me Muhammad Zahid from Hangu, working as Backend Developer ( Core PHP ) for the Project
+

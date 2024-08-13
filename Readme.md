@@ -1,18 +1,21 @@
 ## University of Agriculture Peshawar
 
-<img src="Final Year Project Extra Documents/our uni.png" width="100%">
+<img src="Final Year Project Extra Documents/our uni.png">
 
 <br><br>
 
 ## Our Final Year Project Proposal
-<a href="Final Year Project Extra Documents/Final Year Project Proposal.pdf" Download>Download</a> 
+<a href="Final Year Project Extra Documents/Final Year Project Proposal.pdf">Download Proposal</a> 
 
 
 ## Our Final Year Project Figma Design
-<a href="Final Year Project Extra Documents/Our Final Year Project Figma Design.pdf">Download</a> 
+<a href="Final Year Project Extra Documents/Our Final Year Project Figma Design.pdf">Download Design</a> 
 
 ## Our Final Year Project Thesis
-<a href="Final Year Project Extra Documents/Our Final Year Project Thesis.pdf">Download</a> 
+<a href="Final Year Project Extra Documents/Our Final Year Project Thesis.pdf">Download Thesis</a> 
+
+## Our Final Year Project Final Presentation
+<a href="Final Year Project Extra Documents/Online Shop Tracking System Final Presentation.pptx">Download Presentation</a> 
 
 <br>
 
